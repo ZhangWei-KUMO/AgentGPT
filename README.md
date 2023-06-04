@@ -52,7 +52,13 @@ git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ## 🎉 路线图
 
 这个平台目前处于Beta阶段，已完成和计划中的功能列表可以在我们的网站上找到。 [public roadmap](https://docs.reworkd.ai/roadmap).
+其底层主要源于三个AI平台作为支撑：
 
+1. [OpenAI](https://openai.com/) - 大语言模型
+2. [Serper](https://serper.dev/) - Google 搜索服务
+3. [Replicate](https://replicate.com/) - 图片生成服务
+
+开发人员需要提前在这三个平台开通API Key，同时充值信仰。
 
 ## 🚀 技术栈
 
