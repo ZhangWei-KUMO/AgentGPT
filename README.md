@@ -23,7 +23,7 @@
 <a href="https://discord.gg/gcmNyAAFfV">📢 Discord</a>
 </p>
 
-AgentGPT可以帮助您配置和部署自主AI代理。您可以为其命名，并让它实现任何想象的目标。它会思考要执行的任务，执行这些任务并从结果中学习，以尝试达成目标。这是一项非常先进的技术，可以让您的工作更加高效和智能化。由于国内众所周知的原因，对于GPT中国开发者并不友好，所以在这里Fork了一个中文版供大家学习交流
+AgentGPT可以帮助您配置和部署自主AI代理。您可以为其命名，并让它实现任何想象的目标。它会思考要执行的任务，执行这些任务并从结果中学习，以尝试达成目标。这是一项非常先进的技术，可以让您的工作更加高效和智能化。
 ---
 
 ## ✨ Demo
@@ -61,8 +61,8 @@ git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 - ✅ **授权**: [Next-Auth.js](https://next-auth.js.org)
 - ✅ **ORM**: [Prisma](https://prisma.io) & [SQLModel](https://sqlmodel.tiangolo.com/).
 - ✅ **数据库**: [Planetscale](https://planetscale.com/).
-- ✅ **Styling**: [TailwindCSS + HeadlessUI](https://tailwindcss.com).
-- ✅ **Schema Validation**: [Zod](https://github.com/colinhacks/zod) + [Pydantic](https://sqlmodel.tiangolo.com/).
+- ✅ **样式**: [TailwindCSS + HeadlessUI](https://tailwindcss.com).
+- ✅ **Schema 验证**: [Zod](https://github.com/colinhacks/zod) + [Pydantic](https://sqlmodel.tiangolo.com/).
 - ✅ **大语言模型工具**: [Langchain](https://github.com/hwchase17/langchain).
 
 
@@ -79,11 +79,11 @@ git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 </p>
 
 <h2 align="center">
-💪 Contributors 💪
+💪 贡献者 💪
 </h2>
 
 <p align="center">
-Our contributors have made this project possible. Thank you! 🙏
+感谢以下源码贡献者! 🙏
 </p>
 
 <a href="https://github.com/reworkd/agentgpt/graphs/contributors">
