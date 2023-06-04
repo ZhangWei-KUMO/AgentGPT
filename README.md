@@ -49,13 +49,15 @@ CLI 为 AgentGPT 设置以下内容：
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
 - 🎨 [前端](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
 
-安装Python.11,在这里仅以Ubuntu22举例：
+安装Python3.11,在这里仅以Ubuntu22举例：
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.11
 # 修改~/.bashrc中添加环境变量
 alias python='/usr/bin/python3.11'
 source ~/.bashrc
+# pip与python版本号保持一致
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py python get-pip.py --force-reinstall
 ```
 安装mysql:
 ```bash
