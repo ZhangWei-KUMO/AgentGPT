@@ -49,6 +49,15 @@ CLI 为 AgentGPT 设置以下内容：
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
 - 🎨 [前端](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
 
+安装Python.11,在这里仅以Ubuntu22举例：
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.11
+# 修改~/.bashrc中添加环境变量
+alias python='/usr/bin/python3.11'
+source ~/.bashrc
+```
+
 后端的代码由python编写，在包管理上使用了poetry,首先需要进行安装。由于不同的版本不一样，在这里仅以Ubuntu22举例：
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
@@ -58,6 +67,8 @@ source ~/.bashrc
 poetry --version
 # 进入platform文件夹，安装依赖
 poetry install
+# 进入next中
+npm install
 ```
 
 输入如下命令行，启动程序：
@@ -67,6 +78,7 @@ git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 # 进入platform文件夹启动后台
 poetry run python -m reworkd_platform
 # 进入next中启动前端
+npm run dev
 ```
 
 > 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 AgentGPT，请确保您已安装 Docker。
