@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/>
 </p>
 <p align="center">
-  <em>🤖 Assemble, configure, and deploy autonomous AI Agent(s) in your browser. 🤖 </em>
+  <em>🤖 🤖 在浏览器中组装、配置和部署自主 AI 代理  🤖 </em>
 </p>
 <p align="center">
     <img alt="Node version" src="https://img.shields.io/static/v1?label=node&message=%20%3E=18&logo=node.js&color=2334D058" />
@@ -23,59 +23,55 @@
 <a href="https://discord.gg/gcmNyAAFfV">📢 Discord</a>
 </p>
 
-AgentGPT allows you to configure and deploy Autonomous AI agents.
-Name your own custom AI and have it embark on any goal imaginable.
-It will attempt to reach the goal by thinking of tasks to do, executing them, and learning from the results 🚀.
-
+AgentGPT可以帮助您配置和部署自主AI代理。您可以为其命名，并让它实现任何想象的目标。它会思考要执行的任务，执行这些任务并从结果中学习，以尝试达成目标。这是一项非常先进的技术，可以让您的工作更加高效和智能化。由于国内众所周知的原因，对于GPT中国开发者并不友好，所以在这里Fork了一个中文版供大家学习交流
 ---
 
 ## ✨ Demo
-For the best demo experience, try [our site](https://agentgpt.reworkd.ai) directly :)
+请看视频 [our site](https://agentgpt.reworkd.ai) directly :)
 
 [Demo Video](https://github.com/reworkd/AgentGPT/assets/50181239/5348e44a-29a5-4280-a06b-fe1429a8d99e)
 
 
-## 👨‍🚀 Getting Started
+## 👨‍🚀 启动
 
-The easiest way to get started with AgentGPT is automatic setup CLI bundled with the project.
-The cli sets up the following for AgentGPT:
-- 🔐 [Environment variables](https://github.com/reworkd/AgentGPT/blob/main/.env.example) (and API Keys)
-- 🗂️ [Database](https://github.com/reworkd/AgentGPT/tree/main/db) (Mysql)
-- 🤖 [Backend](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
-- 🎨 [Frontend](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
+使用 AgentGPT 的最简单方法是自动设置 CLI，该 CLI 包含在项目中。
+CLI 为 AgentGPT 设置以下内容：
+- 🔐 [环境变量](https://github.com/reworkd/AgentGPT/blob/main/.env.example) (and API Keys)
+- 🗂️ [数据库](https://github.com/reworkd/AgentGPT/tree/main/db) (Mysql)
+- 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
+- 🎨 [前端](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
 
-To get started follow run the commands below.
+输入如下命令行，启动程序：
 ```bash
 git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ./setup.sh
 ```
 
-> 🐳 The recommend way to set up AgentGPT locally is to [docker-compose](https://www.docker.com/), please make sure you have docker installed.
+> 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 AgentGPT，请确保您已安装 Docker。
 
-## 🎉 Roadmap
+## 🎉 路线图
 
-This platform is currently in beta, a full list of completed and planed features can be found on
-our [public roadmap](https://docs.reworkd.ai/roadmap).
+这个平台目前处于Beta阶段，已完成和计划中的功能列表可以在我们的网站上找到。 [public roadmap](https://docs.reworkd.ai/roadmap).
 
 
-## 🚀 Tech Stack
+## 🚀 技术栈
 
 - ✅ **Bootstrapping**: [create-t3-app](https://create.t3.gg) + [FastAPI-template](https://github.com/s3rius/FastAPI-template).
-- ✅ **Framework**: [Nextjs 13 + Typescript](https://nextjs.org/) + [FastAPI](https://fastapi.tiangolo.com/)
-- ✅ **Auth**: [Next-Auth.js](https://next-auth.js.org)
+- ✅ **框架**: [Nextjs 13 + Typescript](https://nextjs.org/) + [FastAPI](https://fastapi.tiangolo.com/)
+- ✅ **授权**: [Next-Auth.js](https://next-auth.js.org)
 - ✅ **ORM**: [Prisma](https://prisma.io) & [SQLModel](https://sqlmodel.tiangolo.com/).
-- ✅ **Database**: [Planetscale](https://planetscale.com/).
+- ✅ **数据库**: [Planetscale](https://planetscale.com/).
 - ✅ **Styling**: [TailwindCSS + HeadlessUI](https://tailwindcss.com).
 - ✅ **Schema Validation**: [Zod](https://github.com/colinhacks/zod) + [Pydantic](https://sqlmodel.tiangolo.com/).
-- ✅ **LLM Tooling**: [Langchain](https://github.com/hwchase17/langchain).
+- ✅ **大语言模型工具**: [Langchain](https://github.com/hwchase17/langchain).
 
 
 <h2 align="center">
-💝 Our GitHub sponsors 💝
+💝 AutoGPT项目的贡献者 💝
 </h2>
 
 <p align="center">
-Join us in fueling the development of AgentGPT, an open-source project pushing the boundaries of AI agents! Your sponsorship would drive progress by helping us scale up resources, enhance features and functionality, and continue to iterate on this exciting project! 🚀
+加入我们，支持AgentGPT的发展，这是一个推动AI代理技术边界的开源项目！您的赞助将有助于我们扩大资源规模，增强功能和功能，并继续对这个令人兴奋的项目进行迭代，从而推动进步！🚀
 </p>
 
 <p align="center">
