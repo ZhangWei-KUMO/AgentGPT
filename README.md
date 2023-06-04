@@ -57,6 +57,18 @@ sudo apt install python3.11
 alias python='/usr/bin/python3.11'
 source ~/.bashrc
 ```
+安装mysql:
+```bash
+sudo apt update
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+sudo mysql
+# 设置root用户的初始密码，如：12345678
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YOUR_PASSWORD';
+exit
+# 安全设置，根据提示完成即可
+sudo mysql_secure_installation
+```
 
 后端的代码由python编写，在包管理上使用了poetry,首先需要进行安装。由于不同的版本不一样，在这里仅以Ubuntu22举例：
 ```bash
