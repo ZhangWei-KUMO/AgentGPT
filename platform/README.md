@@ -87,7 +87,10 @@ pre-commit install
 
 You can read more about pre-commit here: https://pre-commit.com/
 
-
+## 已知bug
+```bash
+mysqlclient = "^2.1.1"
+```
 ## 测试
 
 如果您想在Docker中运行它，只需运行：
