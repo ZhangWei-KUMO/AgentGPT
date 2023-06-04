@@ -5,10 +5,18 @@
   <em>🤖 🤖 在浏览器中组装、配置和部署自主 AI 代理  🤖 </em>
 </p>
 <p align="center">
-    <img alt="Node version" src="https://img.shields.io/static/v1?label=node&message=%20%3E=18&logo=node.js&color=2334D058" />
-      <a href="https://github.com/reworkd/AgentGPT/blob/master/README.md"><img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English"></a>
-  <a href="https://github.com/reworkd/AgentGPT/blob/master/docs/README.zh-HANS.md"><img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文"></a>
-  <a href="https://github.com/reworkd/AgentGPT/blob/master/docs/README.hu-Cs4K1Sr4C.md"><img src="https://img.shields.io/badge/lang-Hungarian-red.svg" alt="Hungarian"></a>
+  <img alt="Node version" src="https://img.shields.io/static/v1?label=node&message=%20%3E=18&logo=node.js&color=2334D058" />
+  <img alt="Python version" src="https://img.shields.io/badge/python-%E2%89%A53.10-blue" />
+  <img alt="Poetry version" src="https://img.shields.io/badge/poetry-%E2%89%A51.5.1-lightgrey" />
+  <a href="https://github.com/reworkd/AgentGPT/blob/master/README.md">
+    <img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English">
+  </a>
+  <a href="https://github.com/reworkd/AgentGPT/blob/master/docs/README.zh-HANS.md">
+    <img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文">
+  </a>
+  <a href="https://github.com/reworkd/AgentGPT/blob/master/docs/README.hu-Cs4K1Sr4C.md">
+    <img src="https://img.shields.io/badge/lang-Hungarian-red.svg" alt="Hungarian">
+  </a>
 </p>
 
 <p align="center">
@@ -41,10 +49,24 @@ CLI 为 AgentGPT 设置以下内容：
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
 - 🎨 [前端](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
 
+后端的代码由python编写，在包管理上使用了poetry,首先需要进行安装。由于不同的版本不一样，在这里仅以Ubuntu22举例：
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+# 在~/.bashrc中添加环境变量
+export PATH="/home/ubuntu/.local/bin:$PATH"
+source ~/.bashrc
+poetry --version
+# 进入platform文件夹，安装依赖
+poetry install
+```
+
 输入如下命令行，启动程序：
 ```bash
 git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ./setup.sh
+# 进入platform文件夹启动后台
+poetry run python -m reworkd_platform
+# 进入next中启动前端
 ```
 
 > 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 AgentGPT，请确保您已安装 Docker。
