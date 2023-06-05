@@ -67,7 +67,7 @@ export type Message = z.infer<typeof messageSchema>;
 
 /* Agent Type */
 // Agent Mode
-export const [AUTOMATIC_MODE, PAUSE_MODE] = ["Automatic Mode" as const, "Pause Mode" as const];
+export const [AUTOMATIC_MODE, PAUSE_MODE] = ["自动档模式" as const, "手动档模式" as const];
 export type AgentMode = typeof AUTOMATIC_MODE | typeof PAUSE_MODE;
 
 // Agent Playback Control

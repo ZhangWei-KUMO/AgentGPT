@@ -48,7 +48,7 @@ export const TaskWindow = ({ visibleOnMobile }: TaskWindowProps) => {
         <div className="window-heights flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden pr-1">
           {tasks.length == 0 && (
             <p className="w-full p-2 text-center text-xs text-gray-300">
-              This window will display agent tasks as they are created.
+              这里将显示你创建的任务
             </p>
           )}
           <AnimatePresence>
@@ -61,7 +61,7 @@ export const TaskWindow = ({ visibleOnMobile }: TaskWindowProps) => {
           <Input
             value={customTask}
             onChange={(e) => setCustomTask(e.target.value)}
-            placeholder={"Custom task"}
+            placeholder={"自定义任务"}
             small
           />
           <Button
@@ -69,7 +69,7 @@ export const TaskWindow = ({ visibleOnMobile }: TaskWindowProps) => {
             onClick={handleAddTask}
             disabled={!customTask || agent == null}
           >
-            Add
+            +
           </Button>
         </div>
       </div>

@@ -27,5 +27,7 @@
 	"SETTINGS_DIALOG_HEADER": "设置⚙",
 	"SUBSCRIPTION_WILL_NOT_WORK": "（ChatGPT Plus订阅不起作用）",
 	"TEMPERATURE": "温度",
-	"TOKENS": "令牌"
+	"TOKENS": "令牌",
+	"Current tasks":"当前任务"
+
 }

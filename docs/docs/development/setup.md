@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 🛠️ 设置
 
-以下文档将帮助您设置 AgentGPT 的本地安装。
+以下文档将帮助您设置 凹凸GPT 的本地安装。
 
 ## 技术栈
 
@@ -14,7 +14,7 @@ sidebar_position: 1
 
 ## 交互式设置
 
-我们最近推出了一个交互式设置工具，它将指导您创建 ENV 并运行 AgentGPT。只需执行以下命令：
+我们最近推出了一个交互式设置工具，它将指导您创建 ENV 并运行 凹凸GPT。只需执行以下命令：
 
 ```
 git clone https://github.com/ZhangWei-KUMO/AgentGPT && cd AgentGPT
@@ -72,10 +72,10 @@ poetry run python -m agent_backend
 
 ## 运行站点
 
-在本地构建 AgentGPT 后，您可以在 Web 浏览器中访问 http://localhost:3000/。
+在本地构建 凹凸GPT 后，您可以在 Web 浏览器中访问 http://localhost:3000/。
 
 ## 问题 / 其他帮助
 
-如果您仍然遇到问题，您可以遵循 @CybrCo 的旧指南：[如何在本地安装 AgentGPT](https://snapdragon-writer-867.notion.site/How-to-Install-AgentGPT-Locally-9b96b2314c9b491397976249fd121023)
+如果您仍然遇到问题，您可以遵循 @CybrCo 的旧指南：[如何在本地安装 凹凸GPT](https://snapdragon-writer-867.notion.site/How-to-Install-AgentGPT-Locally-9b96b2314c9b491397976249fd121023)
 
-如果您仍然遇到问题，请在 [GitHub 上提交问题](https://github.com/reworkd/AgentGPT/issues) 或在 [discord](https://discord.gg/jdSBAnmdnY) 上联系团队。
+如果您仍然遇到问题，请在 [GitHub 上提交问题](https://github.com/reworkd/AgentGPT/issues) 

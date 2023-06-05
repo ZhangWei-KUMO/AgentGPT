@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/>
 </p>
 <p align="center">
-  <em>🤖 🤖 在浏览器中组装、配置和部署自主 AI 代理  🤖 </em>
+  <em>🤖 🤖 一款中文部署的GPT工具  🤖 </em>
 </p>
 <p align="center">
   <img alt="Node version" src="https://img.shields.io/static/v1?label=node&message=%20%3E=18&logo=node.js&color=2334D058" />
@@ -42,8 +42,8 @@ AgentGPT可以帮助您配置和部署自主AI代理。您可以为其命名，�
 
 ## 👨‍🚀 启动
 
-使用 AgentGPT 的最简单方法是自动设置 CLI，该 CLI 包含在项目中。
-CLI 为 AgentGPT 设置以下内容：
+使用 凹凸GPT 的最简单方法是自动设置 CLI，该 CLI 包含在项目中。
+CLI 为 凹凸GPT 设置以下内容：
 - 🔐 [环境变量](https://github.com/reworkd/AgentGPT/blob/main/.env.example) (and API Keys)
 - 🗂️ [数据库](https://github.com/reworkd/AgentGPT/tree/main/db) (Mysql)
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
@@ -101,7 +101,7 @@ kill [PID]
 npm run dev
 ```
 
-> 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 AgentGPT，请确保您已安装 Docker。
+> 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 凹凸GPT，请确保您已安装 Docker。
 
 ## 🎉 路线图
 

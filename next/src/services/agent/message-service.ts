@@ -90,14 +90,14 @@ class MessageService {
 
     if (typeof e == "string") message = e;
     else if (axios.isAxiosError(e) && !e.response) {
-      message = "Unable to connect to th Python backend. Please make sure its running.";
+      message = "后端程序连接失败，请检查后端程序是否正常运行";
     } else if (axios.isAxiosError(e)) {
       switch (e.response?.status) {
         case 409:
           const data = (e.response?.data as object) || {};
           message = isPlatformError(data)
             ? data.detail
-            : "An Unknown Error Occurred, Please Try Again!";
+            : "出现未知错误!";
           break;
         case 429:
           message = "ERROR_API_KEY_QUOTA";

@@ -12,7 +12,7 @@ Prompts是我们用来动态对齐语言模型行为与当前代理目标/任务
 - [提示工程指南](https://www.promptingguide.ai/techniques/consistency)
 - [开发人员的提示工程](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/)
 
-## AgentGPT 中的技术
+## 凹凸GPT 中的技术
 
 ### 计划和解决
 

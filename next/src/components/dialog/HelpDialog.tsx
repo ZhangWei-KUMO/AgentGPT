@@ -1,15 +1,16 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { FaDiscord, FaGithub, FaTwitter } from "react-icons/fa";
+import {  FaGithub  } from "react-icons/fa";
+import { AiFillWechat,AiTwotoneMail } from "react-icons/ai";
 import Dialog from "./Dialog";
-
+// 帮助弹出框
 export default function HelpDialog({ show, close }: { show: boolean; close: () => void }) {
   const [t] = useTranslation();
   return (
     <Dialog header={`${t("WELCOME_TO_AGENT_GPT", { ns: "help" })} 🤖`} isShown={show} close={close}>
       <div>
         <p>
-          <strong>AgentGPT</strong> {t("INTRODUCING_AGENTGPT", { ns: "help" })}
+          <strong>凹凸GPT</strong> {t("INTRODUCING_AGENTGPT", { ns: "help" })}
         </p>
         <br />
         <div>
@@ -27,7 +28,7 @@ export default function HelpDialog({ show, close }: { show: boolean; close: () =
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
             onClick={() => window.open("https://discord.gg/jdSBAnmdnY", "_blank")}
           >
-            <FaDiscord size={30} />
+            <AiTwotoneMail size={30} />
           </div>
           <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
@@ -38,11 +39,11 @@ export default function HelpDialog({ show, close }: { show: boolean; close: () =
               )
             }
           >
-            <FaTwitter size={30} />
+            <AiFillWechat size={30} />
           </div>
           <div
             className="cursor-pointer rounded-full bg-black/30 p-3 hover:bg-black/70"
-            onClick={() => window.open("https://github.com/reworkd/AgentGPT", "_blank")}
+            onClick={() => window.open("https://github.com/ZhangWei-KUMO/AgentGPT", "_blank")}
           >
             <FaGithub size={30} />
           </div>

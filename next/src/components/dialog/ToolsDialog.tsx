@@ -16,14 +16,14 @@ export const ToolsDialog: React.FC<{
     <Dialog
       header={
         <div className="flex items-center gap-3">
-          <p>Tools</p>
+          <p>工具箱</p>
           <FaCog />
         </div>
       }
       isShown={show}
       close={close}
     >
-      <p>Select what external tools your agents have access to.</p>
+      <p>请选择您的代理程序可以访问哪些外部工具。</p>
       <div className="mt-5 flex flex-col gap-3 ">
         {activeTools.map((tool) => (
           <div
@@ -38,7 +38,7 @@ export const ToolsDialog: React.FC<{
             <Switch value={tool.active} onChange={() => setToolActive(tool.name, !tool.active)} />
           </div>
         ))}
-        {!isSuccess && <p className="text-center text-red-300">Error loading tools.</p>}
+        {!isSuccess && <p className="text-center text-red-300">加载错误</p>}
       </div>
     </Dialog>
   );

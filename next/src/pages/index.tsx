@@ -261,7 +261,7 @@ const Home: NextPage = () => {
             <Expand className="flex w-full flex-row">
               <ChatWindow
                 messages={messages}
-                title="AgentGPT"
+                title="凹凸GPT"
                 onSave={
                   shouldShowSave
                     ? (format) => {
@@ -298,11 +298,11 @@ const Home: NextPage = () => {
                   disabled={agent != null}
                   onChange={(e) => setNameInput(e.target.value)}
                   onKeyDown={(e) => handleKeyPress(e)}
-                  placeholder="AgentGPT"
+                  placeholder="凹凸GPT"
                   type="text"
                 />
                 <Button ping onClick={() => setShowToolsDialog(true)} className="h-fit">
-                  <p className="mr-3">Tools</p>
+                  <p className="mr-2">Tools</p>
                   <FaCog />
                 </Button>
               </Expand>

@@ -120,14 +120,14 @@ const ChatWindow = ({
             </PopIn>
             <PopIn delay={1.5}>
               <div className="m-2 flex flex-col justify-between gap-2 sm:m-4 sm:flex-row">
-                <ExampleAgentButton name="PlatformerGPT 🎮" setAgentRun={setAgentRun}>
-                  Write some code to make a platformer game.
+                <ExampleAgentButton name="代码GPT 🎮" setAgentRun={setAgentRun}>
+                   帮我写一份游戏代码
                 </ExampleAgentButton>
-                <ExampleAgentButton name="TravelGPT 🌴" setAgentRun={setAgentRun}>
-                  Plan a detailed trip to Hawaii.
+                <ExampleAgentButton name="旅游GPT 🌴" setAgentRun={setAgentRun}>
+                   帮我写一份去台湾旅游的攻略
                 </ExampleAgentButton>
-                <ExampleAgentButton name="ResearchGPT 📜" setAgentRun={setAgentRun}>
-                  Create a comprehensive report of the Nike company
+                <ExampleAgentButton name="研报GPT 📜" setAgentRun={setAgentRun}>
+                   帮我写一份详细的有关贵州茅台的研究报告
                 </ExampleAgentButton>
               </div>
             </PopIn>
