@@ -34,18 +34,10 @@
 ```
 npm run serve
 ```
-### 部署
+### 部署到自己的Github Page上
 
 使用SSH：
 
 ```
 $ USE_SSH=true yarn deploy
 ```
-
-不使用SSH：
-
-```
-$ GIT_USER=<你的GitHub用户名> yarn deploy
-```
-
-如果你使用GitHub pages进行托管，这个命令是一种方便的方式来构建网站并推送到`gh-pages`分支。

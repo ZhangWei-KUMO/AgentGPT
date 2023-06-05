@@ -50,7 +50,7 @@ class Settings(BaseSettings):
     serp_api_key: Optional[str] = None
 
     # 前端配置
-    frontend_url: str = "http://localhost:5000"
+    frontend_url: str = "http://localhost:8080"
 
     # 数据库变量
     db_host: str = "localhost"

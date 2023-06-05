@@ -25,16 +25,11 @@ RUN apt-get purge -y \
 COPY . /app/src/
 RUN poetry install --only main
 
-
-
 # Ensure correct line endings after these files are edited by windows
 RUN chmod +x /app/src/entrypoint.sh
 RUN apt-get update && apt-get install -y netcat-openbsd dos2unix \
     && dos2unix /app/src/entrypoint.sh \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-#ENTRYPOINT ["sh", "entrypoint.sh"]
-
-
 CMD ["/usr/local/bin/python", "-m", "agent_backend"]
 
 FROM prod as dev
