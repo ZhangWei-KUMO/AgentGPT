@@ -1,12 +1,12 @@
 import uvicorn
 
-from reworkd_platform.settings import settings
+from agent_backend.settings import settings
 
 
 def main() -> None:
-    """Entrypoint of the application."""
+    """应用程序的入口点"""
     uvicorn.run(
-        "reworkd_platform.web.application:get_app",
+        "agent_backend.web.application:get_app",
         workers=settings.workers_count,
         host=settings.host,
         port=settings.port,

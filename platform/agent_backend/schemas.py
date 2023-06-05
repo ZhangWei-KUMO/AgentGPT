@@ -6,7 +6,7 @@ from reworkd_platform.web.api.agent.analysis import Analysis
 
 LLM_Model = Literal[
     "gpt-3.5-turbo",
-    "gpt-4",
+    # "gpt-4",
 ]
 
 

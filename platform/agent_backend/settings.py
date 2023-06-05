@@ -10,7 +10,7 @@ TEMP_DIR = Path(gettempdir())
 
 
 class LogLevel(str, enum.Enum):  # noqa: WPS600
-    """Possible log levels."""
+    """日志等级"""
 
     NOTSET = "NOTSET"
     DEBUG = "DEBUG"
@@ -22,19 +22,17 @@ class LogLevel(str, enum.Enum):  # noqa: WPS600
 
 class Settings(BaseSettings):
     """
-    Application settings.
-
-    These parameters can be configured
-    with environment variables.
+    应用程序设置，这些参数可以通过环境变量配置。
     """
 
     host: str = "127.0.0.1"
     port: int = 8000
 
-    # Quantity of workers for uvicorn
+    # 是指用于启动uvicorn服务器的工作进程数量。Uvicorn是一个基于ASGI（异步服务器网关接口）的Web服务器，
+    # 可以在Python 3.6+中使用。它支持异步请求处理和Web套接字协议，可以在高负载下处理大量并发连接。
     workers_count: int = 1
 
-    # Enable uvicorn reloading
+    # uvicorn服务器是否应该在代码更改时重新加载。
     reload: bool = True
 
     # Current environment
@@ -51,19 +49,19 @@ class Settings(BaseSettings):
     ff_mock_mode_enabled: bool = False  # Controls whether calls are mocked
     serp_api_key: Optional[str] = None
 
-    # Frontend URL for CORS
+    # 前端配置
     frontend_url: str = "http://localhost:3000"
 
-    # Variables for the database
+    # 数据库变量
     db_host: str = "localhost"
     db_port: int = 3306
-    db_user: str = "reworkd_platform"
-    db_pass: str = "reworkd_platform"
+    db_user: str = "root"
+    db_pass: str = "12345678"
     db_base: str = "reworkd_platform"
     db_echo: bool = False
     db_ca_path: str = "/etc/ssl/cert.pem"
 
-    # Variables for the vector db. We're currently using Weaviate
+    # 向量数据库配置 Weaviate
     vector_db_url: str = "<Should be updated via env>"
     vector_db_api_ket: str = "<Should be updated via env>"
 
