@@ -217,7 +217,7 @@ NODE_ENV=development
 # Next Auth 配置:
 # 用`openssl rand -base64 32`生成NEXTAUTH_SECRET的秘密
 NEXTAUTH_SECRET=changeme
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=http://localhost:5000
 DATABASE_URL=file:./db.sqlite
 
 # 你的open api密钥

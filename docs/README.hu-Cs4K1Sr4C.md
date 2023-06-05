@@ -130,7 +130,7 @@ NODE_ENV=development
 # Következő hitelesítési konfiguráció:
 # Hozzon létre egy titkos kulcsot az `openssl rand -base64 32` paranccsal
 NEXTAUTH_SECRET=VÁLTOZTASS_MEG
-NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_URL=http://localhost:5000
 DATABASE_URL=file:./db.sqlite
 
 # OpenAI API kulcs
