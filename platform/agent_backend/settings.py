@@ -57,7 +57,7 @@ class Settings(BaseSettings):
     db_port: int = 3306
     db_user: str = "root"
     db_pass: str = "12345678"
-    db_base: str = "reworkd_platform"
+    db_base: str = "agent_backend"
     db_echo: bool = False
     db_ca_path: str = "/etc/ssl/cert.pem"
 
@@ -69,7 +69,7 @@ class Settings(BaseSettings):
     sentry_dsn: Optional[str] = None
     sentry_sample_rate: float = 1.0
 
-    kafka_bootstrap_servers: List[str] = ["reworkd_platform-kafka:9092"]
+    kafka_bootstrap_servers: List[str] = ["agent_backend-kafka:9092"]
 
     @property
     def db_url(self) -> URL:

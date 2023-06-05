@@ -5,7 +5,7 @@ import weaviate
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Weaviate
 
-from reworkd_platform.settings import settings
+from agent_backend.settings import settings
 
 SimilarText = List[Tuple[str, float]]
 

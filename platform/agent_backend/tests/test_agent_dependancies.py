@@ -1,7 +1,7 @@
 import pytest
 
-from reworkd_platform.schemas import ModelSettings, AgentRequestBody
-from reworkd_platform.web.api.agent.dependancies import agent_validator
+from agent_backend.schemas import ModelSettings, AgentRequestBody
+from agent_backend.web.api.agent.dependancies import agent_validator
 
 
 @pytest.mark.anyio

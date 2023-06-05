@@ -2,9 +2,9 @@ from typing import List, Any
 
 from fastapi.responses import StreamingResponse as FastAPIStreamingResponse
 
-from reworkd_platform.web.api.agent.agent_service.agent_service import AgentService
-from reworkd_platform.web.api.agent.agent_service.agent_service import Analysis
-from reworkd_platform.web.api.agent.tools.stream_mock import stream_string
+from agent_backend.web.api.agent.agent_service.agent_service import AgentService
+from agent_backend.web.api.agent.agent_service.agent_service import Analysis
+from agent_backend.web.api.agent.tools.stream_mock import stream_string
 
 
 class MockAgentService(AgentService):

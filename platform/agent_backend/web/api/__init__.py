@@ -1,1 +1,1 @@
-"""reworkd_platform API package."""
+"""agent_backend API package."""

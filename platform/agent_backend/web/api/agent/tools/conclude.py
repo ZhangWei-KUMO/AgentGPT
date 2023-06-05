@@ -1,8 +1,8 @@
 from fastapi.responses import StreamingResponse as FastAPIStreamingResponse
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.web.api.agent.tools.stream_mock import stream_string
-from reworkd_platform.web.api.agent.tools.tool import Tool
+from agent_backend.schemas import ModelSettings
+from agent_backend.web.api.agent.tools.stream_mock import stream_string
+from agent_backend.web.api.agent.tools.tool import Tool
 
 
 class Conclude(Tool):

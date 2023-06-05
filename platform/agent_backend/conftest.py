@@ -10,10 +10,10 @@ from sqlalchemy.ext.asyncio import (
     create_async_engine,
 )
 
-from reworkd_platform.db.dependencies import get_db_session
-from reworkd_platform.db.utils import create_database, drop_database
-from reworkd_platform.settings import settings
-from reworkd_platform.web.application import get_app
+from agent_backend.db.dependencies import get_db_session
+from agent_backend.db.utils import create_database, drop_database
+from agent_backend.settings import settings
+from agent_backend.web.application import get_app
 
 
 @pytest.fixture(scope="session")
@@ -33,8 +33,8 @@ async def _engine() -> AsyncGenerator[AsyncEngine, None]:
 
     :yield: new engine.
     """
-    from reworkd_platform.db.meta import meta  # noqa: WPS433
-    from reworkd_platform.db.models import load_all_models  # noqa: WPS433
+    from agent_backend.db.meta import meta  # noqa: WPS433
+    from agent_backend.db.models import load_all_models  # noqa: WPS433
 
     load_all_models()
 

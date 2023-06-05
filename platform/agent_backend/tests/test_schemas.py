@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from reworkd_platform.schemas import ModelSettings
+from agent_backend.schemas import ModelSettings
 
 
 @pytest.mark.parametrize(

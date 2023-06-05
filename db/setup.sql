@@ -2,10 +2,10 @@
 -- This is not available to our user by default, so we must manually add this
 
 -- Create the user
-CREATE USER IF NOT EXISTS 'reworkd_platform'@'%' IDENTIFIED BY 'reworkd_platform';
+CREATE USER IF NOT EXISTS 'agent_backend'@'%' IDENTIFIED BY 'agent_backend';
 
 -- Grant the necessary permissions
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT ON *.* TO 'reworkd_platform'@'%';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT ON *.* TO 'agent_backend'@'%';
 
 -- Apply the changes
 FLUSH PRIVILEGES;

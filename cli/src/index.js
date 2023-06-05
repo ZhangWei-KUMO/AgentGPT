@@ -43,7 +43,7 @@ const handleRunOption = (runOption) => {
       "Please go into the ./next folder and run `npm install && npm run dev`."
     );
     console.log(
-      "Please also go into the ./platform folder and run `poetry install && poetry run python -m reworkd_platform`."
+      "Please also go into the ./platform folder and run `poetry install && poetry run python -m agent_backend`."
     );
     console.log(
       "Please use or update the MySQL database configuration in the env file(s)."

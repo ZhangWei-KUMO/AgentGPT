@@ -5,9 +5,9 @@ from langchain.schema import OutputParserException, BaseOutputParser
 from openai import InvalidRequestError
 from openai.error import ServiceUnavailableError
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.web.api.agent.model_settings import create_model
-from reworkd_platform.web.api.errors import OpenAIError
+from agent_backend.schemas import ModelSettings
+from agent_backend.web.api.agent.model_settings import create_model
+from agent_backend.web.api.errors import OpenAIError
 
 T = TypeVar("T")
 

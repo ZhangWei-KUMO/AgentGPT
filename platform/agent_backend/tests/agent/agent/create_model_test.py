@@ -1,7 +1,7 @@
 import pytest
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.web.api.agent.agent_service.open_ai_agent_service import (
+from agent_backend.schemas import ModelSettings
+from agent_backend.web.api.agent.agent_service.open_ai_agent_service import (
     create_model,
 )
 

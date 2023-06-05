@@ -1,8 +1,8 @@
 import pytest
 from pydantic import ValidationError
 
-from reworkd_platform.web.api.agent.analysis import Analysis
-from reworkd_platform.web.api.agent.tools.tools import get_default_tool, get_tool_name
+from agent_backend.web.api.agent.analysis import Analysis
+from agent_backend.web.api.agent.tools.tools import get_default_tool, get_tool_name
 
 
 def test_analysis_model() -> None:

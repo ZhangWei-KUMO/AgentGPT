@@ -1,9 +1,9 @@
 from lanarky.responses import StreamingResponse
 from langchain import WikipediaAPIWrapper
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.web.api.agent.tools.tool import Tool
-from reworkd_platform.web.api.agent.tools.utils import summarize
+from agent_backend.schemas import ModelSettings
+from agent_backend.web.api.agent.tools.tool import Tool
+from agent_backend.web.api.agent.tools.utils import summarize
 
 
 class Wikipedia(Tool):

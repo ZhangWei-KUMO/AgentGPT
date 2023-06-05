@@ -75,7 +75,7 @@ In a different window, you can run the following to start the backend:
 // Backend. Make sure you are at the root of the project
 cd ./platform
 poetry install
-poetry run python -m reworkd_platform
+poetry run python -m agent_backend
 ```
 
 ## Running the site

@@ -1,7 +1,7 @@
 from aiokafka import AIOKafkaProducer
 from fastapi import FastAPI
 
-from reworkd_platform.settings import settings
+from agent_backend.settings import settings
 
 
 async def init_kafka(app: FastAPI) -> None:  # pragma: no cover

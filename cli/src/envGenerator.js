@@ -59,20 +59,20 @@ const getEnvDefinition = (
         envValues.replicateApiKey || "<change me>",
     },
     "Database (Backend)": {
-      REWORKD_PLATFORM_DATABASE_USER: "reworkd_platform",
-      REWORKD_PLATFORM_DATABASE_PASSWORD: "reworkd_platform",
+      REWORKD_PLATFORM_DATABASE_USER: "agent_backend",
+      REWORKD_PLATFORM_DATABASE_PASSWORD: "agent_backend",
       REWORKD_PLATFORM_DATABASE_HOST: "db",
       REWORKD_PLATFORM_DATABASE_PORT: dbPort,
-      REWORKD_PLATFORM_DATABASE_NAME: "reworkd_platform",
+      REWORKD_PLATFORM_DATABASE_NAME: "agent_backend",
       REWORKD_PLATFORM_DATABASE_URL:
         "mysql://${REWORKD_PLATFORM_DATABASE_USER}:${REWORKD_PLATFORM_DATABASE_PASSWORD}@${REWORKD_PLATFORM_DATABASE_HOST}:${REWORKD_PLATFORM_DATABASE_PORT}/${REWORKD_PLATFORM_DATABASE_NAME}",
     },
     "Database (Frontend)": {
-      DATABASE_USER: "reworkd_platform",
-      DATABASE_PASSWORD: "reworkd_platform",
+      DATABASE_USER: "agent_backend",
+      DATABASE_PASSWORD: "agent_backend",
       DATABASE_HOST: "db",
       DATABASE_PORT: dbPort,
-      DATABASE_NAME: "reworkd_platform",
+      DATABASE_NAME: "agent_backend",
       DATABASE_URL:
         "mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}",
     },

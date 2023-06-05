@@ -2,7 +2,7 @@ from typing import Optional, List, Literal
 
 from pydantic import BaseModel, Field
 
-from reworkd_platform.web.api.agent.analysis import Analysis
+from agent_backend.web.api.agent.analysis import Analysis
 
 LLM_Model = Literal[
     "gpt-3.5-turbo",

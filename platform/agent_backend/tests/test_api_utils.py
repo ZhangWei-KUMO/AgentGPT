@@ -2,7 +2,7 @@ from collections import Counter
 
 import pytest
 
-from reworkd_platform.web.api.agent.api_utils import rotate_keys
+from agent_backend.web.api.agent.api_utils import rotate_keys
 
 ITERATIONS = 10000
 

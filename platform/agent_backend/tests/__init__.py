@@ -1,1 +1,1 @@
-"""Tests for reworkd_platform."""
+"""Tests for agent_backend."""

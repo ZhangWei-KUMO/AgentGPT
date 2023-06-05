@@ -1,9 +1,9 @@
 import openai
 from langchain.chat_models import ChatOpenAI
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.settings import settings
-from reworkd_platform.web.api.agent.api_utils import rotate_keys
+from agent_backend.schemas import ModelSettings
+from agent_backend.settings import settings
+from agent_backend.web.api.agent.api_utils import rotate_keys
 
 openai.api_base = settings.openai_api_base
 

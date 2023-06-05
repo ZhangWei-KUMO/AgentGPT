@@ -2,7 +2,7 @@ from fastapi import Request
 from fastapi.responses import JSONResponse
 from loguru import logger
 
-from reworkd_platform.web.api.errors import PlatformaticError
+from agent_backend.web.api.errors import PlatformaticError
 
 
 async def platformatic_exception_handler(

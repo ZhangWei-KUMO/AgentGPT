@@ -3,20 +3,16 @@ from typing import Awaitable, Callable
 from fastapi import FastAPI
 from sqlalchemy.ext.asyncio import async_sessionmaker
 
-from reworkd_platform.db.meta import meta
-from reworkd_platform.db.models import load_all_models
-from reworkd_platform.db.utils import create_engine
+from agent_backend.db.meta import meta
+from agent_backend.db.models import load_all_models
+from agent_backend.db.utils import create_engine
 
 
 def _setup_db(app: FastAPI) -> None:  # pragma: no cover
     """
-    Creates connection to the database.
-
-    This function creates SQLAlchemy engine instance,
-    session_factory for creating sessions
-    and stores them in the application's state property.
-
-    :param app: fastAPI application.
+        创建到数据库的连接。
+        此函数创建 SQLAlchemy 引擎实例，用于创建会话的 session_factory，并将它们存储在应用程序的状态属性中。
+        :param app: FastAPI 应用程序。      
     """
     engine = create_engine()
     session_factory = async_sessionmaker(
@@ -41,13 +37,9 @@ def register_startup_event(
     app: FastAPI,
 ) -> Callable[[], Awaitable[None]]:  # pragma: no cover
     """
-    Actions to run on application startup.
-
-    This function uses fastAPI app to store data
-    in the state, such as db_engine.
-
-    :param app: the fastAPI application.
-    :return: function that actually performs actions.
+        这个函数使用 FastAPI 应用程序来存储一些数据，
+        例如数据库引擎。它接受一个 FastAPI 应用程序作为参数，
+        并返回一个实际执行操作的函数。
     """
 
     @app.on_event("startup")

@@ -60,4 +60,4 @@ repos:
             types: [python]
             pass_filenames: false
             args:
-              - "reworkd_platform"
+              - "agent_backend"

@@ -9,12 +9,12 @@ from sentry_sdk.integrations.logging import LoggingIntegration
 from sentry_sdk.integrations.sqlalchemy import SqlalchemyIntegration
 
 import logging
-from reworkd_platform.logging import configure_logging
-from reworkd_platform.settings import settings
-from reworkd_platform.web.api.error_handling import platformatic_exception_handler
-from reworkd_platform.web.api.errors import PlatformaticError
-from reworkd_platform.web.api.router import api_router
-from reworkd_platform.web.lifetime import (
+from agent_backend.logging import configure_logging
+from agent_backend.settings import settings
+from agent_backend.web.api.error_handling import platformatic_exception_handler
+from agent_backend.web.api.errors import PlatformaticError
+from agent_backend.web.api.router import api_router
+from agent_backend.web.lifetime import (
     register_shutdown_event,
     register_startup_event,
 )
@@ -22,11 +22,8 @@ from reworkd_platform.web.lifetime import (
 
 def get_app() -> FastAPI:
     """
-    Get FastAPI application.
-
-    This is the main constructor of an application.
-
-    :return: application.
+    获取 FastAPI 应用程序。这是应用程序的主要构造函数。
+    :return: 应用程序。
     """
     configure_logging()
     if settings.sentry_dsn:
@@ -47,8 +44,8 @@ def get_app() -> FastAPI:
             ],
         )
     app = FastAPI(
-        title="Reworkd Platform API",
-        version=metadata.version("reworkd_platform"),
+        title="Agent BackEnd API",
+        version=metadata.version("agent_backend"),
         docs_url="/api/docs",
         redoc_url="/api/redoc",
         openapi_url="/api/openapi.json",
@@ -71,9 +68,8 @@ def get_app() -> FastAPI:
     register_startup_event(app)
     register_shutdown_event(app)
 
-    # Main router for the API.
+    # API的主路由
     app.include_router(router=api_router, prefix="/api")
-
     app.exception_handler(PlatformaticError)(platformatic_exception_handler)
 
     return app

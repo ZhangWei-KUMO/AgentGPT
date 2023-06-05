@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y netcat-openbsd dos2unix \
 #ENTRYPOINT ["sh", "entrypoint.sh"]
 
 
-CMD ["/usr/local/bin/python", "-m", "reworkd_platform"]
+CMD ["/usr/local/bin/python", "-m", "agent_backend"]
 
 FROM prod as dev
 

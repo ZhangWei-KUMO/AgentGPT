@@ -5,7 +5,7 @@ from sqlalchemy import Column, func, String
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import DeclarativeBase
 
-from reworkd_platform.db.meta import meta
+from agent_backend.db.meta import meta
 
 
 class Base(DeclarativeBase):

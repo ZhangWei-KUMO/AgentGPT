@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from lanarky.responses import StreamingResponse
 
-from reworkd_platform.schemas import ModelSettings
+from agent_backend.schemas import ModelSettings
 
 
 class Tool(ABC):

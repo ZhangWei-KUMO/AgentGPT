@@ -91,7 +91,7 @@ npm install
 git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ./setup.sh
 # 进入platform文件夹启动后台
-poetry run python -m reworkd_platform
+poetry run python -m agent_backend
 # 进入next中启动前端
 npm run dev
 ```

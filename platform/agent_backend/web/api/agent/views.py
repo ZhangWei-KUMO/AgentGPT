@@ -4,13 +4,13 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse as FastAPIStreamingResponse
 from pydantic import BaseModel
 
-from reworkd_platform.schemas import AgentRequestBody
-from reworkd_platform.web.api.agent.agent_service.agent_service_provider import (
+from agent_backend.schemas import AgentRequestBody
+from agent_backend.web.api.agent.agent_service.agent_service_provider import (
     get_agent_service,
 )
-from reworkd_platform.web.api.agent.analysis import Analysis
-from reworkd_platform.web.api.agent.dependancies import agent_validator
-from reworkd_platform.web.api.agent.tools.tools import get_external_tools, get_tool_name
+from agent_backend.web.api.agent.analysis import Analysis
+from agent_backend.web.api.agent.dependancies import agent_validator
+from agent_backend.web.api.agent.tools.tools import get_external_tools, get_tool_name
 
 router = APIRouter()
 

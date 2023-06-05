@@ -4,21 +4,21 @@ from lanarky.responses import StreamingResponse
 from langchain.chains import LLMChain
 from langchain.output_parsers import PydanticOutputParser
 
-from reworkd_platform.schemas import ModelSettings
-from reworkd_platform.web.api.agent.agent_service.agent_service import AgentService
-from reworkd_platform.web.api.agent.analysis import Analysis
-from reworkd_platform.web.api.agent.helpers import (
+from agent_backend.schemas import ModelSettings
+from agent_backend.web.api.agent.agent_service.agent_service import AgentService
+from agent_backend.web.api.agent.analysis import Analysis
+from agent_backend.web.api.agent.helpers import (
     call_model_with_handling,
     parse_with_handling,
 )
-from reworkd_platform.web.api.agent.model_settings import create_model
-from reworkd_platform.web.api.agent.prompts import (
+from agent_backend.web.api.agent.model_settings import create_model
+from agent_backend.web.api.agent.prompts import (
     start_goal_prompt,
     analyze_task_prompt,
     create_tasks_prompt,
 )
-from reworkd_platform.web.api.agent.task_output_parser import TaskOutputParser
-from reworkd_platform.web.api.agent.tools.tools import (
+from agent_backend.web.api.agent.task_output_parser import TaskOutputParser
+from agent_backend.web.api.agent.tools.tools import (
     get_tools_overview,
     get_tool_from_name,
     get_user_tools,

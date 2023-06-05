@@ -1,4 +1,4 @@
-# reworkd_platform
+# agent_backend
 本项目的后端API是使用fastapi_template生成的。
 
 ## Poetry
@@ -6,7 +6,7 @@
 这个项目使用poetry作为现代化的依赖管理工具。要运行这个项目，请使用以下命令：
 ```bash
 poetry install
-poetry run python -m reworkd_platform
+poetry run python -m agent_backend
 ```
 
 这将在配置的主机上启动服务器。您可以在`/api/docs`处找到Swagger文档。
@@ -36,8 +36,8 @@ docker-compose -f deploy/docker-compose.yml --project-directory . build
 ## Project structure
 
 ```bash
-$ tree "reworkd_platform"
-reworkd_platform
+$ tree "agent_backend"
+agent_backend
 ├── conftest.py  # Fixtures for all tests.
 ├── db  # module contains db configurations
 │   ├── dao  # Data Access Objects. Contains different classes to interact with database.
@@ -58,7 +58,7 @@ reworkd_platform
 
 你需要在项目的根目录下创建一个名为.env的文件，并将所有的环境变量放在里面。
 
-看起来所有的环境变量名称都应该以"REWORKD_PLATFORM_"前缀开头。例如，如果你在`reworkd_platform/settings.py`文件中看到一个名为`random_parameter`的变量，则需要提供一个名为`REWORKD_PLATFORM_RANDOM_PARAMETER`的环境变量来配置该值。你可以通过覆盖`reworkd_platform.settings.Settings.Config`中的`env_prefix`属性来更改此行为。
+看起来所有的环境变量名称都应该以"REWORKD_PLATFORM_"前缀开头。例如，如果你在`agent_backend/settings.py`文件中看到一个名为`random_parameter`的变量，则需要提供一个名为`REWORKD_PLATFORM_RANDOM_PARAMETER`的环境变量来配置该值。你可以通过覆盖`agent_backend.settings.Settings.Config`中的`env_prefix`属性来更改此行为。
 
 以下是一个.env文件的示例：
 ```bash
@@ -101,7 +101,7 @@ docker-compose -f deploy/docker-compose.yml -f deploy/docker-compose.dev.yml --p
 
 1. 在本地运行测试时，需要启动一个数据库。我更喜欢使用Docker来完成这个任务：
 ```
-docker run -p "3306:3306" -e "MYSQL_PASSWORD=reworkd_platform" -e "MYSQL_USER=reworkd_platform" -e "MYSQL_DATABASE=reworkd_platform" -e ALLOW_EMPTY_PASSWORD=yes bitnami/mysql:8.0.30
+docker run -p "3306:3306" -e "MYSQL_PASSWORD=agent_backend" -e "MYSQL_USER=agent_backend" -e "MYSQL_DATABASE=agent_backend" -e ALLOW_EMPTY_PASSWORD=yes bitnami/mysql:8.0.30
 ```
 
 
@@ -119,7 +119,7 @@ poetry run flake8
 poetry run mypy .
 
 # Pytest
-poetry run pytest -vv --cov="reworkd_platform" .
+poetry run pytest -vv --cov="agent_backend" .
 
 # Bump packages
 poetry self add poetry-plugin-up

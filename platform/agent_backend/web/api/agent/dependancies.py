@@ -2,7 +2,7 @@ from typing import Dict, Any, Optional, Callable, Coroutine
 
 from fastapi import Body
 
-from reworkd_platform.schemas import AgentRequestBody
+from agent_backend.schemas import AgentRequestBody
 
 
 def agent_validator(

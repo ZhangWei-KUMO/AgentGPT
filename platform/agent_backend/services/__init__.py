@@ -1,1 +1,1 @@
-"""Services for reworkd_platform."""
+"""Services for agent_backend."""
