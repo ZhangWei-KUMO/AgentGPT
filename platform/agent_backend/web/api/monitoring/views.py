@@ -6,7 +6,5 @@ router = APIRouter()
 @router.get("/health")
 def health_check() -> None:
     """
-    Checks the health of a project.
-
-    It returns 200 if the project is healthy.
+      检查当前项目健康程度，如果正常则返回200
     """
