@@ -92,6 +92,11 @@ git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ./setup.sh
 # 进入platform文件夹启动后台
 poetry run python -m agent_backend
+# 启动守护者进程
+nohup poetry run python -m agent_backend > ~/py.log &
+# 查看进程,停止守护者进程
+ps -fA | grep python
+kill [PID]
 # 进入next中启动前端
 npm run dev
 ```

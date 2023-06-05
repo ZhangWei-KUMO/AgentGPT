@@ -37,7 +37,7 @@ const getEnvDefinition = (
     },
     "Next Auth config": {
       NEXTAUTH_SECRET: generateAuthSecret(),
-      NEXTAUTH_URL: "http://localhost:3000",
+      NEXTAUTH_URL: "http://localhost:5000",
     },
     "Auth providers (Use if you want to get out of development mode sign-in)": {
       GOOGLE_CLIENT_ID: "***",
@@ -51,7 +51,7 @@ const getEnvDefinition = (
       REWORKD_PLATFORM_ENVIRONMENT: "development",
       REWORKD_PLATFORM_FF_MOCK_MODE_ENABLED: false,
       REWORKD_PLATFORM_OPENAI_API_KEY: envValues.OpenAIApiKey || "<change me>",
-      REWORKD_PLATFORM_FRONTEND_URL: "http://localhost:3000",
+      REWORKD_PLATFORM_FRONTEND_URL: "http://localhost:5000",
       REWORKD_PLATFORM_RELOAD: true,
       REWORKD_PLATFORM_OPENAI_API_BASE: "https://api.openai.com/v1",
       REWORKD_PLATFORM_SERP_API_KEY: envValues.serpApiKey || "<change me>",
