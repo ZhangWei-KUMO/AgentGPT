@@ -21,7 +21,8 @@ class NewTasksResponse(BaseModel):
 
 @router.post("/start")
 async def start_tasks(
-    req_body: AgentRequestBody = Depends(
+    req_body: 
+    AgentRequestBody = Depends(
         agent_validator(
             example={
                 "goal": "Create business plan for a bagel company",
@@ -33,7 +34,7 @@ async def start_tasks(
         )
     ),
 ) -> NewTasksResponse:
-    print(req_body)
+    print(req_body.goal)
     new_tasks = await get_agent_service(req_body.modelSettings).start_goal_agent(
         goal=req_body.goal
     )

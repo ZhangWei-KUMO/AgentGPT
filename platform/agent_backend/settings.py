@@ -2,7 +2,6 @@ import enum
 from pathlib import Path
 from tempfile import gettempdir
 from typing import List, Optional
-
 from pydantic import BaseSettings
 from yarl import URL
 
@@ -11,7 +10,6 @@ TEMP_DIR = Path(gettempdir())
 
 class LogLevel(str, enum.Enum):  # noqa: WPS600
     """日志等级"""
-
     NOTSET = "NOTSET"
     DEBUG = "DEBUG"
     INFO = "INFO"
@@ -24,7 +22,7 @@ class Settings(BaseSettings):
     """
     应用程序设置，这些参数可以通过环境变量配置。
     """
-
+    print("开始加载配置")
     host: str = "127.0.0.1"
     port: int = 8000
 
@@ -50,26 +48,26 @@ class Settings(BaseSettings):
     serp_api_key: Optional[str] = None
 
     # 前端配置
-    frontend_url: str = "http://localhost:8080"
+    frontend_url: str = "<Should be updated via env>"
 
     # 数据库变量
     db_host: str = "localhost"
     db_port: int = 3306
-    db_user: str = "root"
-    db_pass: str = "12345678"
-    db_base: str = "agent_backend"
+    db_user: str = "reworkd_platform"
+    db_pass: str = "reworkd_platform"
+    db_base: str = "reworkd_platform"
     db_echo: bool = False
     db_ca_path: str = "/etc/ssl/cert.pem"
 
     # 向量数据库配置 Weaviate
     vector_db_url: str = "<Should be updated via env>"
-    vector_db_api_ket: str = "<Should be updated via env>"
+    vector_db_api_key: str = "<Should be updated via env>"
 
     # Sentry's configuration.
     sentry_dsn: Optional[str] = None
     sentry_sample_rate: float = 1.0
 
-    kafka_bootstrap_servers: List[str] = ["agent_backend-kafka:9092"]
+    kafka_bootstrap_servers: List[str] = ["reworkd_platform-kafka:9092"]
 
     @property
     def db_url(self) -> URL:
@@ -86,10 +84,10 @@ class Settings(BaseSettings):
             password=self.db_pass,
             path=f"/{self.db_base}",
         )
-
+# 从后端项目的根目录中的.env文件中加载配置
     class Config:
         env_file = ".env"
-        env_prefix = "REWORKD_PLATFORM_"
+        env_prefix = "BACKEND_"
         env_file_encoding = "utf-8"
 
 

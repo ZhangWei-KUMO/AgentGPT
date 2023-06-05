@@ -31,6 +31,7 @@ class OpenAIAgentService(AgentService):
         self._language = model_settings.language or "English"
 
     async def start_goal_agent(self, *, goal: str) -> List[str]:
+        print("2.开始目标代理")
         completion = await call_model_with_handling(
             self.model_settings,
             start_goal_prompt,
@@ -85,6 +86,7 @@ class OpenAIAgentService(AgentService):
         result: str,
         completed_tasks: Optional[List[str]] = None,
     ) -> List[str]:
+        print("创建任务代理")
         llm = create_model(self.model_settings)
         chain = LLMChain(llm=llm, prompt=create_tasks_prompt)
 

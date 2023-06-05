@@ -20,13 +20,15 @@ def parse_with_handling(parser: BaseOutputParser[T], completion: str) -> T:
             e, "There was an issue parsing the response from the AI model."
         )
 
-
+# 调用模型进行处理
 async def call_model_with_handling(
     model_settings: ModelSettings, prompt: BasePromptTemplate, args: dict[str, str]
 ) -> str:
     try:
         model = create_model(model_settings)
         chain = LLMChain(llm=model, prompt=prompt)
+        print("chain:",chain)
+
         return await chain.arun(args)
     except ServiceUnavailableError as e:
         raise OpenAIError(

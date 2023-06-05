@@ -9,6 +9,7 @@ openai.api_base = settings.openai_api_base
 
 
 def create_model(model_settings: ModelSettings, streaming: bool = False) -> ChatOpenAI:
+    print("创建模型")
     return ChatOpenAI(
         client=None,  # Meta private value but mypy will complain its missing
         openai_api_key=rotate_keys(
@@ -19,4 +20,5 @@ def create_model(model_settings: ModelSettings, streaming: bool = False) -> Chat
         model=model_settings.model,
         max_tokens=model_settings.max_tokens,
         streaming=streaming,
+        request_timeout=120
     )
