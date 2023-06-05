@@ -2,16 +2,13 @@
 sidebar_position: 2
 ---
 
-# 🌎 Translations
+# 🌎 翻译
 
-AgentGPT has translations across a variety of languages thanks to the help of many contributors such as @Cs4K1Sr4C.
-languages. We're always looking to improve our translations however, if you notice something is off or missing, please
-feel free to make the necessary updates or submit a ticket on GitHub!
+AgentGPT 由许多贡献者（如 @Cs4K1Sr4C）的帮助下，拥有多种语言的翻译。我们始终在努力改进翻译，但如果您发现有问题或遗漏，请随时进行必要的更新或在 GitHub 上提交工单！
 
-## Translating the Frontend
+## 翻译前端
 
-We use i18next to handle our frontend translations. How it works is we have a folder for each language
-in [next/public/locales](https://github.com/reworkd/AgentGPT/tree/main/next/public/locales).
+我们使用 i18next 处理前端翻译。它的工作原理是我们为每种语言创建一个文件夹，例如 [next/public/locales](https://github.com/reworkd/AgentGPT/tree/main/next/public/locales)。
 
 ```bash title="next/public/locales"
 > en
@@ -21,19 +18,16 @@ in [next/public/locales](https://github.com/reworkd/AgentGPT/tree/main/next/publ
 > zh
 ```
 
-For each component within the app, we namespace their translations. For example, our ChatWindow uses the `chat` name
-space and its translations will be found in the `chat.json` under each folder. Translations are key value pairs where
-the key represents the
-desired text and the value represents the translation for a given langauge.
+对于应用程序中的每个组件，我们将它们的翻译命名空间化。例如，我们的 ChatWindow 使用 `chat` 命名空间，其翻译将在每个文件夹下的 `chat.json` 中找到。翻译是键值对，其中键表示所需的文本，值表示给定语言的翻译。
 
-An example from the `chat` namespace:
+来自 `chat` 命名空间的示例：
 
-- English:  `"EMBARKING_ON_NEW_GOAL": "Embarking on a new goal:"`
-- Spanish:`"EMBARKING_ON_NEW_GOAL": "Embarcándose en un nuevo objetivo:"`
+- 英语：`"EMBARKING_ON_NEW_GOAL": "Embarking on a new goal:"`
+- 西班牙语：`"EMBARKING_ON_NEW_GOAL": "Embarcándose en un nuevo objetivo:"`
 
-#### Adding a new langauge
+#### 添加新语言
 
-To add a new language, go into our i18 config and add a new locale
+要添加新语言，请进入我们的 i18 配置并添加新语言环境
 
 ```bash title="next/next-i18next.config.js"
 i18n: {
@@ -46,12 +40,12 @@ i18n: {
     "sk",
     "hr",
     "tr",
-    // Insert new language code here
+    // 在此处插入新的语言代码
   ],
   ...
 ```
 
-Then head over to our languages definition and add a section to the available languages list
+然后转到我们的语言定义，并将可用语言列表添加到该部分
 
 ```tsx title="next/src/utils/languages.ts"
 export const availableLanguages: Language[] = [
@@ -59,31 +53,13 @@ export const availableLanguages: Language[] = [
   { code: "fr", name: "Français", flag: "🇫🇷" },
   // ...
   { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-  // Insert new language here
+  // 在此处插入新语言
 ];
 ```
 
-After this, you must create a new folder with your langauge code
-in [next/public/locales](https://github.com/reworkd/AgentGPT/tree/main/next/public/locales) and add translations for all
-namespaces of our app. Note these values may not hot reload, so you must manually restart your next server.
+之后，您必须在 [next/public/locales](https://github.com/reworkd/AgentGPT/tree/main/next/public/locales) 中创建一个具有您的语言代码的新文件夹，并为应用程序的所有命名空间添加翻译。请注意，这些值可能无法热重载，因此您必须手动重新启动下一个服务器。
 
-## Translating the Backend
+## 翻译后端
 
-The backend translations are handled via the model itself.
-We simply prompt it to provide the answer in the user selected langauge.
-This means that whenever a new frontend language is added, the language is immediately supported on the backend!
-This does however mean that we don't currently have much room to actually edit the translations provided by the model.
-
-## Translating the Readme
-
-We have a few README translations that live in [main/docs](https://github.com/reworkd/AgentGPT/tree/main/docs) such
-as `README.zh-HANS.md`. If you'd like to translate the README to your language, make a similar file.
-
-After doing this, add a link badge to our main english README alongside the other badges. Example:
-
-<a href="https://github.com/reworkd/AgentGPT/blob/master/README.md"><img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English"/></a>
-
-## Translating our Documentation
-
-This documentation is very experimental. Because of this, we have no plans to support translation just yet 😢
+后端翻译通过模型本身处理。我们只需提示它以用户选择的语言提供答案即可。这意味着，每当添加新的前端语言时，后端立即支持该语言！但是，这也意味着我们目前没有太多空间实际编辑模型提供的翻译。
 

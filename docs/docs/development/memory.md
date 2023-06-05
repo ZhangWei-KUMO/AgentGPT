@@ -2,45 +2,33 @@
 sidebar_position: 5
 ---
 
-# 🧠 Memory
+# 🧠 内存
 
-To fulfill a given goal, AI agents perform a multitude of tasks, taking into account their own execution history.
-When agents are long-running, this becomes a problem as their memory is typically only as large as their context length.
-In the case of GPT-3.5 and GPT-4, this is roughly 8k tokens.
+为了实现给定的目标，AI 代理执行多种任务，考虑到它们自己的执行历史。当代理长时间运行时，这成为一个问题，因为它们的记忆通常只有上下文长度那么大。在 GPT-3.5 和 GPT-4 的情况下，这大约是 8k 个令牌。
 
-What this means with AgentGPT is that once your agents have run for a few loops, they've completely forgotten about what
-they
-did before. To solve this, we need to save agent memory externally which is exactly where Vector Databases come into
-play.
+这意味着使用 AgentGPT 后，一旦您的代理程序运行了几次循环，它们就完全忘记了之前做过的事情。为了解决这个问题，我们需要将代理程序的记忆外部保存，这正是向量数据库发挥作用的地方。
 
-## What is a Vector Database?
+## 什么是向量数据库？
 
-To best learn about vector databases, we recommend looking at external documentation such as
-the [Weaviate docs](https://weaviate.io/developers/weaviate).
+要最好地了解向量数据库，我们建议查看外部文档，如 [Weaviate 文档](https://weaviate.io/developers/weaviate)。
 
-Essentially, vector databases allow us to save task and task execution history externally, allowing agents to access
-memory from many loops prior. This is done through similarity search over text.
+本质上，向量数据库允许我们将任务和任务执行历史外部保存，使代理程序能够访问许多先前循环的记忆。这是通过对文本进行相似性搜索来完成的。
 
-Intuitively, when we as humans want to remember something, we try to think of something related. Eventually,
-we find a collection of information related that topic in our head and act upon it.
-This framework is similar to how a Vector DB operates.
+直观地说，当我们人类想要记住某些东西时，我们尝试想到与之相关的东西。最终，我们在脑海中找到了与该主题相关的信息集合，并采取行动。这个框架类似于向量数据库的操作方式。
 
 ## Weaviate
 
-The vector DB we use by default in AgentGPT is Weaviate. We use them for the following reasons:
+AgentGPT 默认使用的向量数据库是 Weaviate。我们选择使用它们有以下原因：
 
-- They're open source and easily accessible through docker-compose. This means local AgentGPT runs won't require you to
-  generate an API key.
-- They have a cloud offering that can scale with our workload, allowing us to avoid managing more infrastructure
-- They integrate well with tools like LangChain
+- 它们是开源的，并且通过 docker-compose 很容易访问。这意味着本地 AgentGPT 运行不需要您生成 API 密钥。
+- 它们有一个云提供程序，可以随着我们的工作负载扩展，使我们避免管理更多的基础设施
+- 它们与 LangChain 等工具集成良好
 
-If you'd like to add your own databases however, please feel free to make a ticket / PR :)
+## AgentGPT 中的记忆
 
-## Memory in AgentGPT
+长期记忆仍在不断改进中。以下是我们正在使用它的一些方法：
 
-Using long term memory is still a work in progress. Here are some ways we're using it below:
+- 过滤在给定运行中使用的类似任务。
+- 更多功能即将推出...
 
-- Filtering similar tasks used in a given run.
-- More to come...
-
-If you have any ideas for memory or want to help, please do reach out!
+如果您对记忆有任何想法或想要帮助，请随时联系我们！

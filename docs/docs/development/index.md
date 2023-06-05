@@ -5,6 +5,6 @@ hide_table_of_contents: true
 
 import DocCardList from "@theme/DocCardList";
 
-# 🖥 Development
+# 🖥 开发
 
 <DocCardList />

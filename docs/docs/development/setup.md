@@ -2,27 +2,26 @@
 sidebar_position: 1
 ---
 
-# 🛠️ Setup
+# 🛠️ 设置
 
-The following document will help you set up a local installation of AgentGPT.
+以下文档将帮助您设置 AgentGPT 的本地安装。
 
-## Stack
+## 技术栈
 
-- 💅 Frontend: NextJS + Typescript
-- 🐍 Backend: FastAPI + Python
-- 📚 DB: MySQL through docker with the option of running SQLite locally
+- 💅 前端：NextJS + Typescript
+- 🐍 后端：FastAPI + Python
+- 📚 数据库：通过 Docker 运行的 MySQL，也可以在本地运行 SQLite。
 
-## Interactive Setup
+## 交互式设置
 
-We've recently launched an interactive setup tool that will guide you through creating an ENV and running AgentGPT.
-Simply run the following:
+我们最近推出了一个交互式设置工具，它将指导您创建 ENV 并运行 AgentGPT。只需执行以下命令：
 
 ```
 git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
 ./setup.sh
 ```
 
-If you are on windows, you can do the following after downloading the repo
+如果您使用的是 Windows，则可以在下载存储库后执行以下操作：
 
 ```
 cd cli
@@ -30,37 +29,30 @@ npm install
 npm run start
 ```
 
-Going this route, you can ignore the below text.
+按照这种方式，您可以忽略下面的文本。
 
 ## ENV
 
-Before you can get started, you need to ensure your ENV is correctly configured. To do this, copy over
-the [.env.example](https://github.com/reworkd/AgentGPT/blob/main/.env.example) file into the `./next/` directory, rename
-it to `.env` and update values as necessary. Some things to note:
+在开始之前，您需要确保正确配置了 ENV。为此，请将 [.env.example](https://github.com/reworkd/AgentGPT/blob/main/.env.example) 文件复制到 `./next/` 目录中，将其重命名为 `.env` 并根据需要更新值。请注意以下几点：
 
-- You will need to update the `OPENAI_API_KEY` with your own value. See the [FAQ](/faq) for details
-- The DB ENV values are taken from definitions in `./docker-compose.yml`
+- 您需要使用自己的值更新 `OPENAI_API_KEY`。有关详细信息，请参见 [FAQ](/faq)
+- DB ENV 值取自 `./docker-compose.yml` 中的定义
 
-## Using Docker
+## 使用 Docker
 
-The docker build is very straightforward and should work out of the box.
-Ensure you have docker installed by visiting [their website](https://www.docker.com/). After this, run the following
-command:
+Docker 构建非常简单，应该可以直接使用。请访问 [他们的网站](https://www.docker.com/) 确保已安装 Docker。完成后，运行以下命令：
 
 ```bash
 docker-compose up --build
 ```
 
-This will spin up a container for the frontend, backend, and database.
+这将为前端、后端和数据库启动一个容器。
 
-## Developing outside of docker
+## 在 Docker 外开发
 
-Outside of docker, you'll need to just configure your ENV. Additionally, you can use `setup.sh` to walkthrough ENV
-configuration and also update your Prisma configuration to point to a local SQLite
-instance.
+在 Docker 之外，您只需要配置您的 ENV。此外，您可以使用 `setup.sh` 来步入 ENV 配置，并更新您的 Prisma 配置以指向本地 SQLite 实例。
 
-After this, you can run the following to set up your Next.js project. We will add additional instructions for the Python
-backend when enabled.
+完成后，您可以运行以下命令来设置 Next.js 项目。在启用 Python 后端时，我们将添加其他说明。
 
 ```bash
 // Frontend
@@ -69,23 +61,21 @@ npm install
 npm run dev
 ```
 
-In a different window, you can run the following to start the backend:
+在另一个窗口中，您可以运行以下命令来启动后端：
 
 ```bash
-// Backend. Make sure you are at the root of the project
+// Backend. 确保您在项目的根目录下
 cd ./platform
 poetry install
 poetry run python -m agent_backend
 ```
 
-## Running the site
+## 运行站点
 
-After you have locally built AgentGPT, you can travel to http://localhost:3000/ in your web browser.
+在本地构建 AgentGPT 后，您可以在 Web 浏览器中访问 http://localhost:3000/。
 
-## Issues / Additional help
+## 问题 / 其他帮助
 
-If you're still having trouble, you can follow a legacy guide from
-@CybrCo: [How to install AgentGPT locally](https://snapdragon-writer-867.notion.site/How-to-Install-AgentGPT-Locally-9b96b2314c9b491397976249fd121023)
+如果您仍然遇到问题，您可以遵循 @CybrCo 的旧指南：[如何在本地安装 AgentGPT](https://snapdragon-writer-867.notion.site/How-to-Install-AgentGPT-Locally-9b96b2314c9b491397976249fd121023)
 
-If you still face problems, please submit an [issue on GitHub](https://github.com/reworkd/AgentGPT/issues) or reach out
-to the team on [discord](https://discord.gg/jdSBAnmdnY).
+如果您仍然遇到问题，请在 [GitHub 上提交问题](https://github.com/reworkd/AgentGPT/issues) 或在 [discord](https://discord.gg/jdSBAnmdnY) 上联系团队。

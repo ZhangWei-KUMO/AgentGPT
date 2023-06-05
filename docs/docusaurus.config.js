@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AgentGPT',
-  tagline: 'Autonomous AI agents directly in your browser',
+  title: '凹凸GPT',
+  tagline: '您浏览器的代理助手',
   favicon: 'favicon.ico',
   url: 'https://zhangwei-kumo.github.io/',
   baseUrl: '/AgentGPT',
