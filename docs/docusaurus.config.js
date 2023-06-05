@@ -17,8 +17,8 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh',
+    locales: ['zh'],
   },
 
   presets: [
@@ -45,13 +45,13 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: '🤖 AgentGPT',
+        title: '🤖 凹凸GPT',
         items: [
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Docs',
+            label: '文档',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {

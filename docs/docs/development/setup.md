@@ -17,7 +17,7 @@ sidebar_position: 1
 我们最近推出了一个交互式设置工具，它将指导您创建 ENV 并运行 AgentGPT。只需执行以下命令：
 
 ```
-git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
+git clone https://github.com/ZhangWei-KUMO/AgentGPT && cd AgentGPT
 ./setup.sh
 ```
 
