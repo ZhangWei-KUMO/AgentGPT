@@ -1,63 +1,53 @@
 ---
 sidebar_position: 3
 ---
+# 🚀 发展计划
 
-# 🚀 Roadmap
+AgentGPT目前处于beta测试阶段，我们有很多功能计划。以下是我们正在开发的一些功能。
 
-AgentGPT is currently in beta and we have a lot of features planned. Here's a glimpse of whats in the works!
-
-## Features in development ⏳
-
-:::tip
-AgentGPT developers are actively working on the following. Expect these to take anywhere from a few days to 2 weeks.
-:::
-
-- 🧠 **Long term memory via a vector DB**
-  - Providing Agents with more memory will allow them to perform tasks with a lot more context. This will also stop
-    Agents from trying to perform the same or similar tasks multiple times.
-- 🤖 **Agent steer-ability**
-  - Users should be able to guide the Agent through a goal. This involves adding or removing tasks and providing
-    additional context for the agent
-- 🌎 Agent gmail support
-
-## Finished features ✔
-
-- 🔐 **Users and authentication**
-- 💾 **Saving and sharing agent runs**
-  - If you are signed in, after your agent run has finished you have the ability to save it to our database.
-- 🌐 **Dynamic translations for multiple languages**
-  - AgentGPT is used worldwide, and we want to ensure everyone has a seamless experience on the platform. If we are
-    missing the translation for your language, we'd love your help in getting it implemented!
-- 🤖 **AI Model customization**
-  - Now users have the ability to use their own OpenAI API key to customize everything from the model, temperature,
-    loops, and more! This also all runs directly within the user's browser!
-- 📚 **Documentation overhaul**
-  - This is the page you're viewing right now! It will continually be updated as the project evolves to allow any new
-    user / contributer to get familiar with AgentGPT as quickly as possible.
-- 🌐 **Web browsing capabilities**
-  - We have a basic version implemented that performs and summarizes a Google search via the SERP api.
-  - This does not currently visit the websites themselves and parse websites but we are working on this.
-- ✈ **Backend migration to Python**
-  - This is a bigger undertaking but something we feel must be done. It will allow us to migrate off of edge functions
-    and use all the tools available for language models in the Python ecosystem.
-- 💵 **Stripe integration for a lower limit paid version**
-  - (Will help us stop worrying about infra costs)
-
-## Planned features 🕰️
+## 开发中的功能 ⏳
 
 :::tip
-If any of these features stand out to you, or you'd like to suggest more features, please do so in
-the [AgentGPT discord](https://discord.gg/jdSBAnmdnY)!
+AgentGPT开发人员正在积极开发以下功能。预计需要花费几天到两周的时间。
 :::
 
-- 👨‍👩‍👦 **Interaction with websites and people**
-- 📄 **Writing capabilities via a document API**
-  - This would involve the ability
-- 🤖 **Cross agent communication**
+- 🧠 **通过向量数据库的长期记忆**
+  - 提供代理更多的内存将使它们在执行任务时具有更多的上下文。这还将防止代理尝试多次执行相同或类似的任务。
+- 🤖 **代理可操纵性**
+  - 用户应该能够通过目标指导代理。这涉及添加或删除任务并为代理提供其他上下文。
+- 🌎 Agent gmail支持
 
-## Notes
+## 已完成的功能 ✔
 
-We are constantly updating our roadmap and adding new features so stay tuned for more updates and have a look at our
-GitHub.
-We are however a small team and would love community support in helping develop AgentGPT. If you're interested, please
-head over to our [contributing page](/contributing).
+- 🔐 **用户和身份验证**
+- 💾 **保存和共享代理运行**
+  - 如果您已登录，在代理运行完成后，您可以将其保存到我们的数据库中。
+- 🌐 **多语言动态翻译**
+  - AgentGPT在全球范围内使用，我们希望确保每个人在平台上都有无缝的体验。如果我们缺少您语言的翻译，我们希望您能帮助我们实现！
+- 🤖 **AI模型定制**
+  - 现在用户可以使用自己的OpenAI API密钥来自定义模型、温度、循环等所有内容！这也直接在用户的浏览器中运行！
+- 📚 **文档大修**
+  - 这就是您正在查看的页面！随着项目的发展，它将不断更新，以使任何新用户/贡献者尽快熟悉AgentGPT。
+- 🌐 **浏览网页功能**
+  - 我们已经实现了一个基本版本，通过SERP api执行和总结Google搜索。
+  - 目前这并没有访问网站本身和解析网站，但我们正在开发中。
+- ✈ **后端迁移至Python**
+  - 这是一个更大的工作，但我们认为必须完成。它将允许我们迁移到Python生态系统中可用的所有语言模型工具，而不是使用边缘函数。
+- 💵 **Stripe集成以进行低限额付费版本**
+  - （将帮助我们不再担心基础设施成本）
+
+## 计划中的功能 🕰️
+
+:::tip
+如果您对其中任何功能感兴趣或想提出更多功能，请在[AgentGPT discord](https://discord.gg/jdSBAnmdnY)中提出！
+:::
+
+- 👨‍👩‍👦 **与网站和人的互动**
+- 📄 **通过文档API的写作能力**
+  - 这将涉及到的能力
+- 🤖 **跨代理通信**
+
+## 注
+
+我们不断更新我们的路线图并添加新功能，因此请继续关注更多更新，并查看我们的GitHub。
+但是，我们是一个小团队，非常希望社区支持帮助开发AgentGPT。如果您有兴趣，请转到我们的[贡献页面](/contributing)。

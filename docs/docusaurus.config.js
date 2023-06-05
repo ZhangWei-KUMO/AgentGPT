@@ -9,10 +9,10 @@ const config = {
   title: 'AgentGPT',
   tagline: 'Autonomous AI agents directly in your browser',
   favicon: 'favicon.ico',
-  url: 'https://docs.reworkd.ai',
+  url: 'https://cloud-wave.cn',
   baseUrl: '/',
-  organizationName: 'reworkd', // Usually your GitHub org/user name.
-  projectName: 'AgentGPT', // Usually your repo name.
+  organizationName: 'ZhangWei-Kumo',
+  projectName: 'AgentGPT',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -29,7 +29,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          editUrl: 'https://github.com/reworkd/AgentGPT/tree/main/docs/',
+          editUrl: 'https://github.com/ZhangWei-KUMO/AgentGPT/tree/main/docs/',
         },
         blog: false,
         theme: {
@@ -55,7 +55,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/reworkd/AgentGPT',
+            href: 'https://github.com/ZhangWei-KUMO/AgentGPT',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',

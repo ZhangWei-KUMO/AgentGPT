@@ -2,8 +2,5 @@
 sidebar_position: 6
 ---
 
-# 🔥 Use Cases
-
-This page is a WIP and will serve as a cool gateway into the different use cases of AgentGPT.
-If you already have interesting use cases in mind, please reach out to the moderation or dev team
-on [Discord](https://discord.gg/jdSBAnmdnY) or [GitHub](https://github.com/reworkd/AgentGPT).
+# 🔥 使用场景
+如果您有新的应用场景可以通过微信告知我们:15502178435

@@ -2,25 +2,20 @@
 sidebar_position: 1
 ---
 
-# 🤖 Introduction
-Welcome to AgentGPT 👋, an autonomous AI Agent platform that empowers users to create and deploy customizable autonomous AI agents directly in the web.
-Simply assign a name and goal to your AI agent, and watch as it embarks on an exciting journey to accomplish the assigned objective.
+# 🤖 介绍
+欢迎使用 AgentGPT 👋，这是一个自主 AI 代理平台，可以使用户在网页上创建和部署可定制的自主 AI 代理。
+只需为您的 AI 代理指定名称和目标，就可以看到它开始了一段激动人心的旅程，以完成分配的任务。
 
-## How does it work?
-AgentGPT works by chaining language models (Agents) to perform a given goal.
-Recursively, an agent will think of the best tasks to perform a goal, execute on those tasks, evaluate how it performed, and continually think of more tasks.
+## 它如何工作？
+AgentGPT 通过链接语言模型（代理）来执行给定的目标。
+递归地，代理会思考执行目标的最佳任务，执行这些任务，评估其表现，并不断思考更多任务。
 
-## Philosophy
-We think the power of AI should be available to everyone and should be driven by community.
-This is why we are proudly open source. We'd love to hear your feedback at every step of the journey and the following channels are open for you to reach the team:
+## 哲学
+我们认为 AI 的力量应该面向每个人，并由社区驱动。
+这就是为什么我们自豪地开源。我们很乐意在整个旅程中听取您的反馈，以下渠道对您开放，以便与团队联系：
 
 ### Join the community
 - [AgentGPT website](https://agentgpt.reworkd.ai/)
 - [Github](https://github.com/reworkd/AgentGPT)
 - [Discord](https://discord.gg/jdSBAnmdnY)
 - [Google Survey](https://forms.gle/fjCo72hiYWZydJa1A)
-
-## What's next?
-The entire AgentGPT team is incredibly excited for the road to follow.
-We have a ton of exciting features planned for the future, and we hope you'll join us on this journey.
-Have a glimpse of what's to come in the [roadmap](/roadmap) on the next page.
