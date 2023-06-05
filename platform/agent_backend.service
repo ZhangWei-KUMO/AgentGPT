@@ -5,7 +5,7 @@ Description=Agent Auto GPT backend service
 Restart=always
 User=root
 WorkingDirectory=/home/ubuntu/AgentGPT/platform
-ExecStart=poetry run python -m agent_backend
+ExecStart=/home/ubuntu/.local/bin/poetry run python -m agent_backend
 
 [Install]
 WantedBy=multi-user.target
