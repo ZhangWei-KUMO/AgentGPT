@@ -125,3 +125,16 @@ poetry run pytest -vv --cov="reworkd_platform" .
 poetry self add poetry-plugin-up
 poetry up --latest
 ```
+
+## Pyproject.toml 介绍
+
+`pyproject.toml` 是 Python 项目的配置文件，它是 `PEP 518` 引入的一部分。在 Python 项目中，`pyproject.toml` 文件通常用于定义项目元数据、依赖管理和构建配置等信息。
+
+以下是 `pyproject.toml` 的一些常见用途：
+
+- 定义项目元数据，如名称、版本号、描述等。
+- 指定项目所需的 Python 版本。
+- 定义项目的依赖项，包括依赖库和其版本号范围。
+- 配置项目的构建工具，如使用哪种构建系统、如何打包和发布项目等。
+
+在 Python 项目中，`pyproject.toml` 通常与 `poetry` 或 `pipenv` 等依赖管理器一起使用，以简化项目的依赖管理和构建过程。

@@ -1,13 +1,9 @@
 [tool.poetry]
-name = "reworkd_platform"
-version = "0.1.0"
+name = "agent_backend"
+version = "0.1.1"
 description = ""
-authors = [
-
-]
-maintainers = [
-
-]
+authors = ["LewisZhang"]
+maintainers = ["LewisZhang"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
