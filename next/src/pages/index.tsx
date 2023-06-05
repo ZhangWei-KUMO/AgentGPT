@@ -105,17 +105,16 @@ const Home: NextPage = () => {
 
   const disableDeployAgent =
     agent != null || isEmptyOrBlank(nameInput) || isEmptyOrBlank(goalInput);
-
+  // 发起代理请求
   const handleNewGoal = (name: string, goal: string) => {
     if (name.trim() === "" || goal.trim() === "") {
       return;
     }
-
     // Do not force login locally for people that don't have auth setup
-    if (session === null && env.NEXT_PUBLIC_FORCE_AUTH) {
-      setShowSignInDialog(true);
-      return;
-    }
+    // if (session === null && env.NEXT_PUBLIC_FORCE_AUTH) {
+    //   setShowSignInDialog(true);
+    //   return;
+    // }
 
     const newAgent = new AutonomousAgent(
       name.trim(),
@@ -150,7 +149,6 @@ const Home: NextPage = () => {
   const handleKeyPress = (
     e: React.KeyboardEvent<HTMLInputElement> | React.KeyboardEvent<HTMLTextAreaElement>
   ) => {
-    // Only Enter is pressed, execute the function
     if (e.key === "Enter" && !disableDeployAgent && !e.shiftKey) {
       if (isAgentPaused) {
         handleContinue();

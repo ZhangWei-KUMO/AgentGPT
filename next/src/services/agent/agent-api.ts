@@ -14,7 +14,7 @@ export class AgentApi {
     this.props = apiProps;
     this.onError = onError;
   }
-
+  // 初始化任务API
   async getInitialTasks(): Promise<string[]> {
     return (await this.post<{ newTasks: string[] }>("/api/agent/start", {})).newTasks;
   }

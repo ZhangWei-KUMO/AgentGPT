@@ -1,5 +1,5 @@
 # agent_backend
-本项目的后端API是使用fastapi_template生成的。
+本项目的后端API是使用**fastapi_template**生成的。
 
 ## Poetry
 
@@ -8,32 +8,11 @@
 poetry install
 poetry run python -m agent_backend
 ```
-
 这将在配置的主机上启动服务器。您可以在`/api/docs`处找到Swagger文档。
 您可以在此处阅读有关poetry的更多信息：https://python-poetry.org/
 
-## Docker
 
-您可以使用以下命令使用Docker启动项目：
-```bash
-docker-compose -f deploy/docker-compose.yml --project-directory . up --build
-```
-
-If you want to develop in docker with autoreload add `-f deploy/docker-compose.dev.yml` to your docker command.
-Like this:
-
-```bash
-docker-compose -f deploy/docker-compose.yml -f deploy/docker-compose.dev.yml --project-directory . up --build
-```
-
-该命令在端口8000上公开Web应用程序，挂载当前目录并启用自动重新加载。
-但是，每次使用此命令修改`poetry.lock`或`pyproject.toml`时，您都必须重新构建映像：
-
-```bash
-docker-compose -f deploy/docker-compose.yml --project-directory . build
-```
-
-## Project structure
+## 项目结构
 
 ```bash
 $ tree "agent_backend"
@@ -92,18 +71,6 @@ You can read more about pre-commit here: https://pre-commit.com/
 mysqlclient = "^2.1.1"
 ```
 ## 测试
-
-如果您想在Docker中运行它，只需运行：
-```bash
-docker-compose -f deploy/docker-compose.yml -f deploy/docker-compose.dev.yml --project-directory . run --build --rm api pytest -vv .
-docker-compose -f deploy/docker-compose.yml -f deploy/docker-compose.dev.yml --project-directory . down
-```
-
-1. 在本地运行测试时，需要启动一个数据库。我更喜欢使用Docker来完成这个任务：
-```
-docker run -p "3306:3306" -e "MYSQL_PASSWORD=agent_backend" -e "MYSQL_USER=agent_backend" -e "MYSQL_DATABASE=agent_backend" -e ALLOW_EMPTY_PASSWORD=yes bitnami/mysql:8.0.30
-```
-
 
 2. 运行pytest.
 ```bash

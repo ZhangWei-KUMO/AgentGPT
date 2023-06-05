@@ -33,6 +33,7 @@ async def start_tasks(
         )
     ),
 ) -> NewTasksResponse:
+    print(req_body)
     new_tasks = await get_agent_service(req_body.modelSettings).start_goal_agent(
         goal=req_body.goal
     )

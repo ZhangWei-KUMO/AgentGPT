@@ -88,7 +88,7 @@ npm install
 
 输入如下命令行，启动程序：
 ```bash
-git clone https://github.com/reworkd/AgentGPT.git && cd AgentGPT
+git clone https://github.com/ZhangWei-KUMO/AgentGPT.git && cd AgentGPT
 ./setup.sh
 # 进入platform文件夹启动后台
 poetry run python -m agent_backend

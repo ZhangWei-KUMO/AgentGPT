@@ -78,9 +78,10 @@ class AutonomousAgent {
     this.messageService.sendGoalMessage(this.goal);
     this.messageService.sendThinkingMessage();
 
-    // Initialize by getting taskValues
     try {
+      console.log("初始化任务");
       const tasks = await this.$api.getInitialTasks();
+      console.log("初始化任务",tasks);
       await this.createTasks(tasks);
     } catch (e) {
       console.error(e);
