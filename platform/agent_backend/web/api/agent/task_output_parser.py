@@ -7,8 +7,7 @@ from langchain.schema import BaseOutputParser, OutputParserException
 
 class TaskOutputParser(BaseOutputParser[List[str]]):
     """
-    Extension of LangChain's BaseOutputParser
-    Responsible for parsing task creation output into a list of task strings
+    LangChain的BaseOutputParser的扩展，负责将任务创建输出解析为任务字符串列表。
     """
 
     completed_tasks: List[str] = []
@@ -25,17 +24,15 @@ class TaskOutputParser(BaseOutputParser[List[str]]):
             ]
             return [task for task in all_tasks if task not in self.completed_tasks]
         except Exception as e:
-            msg = f"Failed to parse tasks from completion {text}. Got: {e}"
+            msg = f"无法解析完成任务的任务列表 {text}. Got: {e}"
             raise OutputParserException(msg)
 
     def get_format_instructions(self) -> str:
         return """
-        The response should be a JSON array of strings. Example:
-
-        ["Search the web for NBA news", "Write some code to build a web scraper"]
-
-        This should be parsable by json.loads()
-        """
+                response为一个 JSON 字符串数组:
+                ["搜索 NBA 新闻的网页","编写一些代码来构建一个网络爬虫"]
+                均通过json.loads()进行解析
+            """
 
 
 def extract_array(input_str: str) -> List[str]:
@@ -53,7 +50,7 @@ def extract_array(input_str: str) -> List[str]:
 def handle_multiline_string(input_str: str) -> List[str]:
     # Handle multiline string as a list
     if re.match(r"\d+\..+", input_str):
-        # Split the input_str by newline, strip whitespace, and remove any empty lines
+        # 按照换行符将 input_str 分割，去除空格以及删除任何空行。
         return [line.strip() for line in input_str.split("\n") if line.strip() != ""]
     else:
         raise RuntimeError(f"Failed to extract array from {input_str}")

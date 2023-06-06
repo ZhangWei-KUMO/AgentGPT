@@ -36,14 +36,14 @@ export class AgentApi {
       })
     ).newTasks;
   }
-
+  // 分析任务API
   async analyzeTask(task: string): Promise<Analysis> {
     return await this.post<Analysis>("/api/agent/analyze", {
       task: task,
       toolNames: useAgentStore.getState().tools.map((tool) => tool.name),
     });
   }
-
+  // 执行任务API
   async executeTask(task: string, analysis: Analysis): Promise<string> {
     return (
       await this.post<{ response: string }>("/api/agent/execute", {
