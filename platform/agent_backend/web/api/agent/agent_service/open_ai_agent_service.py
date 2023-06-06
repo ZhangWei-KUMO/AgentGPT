@@ -31,7 +31,7 @@ class OpenAIAgentService(AgentService):
         self._language = model_settings.language or "English"
 
     async def start_goal_agent(self, *, goal: str) -> List[str]:
-        print("2.开始目标代理")
+        # 调用模型
         completion = await call_model_with_handling(
             self.model_settings,
             start_goal_prompt,
@@ -49,7 +49,7 @@ class OpenAIAgentService(AgentService):
 
         pydantic_parser = PydanticOutputParser(pydantic_object=Analysis)
         print(get_tools_overview(get_user_tools(tool_names)))
-        completion = await chain.arun(
+        completion = chain.run(
             {
                 "goal": goal,
                 "task": task,
@@ -88,9 +88,10 @@ class OpenAIAgentService(AgentService):
     ) -> List[str]:
         print("创建任务代理")
         llm = create_model(self.model_settings)
+        print("GPT大语言模型创建模型成功")
         chain = LLMChain(llm=llm, prompt=create_tasks_prompt)
 
-        completion = await chain.arun(
+        completion =  chain.run(
             {
                 "goal": goal,
                 "language": self._language,

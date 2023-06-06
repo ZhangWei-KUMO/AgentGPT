@@ -20,7 +20,6 @@ class Settings(BaseSettings):
     """
     应用程序设置，这些参数可以通过环境变量配置。
     """
-    print("开始加载配置")
     host: str = "127.0.0.1"
     port: int = 8000
 
@@ -33,7 +32,7 @@ class Settings(BaseSettings):
     environment: str = "development"
     log_level: LogLevel = LogLevel.INFO
     # OpenAI
-    openai_api_base: str = "https://api.openai.com/v1"
+    openai_api_base: str = "<Should be updated via env>"
     openai_api_key: str = "<Should be updated via env>"
     secondary_openai_api_key: Optional[str] = None
 

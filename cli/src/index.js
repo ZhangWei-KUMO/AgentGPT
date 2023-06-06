@@ -27,7 +27,7 @@ const handleNewEnv = () => {
   inquirer.prompt(newEnvQuestions).then((answers) => {
     dotenv.config({ path: "./.env" });
     generateEnv(answers);
-    console.log("\nEnv 文件创建成功!");
+    console.log("\n环境变量文件创建成功!如果需要修改请进入 ./next/.env 文件和./platform/.env.");
     handleRunOption(answers.runOption);
   });
 };

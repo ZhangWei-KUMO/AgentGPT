@@ -6,17 +6,9 @@ from agent_backend.settings import settings
 
 async def init_kafka(app: FastAPI) -> None:  # pragma: no cover
     """
-    Initialize kafka producer.
-
-    This function creates producer
-    and makes initial connection to
-    the kafka cluster. After that you
-    can use producer stored in state.
-
-    We don't need to use pools here,
-    because aiokafka has implicit pool
-    inside the producer.
-
+    初始化 Kafka producer该函数创建生产者并与 Kafka 集群建立初始连接。
+    之后，您可以使用存储在状态中的生产者。在此过程中我们不需要使用池，
+    因为 aiokafka 中的生产者内部已经有了隐式池。
     :param app: current application.
     """
     app.state.kafka_producer = AIOKafkaProducer(

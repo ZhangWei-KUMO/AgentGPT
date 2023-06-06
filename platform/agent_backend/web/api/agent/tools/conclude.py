@@ -6,7 +6,7 @@ from agent_backend.web.api.agent.tools.tool import Tool
 
 
 class Conclude(Tool):
-    description = "Use when there is nothing else to do. The task has been concluded."
+    description = "当前任务已经完成。"
 
     def __init__(self, model_settings: ModelSettings):
         super().__init__(model_settings)

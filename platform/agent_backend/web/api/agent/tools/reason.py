@@ -9,8 +9,8 @@ from agent_backend.web.api.agent.tools.tool import Tool
 
 class Reason(Tool):
     description = (
-        "Reason about task via existing information or understanding. "
-        "Make decisions / selections from options."
+        "通过现有的信息或理解来推理任务。 "
+        "从选项中做出决策/选择。"
     )
 
     def __init__(self, model_settings: ModelSettings):

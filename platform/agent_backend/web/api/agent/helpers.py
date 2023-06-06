@@ -1,9 +1,12 @@
 from typing import TypeVar
 
 from langchain import LLMChain, BasePromptTemplate
+from langchain.prompts import PromptTemplate
+ 
 from langchain.schema import OutputParserException, BaseOutputParser
 from openai import InvalidRequestError
 from openai.error import ServiceUnavailableError
+from langchain.llms import OpenAI
 
 from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.model_settings import create_model
@@ -26,12 +29,9 @@ async def call_model_with_handling(
     args: dict[str, str]
 ) -> str:
     try:
-        model = create_model(model_settings)
-        chain = LLMChain(llm=model, prompt=prompt)
-        print("chain:",chain)
-        result = await chain.arun(args)
-        print("result:",result)
-
+        llm = create_model(model_settings)
+        chain = LLMChain(llm=llm, prompt=prompt)
+        result = chain.run(args)
         return result
     except ServiceUnavailableError as e:
         raise OpenAIError(
