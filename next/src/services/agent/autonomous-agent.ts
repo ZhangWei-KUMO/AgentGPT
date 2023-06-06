@@ -77,14 +77,12 @@ class AutonomousAgent {
   async startGoal() {
     this.messageService.sendGoalMessage(this.goal);
     this.messageService.sendThinkingMessage();
-
+    
     try {
-      console.log("初始化任务");
       const tasks = await this.$api.getInitialTasks();
-      console.log("初始化任务",tasks);
+      console.log("任务列表：",tasks);
       await this.createTasks(tasks);
     } catch (e) {
-      console.error(e);
       this.messageService.sendErrorMessage(e);
       this.shutdown();
       return;
@@ -116,6 +114,7 @@ class AutonomousAgent {
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
 
     // 启动第一个任务
+    console.log("启动第一个任务");
     const currentTask = this.getRemainingTasks()[0] as Task;
     this.messageService.sendMessage({ ...currentTask, status: "executing" });
     this.messageService.sendThinkingMessage();

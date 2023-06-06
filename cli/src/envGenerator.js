@@ -35,18 +35,6 @@ const getEnvDefinition = (
       PLATFORM_URL: platformUrl,
       NEXT_PUBLIC_FORCE_AUTH: false,
     },
-    "Next Auth config": {
-      NEXTAUTH_SECRET: generateAuthSecret(),
-      NEXTAUTH_URL: "http://localhost:3000",
-    },
-    // "Auth providers (Use if you want to get out of development mode sign-in)": {
-    //   GOOGLE_CLIENT_ID: "***",
-    //   GOOGLE_CLIENT_SECRET: "***",
-    //   GITHUB_CLIENT_ID: "***",
-    //   GITHUB_CLIENT_SECRET: "***",
-    //   DISCORD_CLIENT_SECRET: "***",
-    //   DISCORD_CLIENT_ID: "***",
-    // },
     Backend: {
       BACK_END_ENVIRONMENT: "development",
       BACK_END_FF_MOCK_MODE_ENABLED: false,
