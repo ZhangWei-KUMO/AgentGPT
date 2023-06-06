@@ -219,7 +219,7 @@ const Home: NextPage = () => {
             <div id="title" className="relative flex flex-col items-center font-mono">
               <div className="flex flex-row items-start shadow-2xl">
                 <span className="text-4xl font-bold text-[#C0C0C0] xs:text-5xl sm:text-6xl">
-                  凹凸
+                  Ultra
                 </span>
                 <span className="text-4xl font-bold text-white xs:text-5xl sm:text-6xl">GPT</span>
                 <PopIn delay={0.5}>

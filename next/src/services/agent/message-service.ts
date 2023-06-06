@@ -86,8 +86,8 @@ class MessageService {
   }
 
   sendErrorMessage(e: unknown) {
+    console.error(e);
     let message = "ERROR_RETRIEVE_INITIAL_TASKS";
-
     if (typeof e == "string") message = e;
     else if (axios.isAxiosError(e) && !e.response) {
       message = "后端程序连接失败，请检查后端程序是否正常运行";

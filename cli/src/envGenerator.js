@@ -56,24 +56,26 @@ const getEnvDefinition = (
       BACK_END_OPENAI_API_BASE: "https://api.openai.com/v1",
       BACK_END_SERP_API_KEY: envValues.serpApiKey || "<change me>",
       BACK_END_REPLICATE_API_KEY:envValues.replicateApiKey || "<change me>",
+      BACK_END_VECTOR_DB_URL: envValues.WeaviateUrl || "<change me>",
+      BACK_END_VECTOR_DB_API_KEY: envValues.WeaviateApiKey || "<change me>",
     },
     "Database (Backend)": {
-      BACK_END_DATABASE_USER: "root",
-      BACK_END_DATABASE_PASSWORD: "12345678",
-      BACK_END_DATABASE_HOST: "localhost",
-      BACK_END_DATABASE_PORT: dbPort,
-      BACK_END_DATABASE_NAME: "users",
-      BACK_END_DATABASE_URL:
-        "mysql://${BACK_END_DATABASE_USER}:${BACK_END_DATABASE_PASSWORD}@${BACK_END_DATABASE_HOST}:${BACK_END_DATABASE_PORT}/${BACK_END_DATABASE_NAME}",
+      BACK_END_DB_USER: "root",
+      BACK_END_DB_PASS: "12345678",
+      BACK_END_DB_HOST: "localhost",
+      BACK_END_DB_PORT: dbPort,
+      BACK_END_DB_BASE: "users",
+      BACK_END_DB_URL:
+        "mysql://${BACK_END_DB_USER}:${BACK_END_DB_PASS}@${BACK_END_DB_HOST}:${BACK_END_DB_PORT}/${BACK_END_DB_BASE}",
     },
     "Database (Frontend)": {
-      DATABASE_USER: "root",
-      DATABASE_PASSWORD: "12345678",
-      DATABASE_HOST: "localhost",
-      DATABASE_PORT: dbPort,
-      DATABASE_NAME: "users",
-      DATABASE_URL:
-        "mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}",
+      DB_USER: "root",
+      DB_PASS: "12345678",
+      DB_HOST: "localhost",
+      DB_PORT: dbPort,
+      DB_BASE: "users",
+      DB_URL:
+        "mysql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}",
     },
   };
 };

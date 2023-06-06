@@ -4,10 +4,18 @@ from langchain.chat_models import ChatOpenAI
 from agent_backend.schemas import ModelSettings
 from agent_backend.settings import settings
 from agent_backend.web.api.agent.api_utils import rotate_keys
-print("-----",settings.openai_api_base)
+print(settings.kafka_bootstrap_servers)
+if(settings.db_user == "<Should be updated via env>"):
+    print("数据库USER未配置")
+if(settings.db_pass == "<Should be updated via env>"):
+    print("数据库密码未配置")
+if(settings.db_base == "<Should be updated via env>"):
+    print("数据库名称未配置")
+if(settings.vector_db_url == "<Should be updated via env>"):
+    print("向量数据库URL未配置")
+if(settings.vector_db_api_key == "<Should be updated via env>"):
+    print("向量数据库API KEY未配置")
 openai.api_base = settings.openai_api_base
-
-
 def create_model(model_settings: ModelSettings, streaming: bool = False) -> ChatOpenAI:
     print("创建模型")
     return ChatOpenAI(

@@ -49,6 +49,16 @@ CLI 为 Ultra-GPT 设置以下内容：
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
 - 🎨 [前端](https://github.com/reworkd/AgentGPT/tree/main/next) (Nextjs)
 
+### 配置环境变量
+Ultra-GPT给用户构建了自动化环境变量生成脚本，位于项目`cli`文件夹中，用户只需执行`.setup.sh`文件即可在前端**next**项目文件夹和后端**platform**文件夹下各自创建`.env`文件。
+
+```
+git clone https://github.com/ZhangWei-KUMO/AgentGPT.git && cd AgentGPT
+./setup.sh
+```
+
+
+### 执行环境配置
 安装Python3.11,在这里仅以Ubuntu22举例：
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -86,9 +96,10 @@ poetry install
 npm install
 ```
 
+
+
 输入如下命令行，启动程序：
 ```bash
-git clone https://github.com/ZhangWei-KUMO/AgentGPT.git && cd AgentGPT
 ./setup.sh
 # 进入platform文件夹启动后台
 poetry run python -m agent_backend

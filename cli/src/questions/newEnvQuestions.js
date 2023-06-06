@@ -28,4 +28,16 @@ export const newEnvQuestions = [
     message:
       "输入你的 Replicate API key (图像处理可选项，若没有可以直接按回车，注册传送https://replicate.com/):",
   },
+  {
+    type: "input",
+    name: "WeaviateUrl",
+    message:
+      "输入你的 Weaviate URL (本项目使用的向量数据库为Weaviate，若没有可以直接按回车，注册传送https://weaviate.io//):",
+  },
+  {
+    type: "input",
+    name: "WeaviateApiKey",
+    message:
+      "输入你的 Weaviate API key:",
+  },
 ];

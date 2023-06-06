@@ -11,7 +11,7 @@ sidebar_position: 4
 ### 代理问题
 
 <details>
-<summary>凹凸GPT说它创建了一个文件/数据库/脚本，我在哪里可以找到它？</summary>
+<summary>Ultra-GPT说它创建了一个文件/数据库/脚本，我在哪里可以找到它？</summary>
 目前，AgentGPT无法以这种方式输出，但这是我们正在积极研究的内容。
 请关注我们的<a href="/roadmap">路线图</a>，以了解此功能可能何时可用。
 </details>

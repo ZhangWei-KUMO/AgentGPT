@@ -4,10 +4,8 @@ from tempfile import gettempdir
 from typing import List, Optional
 from pydantic import BaseSettings
 from yarl import URL
-
+# 返回用于临时文件的目录的名称,如：/var/folders/m1/k1p4490s6vxcsmxnm6fr8rg80000gn/T
 TEMP_DIR = Path(gettempdir())
-
-
 class LogLevel(str, enum.Enum):  # noqa: WPS600
     """日志等级"""
     NOTSET = "NOTSET"
@@ -29,15 +27,11 @@ class Settings(BaseSettings):
     # 是指用于启动uvicorn服务器的工作进程数量。Uvicorn是一个基于ASGI（异步服务器网关接口）的Web服务器，
     # 可以在Python 3.6+中使用。它支持异步请求处理和Web套接字协议，可以在高负载下处理大量并发连接。
     workers_count: int = 1
-
     # uvicorn服务器是否应该在代码更改时重新加载。
     reload: bool = True
-
     # Current environment
     environment: str = "development"
-
     log_level: LogLevel = LogLevel.INFO
-
     # OpenAI
     openai_api_base: str = "https://api.openai.com/v1"
     openai_api_key: str = "<Should be updated via env>"
@@ -53,9 +47,9 @@ class Settings(BaseSettings):
     # 数据库变量
     db_host: str = "localhost"
     db_port: int = 3306
-    db_user: str = "reworkd_platform"
-    db_pass: str = "reworkd_platform"
-    db_base: str = "reworkd_platform"
+    db_user: str = "<Should be updated via env>"
+    db_pass: str = "<Should be updated via env>"
+    db_base: str = "<Should be updated via env>"
     db_echo: bool = False
     db_ca_path: str = "/etc/ssl/cert.pem"
 
@@ -87,7 +81,7 @@ class Settings(BaseSettings):
 # 从后端项目的根目录中的.env文件中加载配置
     class Config:
         env_file = ".env"
-        env_prefix = "BACKEND_"
+        env_prefix = "BACK_END_"
         env_file_encoding = "utf-8"
 
 
