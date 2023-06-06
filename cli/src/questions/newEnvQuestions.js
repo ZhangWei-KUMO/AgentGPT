@@ -12,7 +12,7 @@ export const newEnvQuestions = [
       if (isValidSkKey(apikey) || apikey === "") {
         return true;
       } else {
-        return "\n非法 api key. Please try again.";
+        return "\n 该 api key不可用.";
       }
     },
   },
@@ -20,12 +20,12 @@ export const newEnvQuestions = [
     type: "input",
     name: "serpApiKey",
     message:
-      "你的 SERP API key (https://serper.dev/)? Leave empty to disable web search.",
+      "你的 SERP API key (https://serper.dev/)? 如果设置为空则不可使用Web搜索。",
   },
   {
     type: "input",
     name: "replicateApiKey",
     message:
-      "你的 Replicate API key (https://replicate.com/)? Leave empty to just use DALL-E for image generation.",
+      "你的 Replicate API key (https://replicate.com/)? 留空以仅使用 DALL-E 进行图像生成。",
   },
 ];

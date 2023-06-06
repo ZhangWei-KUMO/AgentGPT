@@ -11,13 +11,12 @@ from agent_backend.web.api.errors import OpenAIError
 
 T = TypeVar("T")
 
-
 def parse_with_handling(parser: BaseOutputParser[T], completion: str) -> T:
     try:
         return parser.parse(completion)
     except OutputParserException as e:
         raise OpenAIError(
-            e, "There was an issue parsing the response from the AI model."
+            e, "解析 AI 模型响应时出现问题。"
         )
 
 # 调用模型进行处理
@@ -37,10 +36,10 @@ async def call_model_with_handling(
     except ServiceUnavailableError as e:
         raise OpenAIError(
             e,
-            "OpenAI is experiencing issues. Visit "
-            "https://status.openai.com/ for more info.",
+            "OpenAI 出现问题，请访问 "
+            "https://status.openai.com/",
         )
     except InvalidRequestError as e:
         raise OpenAIError(e, e.user_message)
     except Exception as e:
-        raise OpenAIError(e, "There was an issue getting a response from the AI model.")
+        raise OpenAIError(e, "从 AI 模型获取响应时出现问题。")

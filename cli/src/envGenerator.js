@@ -1,7 +1,7 @@
 import crypto from "crypto";
 import fs from "fs";
 import chalk from "chalk";
-
+// 生成.env文件
 export const generateEnv = (envValues) => {
   let isDockerCompose = envValues.runOption === "docker-compose";
   let dbPort = isDockerCompose ? 3307 : 3306;
@@ -55,8 +55,7 @@ const getEnvDefinition = (
       BACK_END_RELOAD: true,
       BACK_END_OPENAI_API_BASE: "https://api.openai.com/v1",
       BACK_END_SERP_API_KEY: envValues.serpApiKey || "<change me>",
-      BACK_END_REPLICATE_API_KEY:
-        envValues.replicateApiKey || "<change me>",
+      BACK_END_REPLICATE_API_KEY:envValues.replicateApiKey || "<change me>",
     },
     "Database (Backend)": {
       BACK_END_DATABASE_USER: "root",

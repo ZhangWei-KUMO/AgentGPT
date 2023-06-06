@@ -4,21 +4,21 @@ import figlet from "figlet";
 export const printTitle = () => {
   console.log(
     chalk.red(
-      figlet.textSync("凹凸GPT", {
+      figlet.textSync("UltraGPT", {
         horizontalLayout: "full",
         font: "ANSI Shadow",
       })
     )
   );
   console.log(
-    "Welcome to the AgentGPT CLI! This CLI will generate the required .env files."
+    "欢迎使用 凹凸GPT 命令行界面！该界面将生成所需的 .env 文件。"
   );
   console.log(
-    "Copies of the generated envs will be created in `./next/.env` and `./platform/.env`.\n"
+    "生成的结果将分别位于`./next/.env` 和 `./platform/.env`.\n"
   );
 };
 
-// Function to check if entered api key is in the correct format
+// 检查是否为有效的Open AI Key
 export const isValidSkKey = (apikey) => {
   const pattern = /^sk-[a-zA-Z0-9]{48}$/;
   return pattern.test(apikey);
