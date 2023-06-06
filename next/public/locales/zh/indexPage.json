@@ -5,6 +5,5 @@
   "LABEL_AGENT_GOAL": "目标",
   "PLACEHOLDER_AGENT_GOAL": "让世界变得更美好",
   "BUTTON_DEPLOY_AGENT": "运行代理",
-  "BUTTON_STOP_AGENT": "停止代理",
-  "Current tasks":"当前任务"
+  "BUTTON_STOP_AGENT": "停止代理"
   }

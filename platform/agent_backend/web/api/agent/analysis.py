@@ -21,7 +21,7 @@ class Analysis(BaseModel):
         from agent_backend.web.api.agent.tools.tools import get_default_tool_name
 
         return cls(
-            reasoning="Hmm... I'll have to try again",
+            reasoning="报错啦~~~",
             action=get_default_tool_name(),
             arg="Analyze errored out",
         )

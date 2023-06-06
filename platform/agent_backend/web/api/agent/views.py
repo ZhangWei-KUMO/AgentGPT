@@ -34,7 +34,7 @@ async def start_tasks(
         )
     ),
 ) -> NewTasksResponse:
-    print(req_body.goal)
+    # 启动任务
     new_tasks = await get_agent_service(req_body.modelSettings).start_goal_agent(
         goal=req_body.goal
     )
@@ -72,11 +72,13 @@ async def execute_tasks(
         )
     ),
 ) -> FastAPIStreamingResponse:
-    return await get_agent_service(req_body.modelSettings).execute_task_agent(
+    res = await get_agent_service(req_body.modelSettings).execute_task_agent(
         goal=req_body.goal or "",
         task=req_body.task or "",
         analysis=req_body.analysis or Analysis.get_default_analysis(),
     )
+    print("API结果：",res)
+    return res
 
 
 @router.post("/create")

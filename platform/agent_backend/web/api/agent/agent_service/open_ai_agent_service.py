@@ -32,6 +32,7 @@ class OpenAIAgentService(AgentService):
 
     async def start_goal_agent(self, *, goal: str) -> List[str]:
         # 调用模型
+        print("调用：",self._language, self.model_settings)
         completion = await call_model_with_handling(
             self.model_settings,
             start_goal_prompt,
@@ -40,25 +41,28 @@ class OpenAIAgentService(AgentService):
 
         task_output_parser = TaskOutputParser(completed_tasks=[])
         return parse_with_handling(task_output_parser, completion)
-
+# 核心代码
     async def analyze_task_agent(
         self, *, goal: str, task: str, tool_names: List[str]
     ) -> Analysis:
         llm = create_model(self.model_settings)
         chain = LLMChain(llm=llm, prompt=analyze_task_prompt)
-
         pydantic_parser = PydanticOutputParser(pydantic_object=Analysis)
-        print(get_tools_overview(get_user_tools(tool_names)))
+        tool_names = get_user_tools(tool_names)
+        print("tool_names",tool_names)
+        tools_overview = get_tools_overview(tool_names)
+      
+
         completion = chain.run(
             {
                 "goal": goal,
                 "task": task,
                 "language": self._language,
-                "tools_overview": get_tools_overview(get_user_tools(tool_names)),
+                "tools_overview": tools_overview
             }
         )
-
-        print("Analysis completion:\n", completion)
+      
+        print("分析完成:\n", completion)
         try:
             return pydantic_parser.parse(completion)
         except Exception as error:
@@ -72,10 +76,12 @@ class OpenAIAgentService(AgentService):
         task: str,
         analysis: Analysis,
     ) -> StreamingResponse:
-        print("Execution analysis:", analysis)
-
+        print("执行分析:", analysis)
         tool_class = get_tool_from_name(analysis.action)
-        return await tool_class(self.model_settings).call(goal, task, analysis.arg)
+        print("使用工具:", tool_class)
+        res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
+        print("执行完成:", res)
+        return res
 
     async def create_tasks_agent(
         self,
@@ -86,11 +92,8 @@ class OpenAIAgentService(AgentService):
         result: str,
         completed_tasks: Optional[List[str]] = None,
     ) -> List[str]:
-        print("创建任务代理")
         llm = create_model(self.model_settings)
-        print("GPT大语言模型创建模型成功")
         chain = LLMChain(llm=llm, prompt=create_tasks_prompt)
-
         completion =  chain.run(
             {
                 "goal": goal,

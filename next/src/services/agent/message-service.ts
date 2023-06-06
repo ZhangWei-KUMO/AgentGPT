@@ -59,12 +59,12 @@ class MessageService {
       value: translate("ALL_TASKS_COMPLETETD", "errors"),
     });
   }
-
+  // 发生分析信息
   sendAnalysisMessage(analysis: Analysis) {
-    let message = "⏰ Generating response...";
-    if (analysis.action == "search") {
-      message = `🔍 Searching the web for "${analysis.arg}"...`;
-    }
+    let message = `🔍Searching the web for "${analysis.arg}"...`;
+    // if (analysis.action == "search" || analysis.action == "collect" || analysis.action == "搜索") {
+    //   message = `🔍 Searching the web for "${analysis.arg}"...`;
+    // }
     if (analysis.action == "wikipedia") {
       message = `🌐 Searching Wikipedia for "${analysis.arg}"...`;
     }

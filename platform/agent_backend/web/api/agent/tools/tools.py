@@ -9,7 +9,8 @@ from agent_backend.web.api.agent.tools.tool import Tool
 
 
 def get_user_tools(tool_names: List[str]) -> List[Type[Tool]]:
-    return list(map(get_tool_from_name, tool_names)) + get_default_tools()
+    tools =  list(map(get_tool_from_name, tool_names)) + get_default_tools()
+    return tools
 
 
 def get_available_tools() -> List[Type[Tool]]:
@@ -19,7 +20,10 @@ def get_available_tools() -> List[Type[Tool]]:
 def get_available_tools_names() -> List[str]:
     return [get_tool_name(tool) for tool in get_available_tools()]
 
-
+"""
+外部工具，有图像处理，代码处理，搜索处理。
+未来可以添加的可以有维基百科、知乎、知网等等
+"""
 def get_external_tools() -> List[Type[Tool]]:
     return [
         # Wikipedia,  # TODO: Remove if async doesn't work
@@ -28,7 +32,9 @@ def get_external_tools() -> List[Type[Tool]]:
         Code,
     ]
 
-
+"""
+默认工具分为推理（Reason）和结论（Conclude）两大块
+"""
 def get_default_tools() -> List[Type[Tool]]:
     return [
         Reason,
@@ -58,9 +64,10 @@ def get_tools_overview(tools: List[Type[Tool]]) -> str:
     # Join the unique strings with newlines
     return "\n".join(unique_strings)
 
-
+# 搜集工具，实际上就是action
 def get_tool_from_name(tool_name: str) -> Type[Tool]:
     for tool in get_available_tools():
+        print(f"搜索是否有匹配任务...{tool_name}")
         if get_tool_name(tool) == format_tool_name(tool_name):
             return tool
 
@@ -68,6 +75,7 @@ def get_tool_from_name(tool_name: str) -> Type[Tool]:
 
 
 def get_default_tool() -> Type[Tool]:
+    print("启动默认工具-Reason")
     return Reason
 
 

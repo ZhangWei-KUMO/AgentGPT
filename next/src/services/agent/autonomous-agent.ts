@@ -115,13 +115,12 @@ class AutonomousAgent {
     // Wait before starting TODO: think about removing this
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
 
-    // Start with first task
+    // 启动第一个任务
     const currentTask = this.getRemainingTasks()[0] as Task;
-
     this.messageService.sendMessage({ ...currentTask, status: "executing" });
     this.messageService.sendThinkingMessage();
 
-    // Analyze how to execute a task: Reason, web search, other tools...
+    // 分析如何执行任务：通过理性思考、进行网络搜索以及利用其他工具来实现
     const analysis = await this.$api.analyzeTask(currentTask.value);
     this.messageService.sendAnalysisMessage(analysis);
 

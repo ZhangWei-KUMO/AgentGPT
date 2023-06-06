@@ -42,7 +42,7 @@ export const TaskWindow = ({ visibleOnMobile }: TaskWindowProps) => {
       )}
     >
       <div className="sticky top-0 my-2 flex items-center justify-center gap-2 bg-zinc-900 p-2 text-gray-100 ">
-        <FaListAlt /> {t("Current tasks")}
+        <FaListAlt />
       </div>
       <div className="flex h-full w-full flex-col gap-2 px-1 py-1">
         <div className="window-heights flex w-full flex-col gap-2 overflow-y-auto overflow-x-hidden pr-1">

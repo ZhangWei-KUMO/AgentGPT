@@ -9,10 +9,8 @@ from agent_backend.web.api.agent.tools.stream_mock import stream_string
 from agent_backend.web.api.agent.tools.tool import Tool
 from agent_backend.web.api.agent.tools.utils import summarize
 
-
 # Search google via serper.dev. Adapted from LangChain
 # https://github.com/hwchase17/langchain/blob/master/langchain/utilities
-
 
 async def _google_serper_search_results(
     search_term: str, search_type: str = "search"
@@ -24,7 +22,7 @@ async def _google_serper_search_results(
     params = {
         "q": search_term,
     }
-
+   # 调用serper.dev的API
     async with aiohttp.ClientSession() as session:
         async with session.post(
             f"https://google.serper.dev/{search_type}", headers=headers, params=params
@@ -36,11 +34,11 @@ async def _google_serper_search_results(
 
 class Search(Tool):
     description = (
-        "Search Google for short up to date searches for simple questions "
-        "news and people.\n"
-        "The argument should be the search query."
+        "搜索谷歌以获取简单问题的短期和最新答案。 \n"
+        "参数将会变成搜索查询"
     )
-    public_description = "Search google for information about current events."
+    print("搜索谷歌以获取简单问题的短期和最新答案。 \n")
+    public_description = "搜索谷歌以获取有关当前事件的信息。"
 
     def __init__(self, model_settings: ModelSettings):
         super().__init__(model_settings)
@@ -52,15 +50,15 @@ class Search(Tool):
     async def call(
         self, goal: str, task: str, input_str: str
     ) -> FastAPIStreamingResponse:
+        # 获取Google搜索结果
         results = await _google_serper_search_results(
             input_str,
         )
-
-        k = 6  # Number of results to return
-        max_links = 3  # Number of links to return
+        k = 6  # 返回结果数
+        max_links = 3  # 返回链接数
         snippets: List[str] = []
         links: List[str] = []
-
+    
         if results.get("answerBox"):
             answer_values = []
             answer_box = results.get("answerBox", {})
@@ -73,7 +71,7 @@ class Search(Tool):
 
             if len(answer_values) > 0:
                 return stream_string("\n".join(answer_values), True)
-
+       
         if results.get("knowledgeGraph"):
             kg = results.get("knowledgeGraph", {})
             title = kg.get("title")
@@ -85,7 +83,7 @@ class Search(Tool):
                 snippets.append(description)
             for attribute, value in kg.get("attributes", {}).items():
                 snippets.append(f"{title} {attribute}: {value}.")
-
+         # 遍历从Google搜索结果中获取的信息，取前6个合并成背景资料
         for result in results["organic"][:k]:
             if "snippet" in result:
                 snippets.append(result["snippet"])
@@ -95,9 +93,12 @@ class Search(Tool):
                 snippets.append(f"{attribute}: {value}.")
 
         if len(snippets) == 0:
-            return stream_string("No good Google Search Result was found", True)
-
-        return summarize(self.model_settings, goal, task, snippets)
+            return stream_string("Google搜索引擎中没有搜索到相关信息", True)
+        
+        # 生成摘要
+        result = summarize(self.model_settings, goal, task, snippets)
+        print("生成摘要：",result)
+        return result
 
         # TODO: Stream with formatting
         # return f"{summary}\n\nLinks:\n" + "\n".join([f"- {link}" for link in links])
