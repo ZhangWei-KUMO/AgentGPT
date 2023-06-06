@@ -42,8 +42,8 @@ AgentGPT可以帮助您配置和部署自主AI代理。您可以为其命名，�
 
 ## 👨‍🚀 启动
 
-使用 凹凸GPT 的最简单方法是自动设置 CLI，该 CLI 包含在项目中。
-CLI 为 凹凸GPT 设置以下内容：
+使用 Ultra-GPT 的最简单方法是自动设置 CLI，该 CLI 包含在项目中。
+CLI 为 Ultra-GPT 设置以下内容：
 - 🔐 [环境变量](https://github.com/reworkd/AgentGPT/blob/main/.env.example) (and API Keys)
 - 🗂️ [数据库](https://github.com/reworkd/AgentGPT/tree/main/db) (Mysql)
 - 🤖 [后端](https://github.com/reworkd/AgentGPT/tree/main/platform) (FastAPI)
@@ -101,7 +101,7 @@ kill [PID]
 npm run dev
 ```
 
-> 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 凹凸GPT，请确保您已安装 Docker。
+> 🐳  推荐在本地使用 [docker-compose](https://www.docker.com/) 设置 Ultra-GPT，请确保您已安装 Docker。
 
 ## 🎉 路线图
 

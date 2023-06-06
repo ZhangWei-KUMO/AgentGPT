@@ -20,9 +20,9 @@ const DefaultLayout = (props: LayoutProps) => {
       )}
     >
       <Head>
-        <title>凹凸GPT</title>
+        <title>Ultra-GPT</title>
         <meta name="description" content={description} />
-        <meta property="og:title" content="凹凸GPT: 中文社区自主GPT工具 🤖" />
+        <meta property="og:title" content="Ultra-GPT: 中文社区自主GPT工具 🤖" />
         <meta property="og:description" content={description} />
         {/* <meta property="og:url" content="https://agentgpt.reworkd.ai/" />
         <meta property="og:image" content="https://agentgpt.reworkd.ai/banner.png" /> */}

@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ### 简介
 
-以下是关于 凹凸GPT 最常见的问题列表。如果您有任何未解答的问题，请在 [Discord](https://discord.gg/jdSBAnmdnY) 或 [GitHub](https://github.com/reworkd/AgentGPT) 上联系我们的管理或开发团队。
+以下是关于 Ultra-GPT 最常见的问题列表。如果您有任何未解答的问题，请在 [Discord](https://discord.gg/jdSBAnmdnY) 或 [GitHub](https://github.com/reworkd/AgentGPT) 上联系我们的管理或开发团队。
 
 ### 代理问题
 
@@ -20,20 +20,20 @@ sidebar_position: 4
 <summary>我的代理程序总是运行出错！</summary>
 由于 API 和基础设施成本，我们必须限制代理程序的运行时间 😢。
 
-为了规避这个问题，您可以访问我们的<a href="/roadmap">设置文档</a>，使用自己的 API 密钥在本地托管 凹凸GPT。
+为了规避这个问题，您可以访问我们的<a href="/roadmap">设置文档</a>，使用自己的 API 密钥在本地托管 Ultra-GPT。
 或者，您可以订阅我们的专业计划以增加限制。
 </details>
 
 <details>
 <summary>我的代理程序一开始表现很好，但后来停止了！我能从上次离开的地方继续吗？</summary>
 目前，所有代理程序运行都是相互隔离的，因此这是不可能的。
-这是我们未来要添加的功能之一，但同时，您可以使用它为您生成的信息创建另一个 凹凸GPT 运行。
+这是我们未来要添加的功能之一，但同时，您可以使用它为您生成的信息创建另一个 Ultra-GPT 运行。
 请关注我们的<a href="/roadmap">路线图</a>，以了解此功能可能何时可用。
 </details>
 
 <details>
 <summary>凹凸GPT能使用 GPT-4 吗？</summary>
-凹凸GPT 目前为免费用户使用 GPT-3.5，家里没矿是主要原因
+Ultra-GPT 目前为免费用户使用 GPT-3.5，家里没矿是主要原因
 </details>
 
 <details>
@@ -53,23 +53,23 @@ ChatGPT 是一个很棒的工具，可以让您提出特定的问题并获得结
 </details>
 
 <details>
-<summary>这与 凹凸GPT 有什么区别？</summary>
-凹凸GPT 和 AutoGPT 都是涉及自主 AI 代理的项目。凹凸GPT 是一个本地运行的工具，而 凹凸GPT 是一个基于 Web 的平台。
+<summary>这与 Ultra-GPT 有什么区别？</summary>
+Ultra-GPT 和 AutoGPT 都是涉及自主 AI 代理的项目。Ultra-GPT 是一个本地运行的工具，而 Ultra-GPT 是一个基于 Web 的平台。
 </details>
 
 <details>
-<summary>A凹凸GPT 能做什么？</summary>
-凹凸GPT 可以做很多事情，但我们也正在努力赋予它更多功能。请访问我们的<a href="/usecases">用例</a>页面，了解人们目前如何使用 AgentGPT。
+<summary>AUltra-GPT 能做什么？</summary>
+Ultra-GPT 可以做很多事情，但我们也正在努力赋予它更多功能。请访问我们的<a href="/usecases">用例</a>页面，了解人们目前如何使用 AgentGPT。
 </details>
 
 <details>
-<summary>凹凸GPT 是否可以访问互联网？</summary>
+<summary>Ultra-GPT 是否可以访问互联网？</summary>
 目前还没有，但这很快就会来！请关注我们的<a href="/roadmap">路线图</a>。
 </details>
 
 ### 本地贡献问题
 
 <details>
-<summary>我在本地设置 凹凸GPT 时遇到了麻烦！</summary>
+<summary>我在本地设置 Ultra-GPT 时遇到了麻烦！</summary>
 请访问我们的<a href="/development/setup">设置文档</a>以诊断任何问题。如果您有未记录的问题，请在<a href="https://github.com/reworkd/AgentGPT/issues">GitHub 上提交问题</a>。
 </details>

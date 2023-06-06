@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: '凹凸GPT',
+  title: 'Ultra-GPT',
   tagline: '您浏览器的代理助手',
   favicon: 'favicon.ico',
   url: 'https://zhangwei-kumo.github.io/',
@@ -45,7 +45,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: '🤖 凹凸GPT',
+        title: '🤖 Ultra-GPT',
         items: [
           {
             type: 'docSidebar',

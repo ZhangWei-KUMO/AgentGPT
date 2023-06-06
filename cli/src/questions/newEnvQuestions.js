@@ -7,7 +7,7 @@ export const newEnvQuestions = [
     type: "input",
     name: "OpenAIApiKey",
     message:
-      "输入你的openai key (eg: sk...) 或者按下任意键跳过.",
+      "输入你的Open API Key(若没有可以直接按回车，注册传送https://beta.openai.com/account/api-keys):",
     validate: (apikey) => {
       if (isValidSkKey(apikey) || apikey === "") {
         return true;
@@ -20,12 +20,12 @@ export const newEnvQuestions = [
     type: "input",
     name: "serpApiKey",
     message:
-      "你的 SERP API key (https://serper.dev/)? 如果设置为空则不可使用Web搜索。",
+      "输入你的 SERP API key (Google搜索可选项，若没有可以直接按回车，注册传送https://serper.dev/):",
   },
   {
     type: "input",
     name: "replicateApiKey",
     message:
-      "你的 Replicate API key (https://replicate.com/)? 留空以仅使用 DALL-E 进行图像生成。",
+      "输入你的 Replicate API key (图像处理可选项，若没有可以直接按回车，注册传送https://replicate.com/):",
   },
 ];
