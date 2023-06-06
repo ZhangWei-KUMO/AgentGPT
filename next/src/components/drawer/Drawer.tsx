@@ -13,8 +13,6 @@ import {
   FaUser,
 } from "react-icons/fa";
 import clsx from "clsx";
-import { useAuth } from "../../hooks/useAuth";
-import type { Session } from "next-auth";
 import { api } from "../../utils/api";
 import { useRouter } from "next/router";
 import FadingHr from "../FadingHr";
@@ -25,12 +23,12 @@ import { DrawerUrlButton } from "./DrawerUrlButton";
 const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings: () => void }) => {
   const [t] = useTranslation("drawer");
   const [showDrawer, setShowDrawer] = useState(true);
-  const { session, signIn, signOut, status } = useAuth();
+  // const { session, signIn, signOut, status } = useAuth();
   const router = useRouter();
-  const query = api.agent.getAll.useQuery(undefined, {
-    enabled: !!session?.user,
-  });
-  const userAgents = query.data ?? [];
+  // const query = api.agent.getAll.useQuery(undefined, {
+  //   enabled: !!session?.user,
+  // });
+  // const userAgents = query.data ?? [];
 
   useEffect(() => {
     // Function to check if the screen width is for desktop or tablet
@@ -90,16 +88,16 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
             onClick={() => location.reload()}
           />
           <ul className="flex flex-col gap-2 overflow-auto">
-            {userAgents.map((agent, index) => (
+            {/* {userAgents.map((agent, index) => (
               <DrawerItemButton
                 key={index}
                 icon={<FaRobot />}
                 text={agent.name}
                 onClick={() => void router.push(`/agent?id=${agent.id}`)}
               />
-            ))}
+            ))} */}
 
-            {status === "unauthenticated" && (
+            {/* {status === "unauthenticated" && (
               <div className="p-1 text-sm">
                 <a className="link" onClick={() => void signIn()}>
                   {t("SIGN_IN")}
@@ -109,12 +107,12 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
             )}
             {status === "authenticated" && userAgents.length === 0 && (
               <div className="text-sm">{t("NEED_TO_SIGN_IN_AND_CREATE_AGENT_FIRST")}</div>
-            )}
+            )} */}
           </ul>
         </div>
 
         <div className="flex flex-col gap-1">
-          {session?.user && (
+          {/* {session?.user && (
             <>
               <FadingHr className="my-2" />
               <div className="flex flex-row items-center justify-center gap-2 text-sm">
@@ -122,9 +120,9 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
                 {session?.user?.name}
               </div>
             </>
-          )}
+          )} */}
           <FadingHr className="my-2" />
-          <AuthItem session={session} signIn={signIn} signOut={signOut} />
+          {/* <AuthItem session={session} signIn={signIn} signOut={signOut} /> */}
           <DrawerItemButton
             icon={<FaQuestionCircle />}
             text={t("HELP_BUTTON")}

@@ -23,7 +23,7 @@
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    "**/*.js"
-  ],
+    "**/*.js",
+ ],
   "exclude": ["node_modules", "venv"]
 }

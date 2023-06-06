@@ -1,7 +1,6 @@
 import React from "react";
 import Dialog from "./Dialog";
 import Button from "../Button";
-import { useAuth } from "../../hooks/useAuth";
 
 export interface SignInDialogProps {
   show: boolean;
@@ -9,20 +8,20 @@ export interface SignInDialogProps {
 }
 
 export const SignInDialog = ({ show, close }: SignInDialogProps) => {
-  const { signIn } = useAuth();
+  // const { signIn } = useAuth();
 
   return (
     <Dialog
       header="Sign in 🔐"
       isShown={show}
       close={close}
-      footerButton={<Button onClick={() => void signIn()}>Sign in</Button>}
+      // footerButton={<Button onClick={() => void signIn()}>Sign in</Button>}
     >
       <p>
         Please{" "}
-        <a className="link" onClick={() => void signIn()}>
+        {/* <a className="link" onClick={() => void signIn()}>
           sign in
-        </a>{" "}
+        </a>{" "} */}
         to deploy an Agent! 🤖
       </p>
     </Dialog>

@@ -1,6 +1,6 @@
 import type { ModelSettings } from "../../utils/types";
 import { DEFAULT_MAX_LOOPS_FREE } from "../../utils/constants";
-import type { Session } from "next-auth";
+// import type { Session } from "next-auth";
 import { v1, v4 } from "uuid";
 import type { AgentMode, AgentPlaybackControl, Message, Task } from "../../types/agentTypes";
 import { AGENT_PAUSE, AGENT_PLAY, AUTOMATIC_MODE, PAUSE_MODE } from "../../types/agentTypes";
@@ -22,7 +22,7 @@ class AutonomousAgent {
   handlePause: (opts: { agentPlaybackControl?: AgentPlaybackControl }) => void;
   shutdown: () => void;
   numLoops = 0;
-  session?: Session;
+  // session?: Session;
   _id: string;
   mode: AgentMode;
   playbackControl: AgentPlaybackControl;
@@ -37,7 +37,7 @@ class AutonomousAgent {
     shutdown: () => void,
     modelSettings: ModelSettings,
     mode: AgentMode,
-    session?: Session,
+    // session?: Session,
     playbackControl?: AgentPlaybackControl
   ) {
     this.name = name;
@@ -46,7 +46,7 @@ class AutonomousAgent {
     this.handlePause = handlePause;
     this.shutdown = shutdown;
     this.modelSettings = modelSettings;
-    this.session = session;
+    // this.session = session;
     this._id = v4();
     this.mode = mode || AUTOMATIC_MODE;
     this.playbackControl = playbackControl || this.mode == PAUSE_MODE ? AGENT_PAUSE : AGENT_PLAY;

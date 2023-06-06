@@ -16,10 +16,10 @@ export const formatErrors = (
 
 if (!_clientEnv.success) {
   console.error(
-    "❌ Invalid environment variables:\n",
+    "❌ 环境变量不合法:\n",
     ...formatErrors(_clientEnv.error.format()),
   );
-  throw new Error("Invalid environment variables");
+  throw new Error("环境变量不合法");
 }
 
 for (let key of Object.keys(_clientEnv.data)) {

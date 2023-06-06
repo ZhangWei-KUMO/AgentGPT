@@ -15,7 +15,6 @@ import Expand from "../components/motions/expand";
 import HelpDialog from "../components/dialog/HelpDialog";
 import { SettingsDialog } from "../components/dialog/SettingsDialog";
 import { TaskWindow } from "../components/TaskWindow";
-import { useAuth } from "../hooks/useAuth";
 import type { AgentPlaybackControl, Message } from "../types/agentTypes";
 import { AGENT_PLAY, isTask } from "../types/agentTypes";
 import { useAgent } from "../hooks/useAgent";
@@ -44,7 +43,7 @@ const Home: NextPage = () => {
   const agentMode = useAgentStore.use.agentMode();
   const agent = useAgentStore.use.agent();
 
-  const { session, status } = useAuth();
+  // const { session, status } = useAuth();
   const [nameInput, setNameInput] = React.useState<string>("");
   const [goalInput, setGoalInput] = React.useState<string>("");
   const [mobileVisibleWindow, setMobileVisibleWindow] = React.useState<"Chat" | "Tasks">("Chat");
@@ -127,7 +126,7 @@ const Home: NextPage = () => {
         ...settingsModel.settings,
       },
       agentMode,
-      session ?? undefined
+      // session ?? undefined
     );
     setAgent(newAgent);
     setHasSaved(false);
@@ -167,8 +166,8 @@ const Home: NextPage = () => {
     setMobileVisibleWindow(visibleWindow);
   };
 
-  const shouldShowSave =
-    status === "authenticated" && isAgentStopped && messages.length && !hasSaved;
+  const shouldShowSave = false;
+    // status === "authenticated" && isAgentStopped && messages.length && !hasSaved;
 
   const firstButton =
     isAgentPaused && !isAgentStopped ? (

@@ -54,7 +54,7 @@ const save = (key: string, data: object) => {
 };
 
 export function useTools() {
-  const { data: Session } = useSession();
+  // const { data: Session } = useSession();
   const setTools = useAgentStore.use.setTools();
 
   const queryClient = useQueryClient();
