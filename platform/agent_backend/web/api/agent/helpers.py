@@ -22,14 +22,18 @@ def parse_with_handling(parser: BaseOutputParser[T], completion: str) -> T:
 
 # 调用模型进行处理
 async def call_model_with_handling(
-    model_settings: ModelSettings, prompt: BasePromptTemplate, args: dict[str, str]
+    model_settings: ModelSettings,
+    prompt: BasePromptTemplate, 
+    args: dict[str, str]
 ) -> str:
     try:
         model = create_model(model_settings)
         chain = LLMChain(llm=model, prompt=prompt)
         print("chain:",chain)
+        result = await chain.arun(args)
+        print("result:",result)
 
-        return await chain.arun(args)
+        return result
     except ServiceUnavailableError as e:
         raise OpenAIError(
             e,

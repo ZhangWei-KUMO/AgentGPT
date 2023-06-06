@@ -4,7 +4,7 @@ from langchain.chat_models import ChatOpenAI
 from agent_backend.schemas import ModelSettings
 from agent_backend.settings import settings
 from agent_backend.web.api.agent.api_utils import rotate_keys
-
+print("-----",settings.openai_api_base)
 openai.api_base = settings.openai_api_base
 
 
