@@ -127,7 +127,7 @@ const ChatWindow = ({
                    帮我写一份去台湾旅游的攻略
                 </ExampleAgentButton>
                 <ExampleAgentButton name="研报 📜" setAgentRun={setAgentRun}>
-                   帮我写一份详细的有关贵州茅台的研究报告
+                   帮我写一份2023年中国新能源汽车的研究报告
                 </ExampleAgentButton>
           
               </div>

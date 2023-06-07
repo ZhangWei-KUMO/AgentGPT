@@ -56,7 +56,7 @@ class Search(Tool):
         results = await _google_serper_search_results(
             input_str,
         )
-        k = 12  # 返回结果数
+        k = 20  # 返回结果数
         max_links = 6  # 返回链接数
         snippets: List[str] = []
         links: List[str] = []
