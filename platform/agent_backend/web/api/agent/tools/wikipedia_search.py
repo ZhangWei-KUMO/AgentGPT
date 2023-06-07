@@ -1,9 +1,9 @@
 from lanarky.responses import StreamingResponse
 from langchain import WikipediaAPIWrapper
-
 from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.tools.tool import Tool
 from agent_backend.web.api.agent.tools.utils import summarize
+import wikipedia
 
 
 class Wikipedia(Tool):
@@ -19,6 +19,7 @@ class Wikipedia(Tool):
         )
 
     async def call(self, goal: str, task: str, input_str: str) -> StreamingResponse:
-        # TODO: Make the below async
-        wikipedia_search = self.wikipedia.run(input_str)
-        return summarize(self.model_settings, goal, task, [wikipedia_search])
+        wikipedia.set_lang("zh")
+        # 只有gpt4可以这么造
+        res =  wikipedia.page(input_str)
+        return res.content

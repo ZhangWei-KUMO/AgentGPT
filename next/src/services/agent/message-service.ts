@@ -65,7 +65,7 @@ class MessageService {
     if (analysis.action == "search") {
       message = `🔍正在互联网中搜索 for "${analysis.arg}"...`;
     }
-    if (analysis.action == "wikipedia") {
+    if (analysis.action == "维基百科") {
       message = `🌐 正在维基百科中查找 for "${analysis.arg}"...`;
     }
     // if (analysis.action == "image") {

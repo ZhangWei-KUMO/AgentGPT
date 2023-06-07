@@ -10,7 +10,7 @@ LLM_Model = Literal[
 class ModelSettings(BaseModel):
     model: LLM_Model = Field(default="gpt-3.5-turbo", alias="customModelName")
     temperature: float = Field(default=0.5, alias="customTemperature", ge=0.0, le=1.0)
-    max_tokens: int = Field(default=2000, alias="maxTokens", ge=0, le=2000)
+    max_tokens: int = Field(default=1500, alias="maxTokens", ge=0, le=2000)
     language: str = Field(default="Chinese")
 
 # 代理请求Body

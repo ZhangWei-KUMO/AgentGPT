@@ -2,6 +2,7 @@ from typing import Type, List
 
 from agent_backend.web.api.agent.tools.code import Code
 from agent_backend.web.api.agent.tools.conclude import Conclude
+from agent_backend.web.api.agent.tools.wikipedia_search import Wikipedia
 from agent_backend.web.api.agent.tools.reason import Reason
 from agent_backend.web.api.agent.tools.search import Search
 from agent_backend.web.api.agent.tools.tool import Tool
@@ -25,8 +26,9 @@ def get_available_tools_names() -> List[str]:
 """
 def get_external_tools() -> List[Type[Tool]]:
     return [
+        Wikipedia,
         Search,
-        Code,
+        Code,      
     ]
 
 """
