@@ -116,6 +116,7 @@ class AutonomousAgent {
     // 启动第一个任务
     console.log("启动第一个任务");
     const currentTask = this.getRemainingTasks()[0] as Task;
+    console.log("currentTask",currentTask);
     this.messageService.sendMessage({ ...currentTask, status: "executing" });
     this.messageService.sendThinkingMessage();
 
@@ -132,8 +133,7 @@ class AutonomousAgent {
     this.messageService.sendMessage({ ...executionMessage, status: "completed" });
 
     const result = "";
-    await streamText(
-      "/api/agent/execute",
+    await streamText("/api/agent/execute",
       {
         goal: this.goal,
         task: currentTask.value,
@@ -144,6 +144,7 @@ class AutonomousAgent {
         executionMessage.info = "";
       },
       (text) => {
+        console.log("text",text)
         executionMessage.info += text;
         this.messageService.updateMessage(executionMessage);
       },
@@ -153,9 +154,10 @@ class AutonomousAgent {
       },
       () => !this.isRunning
     );
+    console.log("currentTask.value",currentTask.value);
 
     this.completedTasks.push(currentTask.value || "");
-
+    console.log("completedTasks", this.completedTasks);
     // Wait before adding tasks TODO: think about removing this
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
     this.messageService.sendThinkingMessage();

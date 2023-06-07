@@ -9,10 +9,6 @@ function stringToBoolean() {
   return z.preprocess((str) => str === "true", z.boolean());
 }
 
-function stringToNumber() {
-  return z.preprocess((str) => Number(str), z.number());
-}
-
 /**
  * Specify your server-side environment variables schema here.
  * This way you can ensure the app isn't built with invalid env vars.

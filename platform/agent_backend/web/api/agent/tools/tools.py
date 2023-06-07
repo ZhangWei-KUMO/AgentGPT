@@ -2,7 +2,6 @@ from typing import Type, List
 
 from agent_backend.web.api.agent.tools.code import Code
 from agent_backend.web.api.agent.tools.conclude import Conclude
-from agent_backend.web.api.agent.tools.image import Image
 from agent_backend.web.api.agent.tools.reason import Reason
 from agent_backend.web.api.agent.tools.search import Search
 from agent_backend.web.api.agent.tools.tool import Tool
@@ -27,7 +26,6 @@ def get_available_tools_names() -> List[str]:
 def get_external_tools() -> List[Type[Tool]]:
     return [
         # Wikipedia,  # TODO: Remove if async doesn't work
-        Image,
         Search,
         Code,
     ]
@@ -52,25 +50,17 @@ def format_tool_name(tool_name: str) -> str:
 
 def get_tools_overview(tools: List[Type[Tool]]) -> str:
     """Return a formatted string of name: description pairs for all available tools"""
-
-    # Create a list of formatted strings
     formatted_strings = [
         f"'{get_tool_name(tool)}': {tool.description}" for tool in tools
     ]
-
-    # Remove duplicates by converting the list to a set and back to a list
     unique_strings = list(set(formatted_strings))
-
-    # Join the unique strings with newlines
     return "\n".join(unique_strings)
 
 # 搜集工具，实际上就是action
 def get_tool_from_name(tool_name: str) -> Type[Tool]:
     for tool in get_available_tools():
-        print(f"搜索是否有匹配任务...{tool_name}")
-        if get_tool_name(tool) == format_tool_name(tool_name):
-            return tool
-
+        print(f"第二步：使用{tool_name}工具")
+        return tool
     return get_default_tool()
 
 

@@ -37,7 +37,7 @@ class Search(Tool):
         "搜索谷歌以获取简单问题的短期和最新答案。 \n"
         "参数将会变成搜索查询"
     )
-    print("搜索谷歌以获取简单问题的短期和最新答案。 \n")
+    print("进入Google搜索系统... \n")
     public_description = "搜索谷歌以获取有关当前事件的信息。"
 
     def __init__(self, model_settings: ModelSettings):
@@ -96,6 +96,7 @@ class Search(Tool):
             return stream_string("Google搜索引擎中没有搜索到相关信息", True)
         
         # 生成摘要
+        print("开始信息整理：",result)
         result = summarize(self.model_settings, goal, task, snippets)
         print("生成摘要：",result)
         return result

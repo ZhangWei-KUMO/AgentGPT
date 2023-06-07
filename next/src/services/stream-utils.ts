@@ -25,8 +25,9 @@ const fetchData = async (
     const error = (await response.json()) as { error: string; detail: string };
     onError(error.detail);
   }
-
-  return response.body?.getReader();
+  let r = response.body?.getReader();
+  console.log("response",r);
+  return r;
 };
 
 async function readStream(reader: TextStream): Promise<string | null> {
@@ -50,6 +51,7 @@ async function processStream(
       }
 
       const text = await readStream(reader);
+      console.log("封装：",text);
       if (text === null) break;
       onText(text);
     }
@@ -67,6 +69,7 @@ export const streamText = async (
   shouldClose: () => boolean
 ) => {
   const reader = await fetchData(url, body, onError);
+  console.log("reader",reader);
   if (!reader) {
     console.error("Reader is undefined!");
     return;

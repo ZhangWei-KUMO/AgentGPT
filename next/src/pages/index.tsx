@@ -135,11 +135,13 @@ const Home: NextPage = () => {
   };
 
   const handleContinue = () => {
+    console.log("agent",agent)
     if (!agent) {
       return;
     }
-
+    console.log("AGENT_PLAY",AGENT_PLAY)
     agent.updatePlayBackControl(AGENT_PLAY);
+    console.log("agent.playbackControl",agent.playbackControl)
     updateIsAgentPaused(agent.playbackControl);
     agent.updateIsRunning(true);
     agent.run().then(console.log).catch(console.error);
@@ -239,7 +241,7 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <Button
                 className="rounded-r-none py-0 text-sm sm:py-[0.25em] xl:hidden"
                 disabled={mobileVisibleWindow == "Chat"}
@@ -254,7 +256,7 @@ const Home: NextPage = () => {
               >
                 Tasks
               </Button>
-            </div>
+            </div> */}
             <Expand className="flex w-full flex-row">
               <ChatWindow
                 messages={messages}

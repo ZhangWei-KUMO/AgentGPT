@@ -68,7 +68,7 @@ class OpenAIAgentService(AgentService):
         except Exception as error:
             print(f"Error parsing analysis: {error}")
             return Analysis.get_default_analysis()
-
+    #执行任务代理 
     async def execute_task_agent(
         self,
         *,
@@ -76,11 +76,10 @@ class OpenAIAgentService(AgentService):
         task: str,
         analysis: Analysis,
     ) -> StreamingResponse:
-        print("执行分析:", analysis)
+        print("第一步：执行任务分析:", analysis)
         tool_class = get_tool_from_name(analysis.action)
-        print("使用工具:", tool_class)
+        print("第三步：使用工具", tool_class)
         res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
-        print("执行完成:", res)
         return res
 
     async def create_tasks_agent(

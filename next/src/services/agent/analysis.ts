@@ -1,5 +1,5 @@
 export type Analysis = {
   reasoning: string;
-  action: "reason" | "search" | "wikipedia" | "image" | "code" | "collect"
+  action: "reason" | "search" | "wikipedia" | "code" | "collect"
   arg: string;
 };
