@@ -68,9 +68,9 @@ class MessageService {
     if (analysis.action == "wikipedia") {
       message = `🌐 Searching Wikipedia for "${analysis.arg}"...`;
     }
-    if (analysis.action == "image") {
-      message = `🎨 Generating an image with prompt: "${analysis.arg}"...`;
-    }
+    // if (analysis.action == "image") {
+    //   message = `🎨 Generating an image with prompt: "${analysis.arg}"...`;
+    // }
     if (analysis.action == "code") {
       message = `💻 Writing code...`;
     }
