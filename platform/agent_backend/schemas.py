@@ -6,18 +6,18 @@ LLM_Model = Literal[
     "gpt-3.5-turbo",
     # "gpt-4"
 ]
-
+# 模型的默认值设定，包括模型名称、温度、最大token数、语言
 class ModelSettings(BaseModel):
     model: LLM_Model = Field(default="gpt-3.5-turbo", alias="customModelName")
-    temperature: float = Field(default=0.9, alias="customTemperature", ge=0.0, le=1.0)
-    max_tokens: int = Field(default=300, alias="maxTokens", ge=0, le=2000)
-    language: str = Field(default="English")
+    temperature: float = Field(default=0.2, alias="customTemperature", ge=0.0, le=1.0)
+    max_tokens: int = Field(default=1000, alias="maxTokens", ge=0, le=2000)
+    language: str = Field(default="Chinese")
 
 # 代理请求Body
 class AgentRequestBody(BaseModel):
     modelSettings: ModelSettings
     goal: str
-    language: str = "English"
+    language: str = "Chinese"
     task: Optional[str]
     analysis: Optional[Analysis]
     toolNames: Optional[List[str]]

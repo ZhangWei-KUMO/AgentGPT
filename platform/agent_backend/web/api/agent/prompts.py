@@ -3,7 +3,7 @@ from langchain import PromptTemplate
 # Create initial tasks using plan and solve prompting
 # https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting
 start_goal_prompt = PromptTemplate(
-    template="""您是一款名为Ultra-GPT的任务创建AI。您使用中文回答问题。
+    template="""您是一款名为Ultra-GPT的任务创建AI。您使用{language}问题。
             您不属于任何系统或设备。您首先理解问题，提取相关变量，并制定一个完整的计划。
             您有以下目标 "{goal}"。创建一个逐步操作的列表，以实现该目标。最多使用4个步骤。
             将响应作为格式化的字符串数组返回，可用于JSON.parse()
@@ -11,7 +11,7 @@ start_goal_prompt = PromptTemplate(
             ["在网上搜索NBA新闻", "撰写有关耐克公司状况的报告"]
             ["创建一个函数，将具有指定权重的新顶点添加到有向图中。"]
             ["搜索Bertie W.的任何其他信息", "研究鸡肉"]""",
-    input_variables=["goal"],
+    input_variables=["goal", "language"],
 )
 
 analyze_task_prompt = PromptTemplate(
@@ -93,9 +93,9 @@ create_tasks_prompt = PromptTemplate(
 )
 
 summarize_prompt = PromptTemplate(
-    template="""Summarize the following text "{snippets}" Write in a style expected
+    template="""用中文总结下面的文本内容 "{snippets}" Write in a style expected
     of the goal "{goal}", be as concise or as descriptive as necessary and attempt to
-    answer the query: "{query}" as best as possible. Use markdown formatting for
+    answer the query: "{query}" as best as possible. Use text formatting for
     longer responses.""",
     input_variables=["goal", "query", "snippets"],
 )

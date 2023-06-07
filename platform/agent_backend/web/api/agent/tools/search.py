@@ -54,8 +54,8 @@ class Search(Tool):
         results = await _google_serper_search_results(
             input_str,
         )
-        k = 6  # 返回结果数
-        max_links = 3  # 返回链接数
+        k = 12  # 返回结果数
+        max_links = 6  # 返回链接数
         snippets: List[str] = []
         links: List[str] = []
     
@@ -96,7 +96,7 @@ class Search(Tool):
             return stream_string("Google搜索引擎中没有搜索到相关信息", True)
         
         # 生成摘要
-        print("开始信息整理：",result)
+        print("开始信息整理：",snippets)
         result = summarize(self.model_settings, goal, task, snippets)
         print("生成摘要：",result)
         return result

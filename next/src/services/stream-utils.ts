@@ -50,9 +50,13 @@ async function processStream(
         return;
       }
 
-      const text = await readStream(reader);
-      console.log("封装：",text);
-      if (text === null) break;
+      let origin_text = await readStream(reader);
+      let text = ''
+      if (origin_text === null){
+        break
+      }else{
+        text = origin_text.replace(/\n/g, "<br/>");
+      }
       onText(text);
     }
   } catch (error) {

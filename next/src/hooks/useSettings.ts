@@ -11,9 +11,9 @@ const SETTINGS_KEY = "AGENTGPT_SETTINGS";
 
 const DEFAULT_SETTINGS: ModelSettings = {
   customModelName: GPT_35_TURBO,
-  customTemperature: 0.9 as const,
+  customTemperature: 0.1 as const,
   customMaxLoops: DEFAULT_MAX_LOOPS_CUSTOM_API_KEY,
-  maxTokens: 300 as const,
+  maxTokens: 500 as const,
 };
 
 const loadSettings = () => {

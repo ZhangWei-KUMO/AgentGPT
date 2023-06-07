@@ -9,8 +9,8 @@ export const ENGLISH = { code: "en", name: "English", flag: "🇺🇸" };
 export const availableLanguages: Language[] = [
   ENGLISH,
   { code: "ja", name: "日本語", flag: "🇯🇵" },
-  { code: "zh", name: "zh", flag: "🇨🇳" },
-  { code: "zhtw", name: "zhtw", flag: "🇭🇰" },
+  { code: "zh", name: "简体中文", flag: "🇨🇳" },
+  { code: "zhtw", name: "繁体中文", flag: "🇭🇰" },
 ];
 
 export const languages: Language[] = availableLanguages.sort((a, b) =>

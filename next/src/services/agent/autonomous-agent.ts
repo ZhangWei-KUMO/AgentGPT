@@ -144,7 +144,8 @@ class AutonomousAgent {
         executionMessage.info = "";
       },
       (text) => {
-        console.log("text",text)
+        text = text.replace(/\n/g, "<br/>");
+        console.log("已经替换后",text,typeof text);
         executionMessage.info += text;
         this.messageService.updateMessage(executionMessage);
       },
