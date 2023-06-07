@@ -120,16 +120,39 @@ const ChatWindow = ({
             </PopIn>
             <PopIn delay={1.5}>
               <div className="m-2 flex flex-col justify-between gap-2 sm:m-4 sm:flex-row">
-                <ExampleAgentButton name="代码GPT 🎮" setAgentRun={setAgentRun}>
+                <ExampleAgentButton name="代码 🎮" setAgentRun={setAgentRun}>
                    帮我写一份游戏代码
                 </ExampleAgentButton>
-                <ExampleAgentButton name="旅游GPT 🌴" setAgentRun={setAgentRun}>
+                <ExampleAgentButton name="旅游 🌴" setAgentRun={setAgentRun}>
                    帮我写一份去台湾旅游的攻略
                 </ExampleAgentButton>
-                <ExampleAgentButton name="研报GPT 📜" setAgentRun={setAgentRun}>
+                <ExampleAgentButton name="研报 📜" setAgentRun={setAgentRun}>
                    帮我写一份详细的有关贵州茅台的研究报告
                 </ExampleAgentButton>
+          
               </div>
+              <div className="m-2 flex flex-col justify-between gap-2 sm:m-4 sm:flex-row">
+              <ExampleAgentButton name="爬虫 😈" setAgentRun={setAgentRun}>
+                   告诉我知乎今天的热门话题
+                </ExampleAgentButton>
+                <ExampleAgentButton name="科技 " setAgentRun={setAgentRun}>
+                   帮我搜索有关苹果最新MR眼镜的信息
+                </ExampleAgentButton>
+                <ExampleAgentButton name="教育 📏" setAgentRun={setAgentRun}>
+                   我需要了解什么是拉格朗日定理
+                </ExampleAgentButton>
+                </div>
+                <div className="m-2 flex flex-col justify-between gap-2 sm:m-4 sm:flex-row">
+                <ExampleAgentButton name="经济 🚗" setAgentRun={setAgentRun}>
+                  帮我分析一下中国2023年CPI和就业率
+                </ExampleAgentButton> 
+                <ExampleAgentButton name="文化 📚" setAgentRun={setAgentRun}>
+                  古希腊文化的起源是什么
+                </ExampleAgentButton> 
+                <ExampleAgentButton name="新闻 📢" setAgentRun={setAgentRun}>
+                  整理下最近科技行业的新闻
+                </ExampleAgentButton>  
+                </div>
             </PopIn>
           </>
         )}

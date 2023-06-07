@@ -1,12 +1,8 @@
 from typing import List
 from lanarky.responses import StreamingResponse
 from langchain import LLMChain
-
 from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.model_settings import create_model
-
-
-
 
 def summarize(
     model_settings: ModelSettings, goal: str, query: str, snippets: List[str]
@@ -23,8 +19,7 @@ def summarize(
             "query": query,
             "snippets": snippets
          }
-    resp =  chain.run(args)
-    print("resp",resp)
+    markdown = chain.run(args)
 
     # res = await chain.arun(args)
     # print("---",tasks)
@@ -37,4 +32,4 @@ def summarize(
     #      },
     #      media_type="text/event-stream",
     # )
-    return resp
+    return markdown

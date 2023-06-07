@@ -27,7 +27,7 @@ class Reason(Tool):
         return StreamingResponse.from_chain(
             chain,
             {"goal": goal, 
-             "language": "English", 
+             "language": "简体中文", 
              "task": task
             },
             media_type="text/event-stream",

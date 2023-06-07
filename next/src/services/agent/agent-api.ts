@@ -45,12 +45,11 @@ export class AgentApi {
   }
   // 执行任务API
   async executeTask(task: string, analysis: Analysis): Promise<string> {
-    console.log("到底传了啥",task,analysis)
+    console.log("executeTask前端传参",analysis)
     let res = await this.post<{ response: string }>("/api/agent/execute", {
         task: task,
         analysis: analysis,
       })
-    console.log("到底返回了啥",res)
     return res.response;
   }
 

@@ -61,12 +61,12 @@ class MessageService {
   }
   // 发生分析信息
   sendAnalysisMessage(analysis: Analysis) {
-    let message = `🔍Searching the web for "${analysis.arg}"...`;
-    // if (analysis.action == "search" || analysis.action == "collect" || analysis.action == "搜索") {
-    //   message = `🔍 Searching the web for "${analysis.arg}"...`;
-    // }
+    let message = 'AI正在计算中...';
+    if (analysis.action == "search") {
+      message = `🔍正在互联网中搜索 for "${analysis.arg}"...`;
+    }
     if (analysis.action == "wikipedia") {
-      message = `🌐 Searching Wikipedia for "${analysis.arg}"...`;
+      message = `🌐 正在维基百科中查找 for "${analysis.arg}"...`;
     }
     // if (analysis.action == "image") {
     //   message = `🎨 Generating an image with prompt: "${analysis.arg}"...`;

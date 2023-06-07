@@ -2,13 +2,14 @@ import { env } from "../env/client.mjs";
 import type { RequestBody } from "../utils/interfaces";
 
 type TextStream = ReadableStreamDefaultReader<Uint8Array>;
-
+// 从后端获取包含文本流的Stream
 const fetchData = async (
   url: string,
   body: RequestBody,
   onError: (message: unknown) => void
 ): Promise<TextStream | undefined> => {
   url = env.NEXT_PUBLIC_BACKEND_URL + url;
+  console.log("fetch body", body)
   const response = await fetch(url, {
     method: "POST",
     cache: "no-cache",
@@ -25,9 +26,9 @@ const fetchData = async (
     const error = (await response.json()) as { error: string; detail: string };
     onError(error.detail);
   }
-  let r = response.body?.getReader();
-  console.log("response",r);
-  return r;
+  
+  let promiseTextStream = response.body?.getReader();
+  return promiseTextStream;
 };
 
 async function readStream(reader: TextStream): Promise<string | null> {
@@ -35,6 +36,7 @@ async function readStream(reader: TextStream): Promise<string | null> {
   return result.done ? null : new TextDecoder().decode(result.value);
 }
 
+// 对文本流进行处理
 async function processStream(
   reader: TextStream,
   onStart: () => void,
@@ -50,14 +52,9 @@ async function processStream(
         return;
       }
 
-      let origin_text = await readStream(reader);
-      let text = ''
-      if (origin_text === null){
-        break
-      }else{
-        text = origin_text.replace(/\n/g, "<br/>");
-      }
-      onText(text);
+      let text = await readStream(reader);
+      if (text === null) break;
+      onText(eval(text));
     }
   } catch (error) {
     onError(error);
@@ -73,7 +70,6 @@ export const streamText = async (
   shouldClose: () => boolean
 ) => {
   const reader = await fetchData(url, body, onError);
-  console.log("reader",reader);
   if (!reader) {
     console.error("Reader is undefined!");
     return;

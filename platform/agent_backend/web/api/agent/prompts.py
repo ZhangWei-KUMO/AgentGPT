@@ -84,9 +84,9 @@ create_tasks_prompt = PromptTemplate(
     If no new or further tasks are needed, return [] and nothing else
 
     Examples:
-    ["Search the web for NBA news"]
+    ["从网络上搜索NBA新闻"]
     ["Create a function to add a new vertex with a specified weight to the digraph."]
-    ["Search for any additional information on Bertie W."]
+    ["继续搜索有关科比布莱恩特的新闻"]
     []
     """,
     input_variables=["goal", "language", "tasks", "lastTask", "result"],

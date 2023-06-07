@@ -8,11 +8,9 @@ from agent_backend.web.api.agent.tools.utils import summarize
 
 class Wikipedia(Tool):
     description = (
-        "Search Wikipedia for information about historical people, companies, events, "
-        "places or research. This should be used over search for broad overviews of "
-        "specific nouns.\n The argument should be a simple query of just the noun."
+        "搜索维基百科以获取有关历史人物、公司、事件、地点或研究的信息。这应该用于搜索特定名词的广泛概述。参数应该是一个简单的名词查询。"
     )
-    public_description = "Search Wikipedia for historical information."
+    public_description = "搜索维基百科以获取历史信息。"
 
     def __init__(self, model_settings: ModelSettings):
         super().__init__(model_settings)

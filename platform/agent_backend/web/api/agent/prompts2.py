@@ -12,9 +12,9 @@ start_goal_prompt = PromptTemplate(
     Return the response as a formatted array of strings that can be used in JSON.parse()
 
     Examples:
-    ["Search the web for NBA news", "Write a report on the state of Nike"]
+    ["在互联网上搜索CBA的新闻", "Write a report on the state of Nike"]
     ["Create a function to add a new vertex with a specified weight to the digraph."]
-    ["Search for any additional information on Bertie W.", "Research Chicken"]
+    ["搜索有关特朗普的新闻", "Research Chicken"]
     """,
     input_variables=["goal", "language"],
 )
@@ -92,9 +92,9 @@ create_tasks_prompt = PromptTemplate(
     If no new or further tasks are needed, return [] and nothing else
 
     Examples:
-    ["Search the web for NBA news"]
+    ["在互联网中搜索NBA的新闻"]
     ["Create a function to add a new vertex with a specified weight to the digraph."]
-    ["Search for any additional information on Bertie W."]
+    ["搜索有关最近快船队的新闻"]
     []
     """,
     input_variables=["goal", "language", "tasks", "lastTask", "result"],

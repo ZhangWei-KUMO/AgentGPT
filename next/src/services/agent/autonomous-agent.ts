@@ -9,7 +9,7 @@ import { AgentApi } from "./agent-api";
 import MessageService from "./message-service";
 import { streamText } from "../stream-utils";
 
-const TIMEOUT_LONG = 1000;
+const TIMEOUT_LONG = 10000;
 const TIMOUT_SHORT = 800;
 
 class AutonomousAgent {
@@ -52,7 +52,7 @@ class AutonomousAgent {
     this.playbackControl = playbackControl || this.mode == PAUSE_MODE ? AGENT_PAUSE : AGENT_PLAY;
 
     this.messageService = new MessageService(renderMessage);
-
+    // 初始化任务API
     this.$api = new AgentApi(
       {
         goal,
@@ -61,7 +61,7 @@ class AutonomousAgent {
       this.onApiError
     );
   }
-
+  
   async run() {
     if (!this.isRunning) {
       this.updateIsRunning(true);
@@ -80,7 +80,6 @@ class AutonomousAgent {
     
     try {
       const tasks = await this.$api.getInitialTasks();
-      console.log("任务列表：",tasks);
       await this.createTasks(tasks);
     } catch (e) {
       this.messageService.sendErrorMessage(e);
@@ -113,15 +112,12 @@ class AutonomousAgent {
     // Wait before starting TODO: think about removing this
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
 
-    // 启动第一个任务
-    console.log("启动第一个任务");
     const currentTask = this.getRemainingTasks()[0] as Task;
-    console.log("currentTask",currentTask);
     this.messageService.sendMessage({ ...currentTask, status: "executing" });
     this.messageService.sendThinkingMessage();
-
-    // 分析如何执行任务：通过理性思考、进行网络搜索以及利用其他工具来实现
+    console.log("执行任务名称",currentTask.value)
     const analysis = await this.$api.analyzeTask(currentTask.value);
+    
     this.messageService.sendAnalysisMessage(analysis);
 
     const executionMessage: Message = {
@@ -144,9 +140,7 @@ class AutonomousAgent {
         executionMessage.info = "";
       },
       (text) => {
-        text = text.replace(/\n/g, "<br/>");
-        console.log("已经替换后",text,typeof text);
-        executionMessage.info += text;
+        executionMessage.info = text.replace(/"/g, "");
         this.messageService.updateMessage(executionMessage);
       },
       (error) => {
@@ -155,10 +149,7 @@ class AutonomousAgent {
       },
       () => !this.isRunning
     );
-    console.log("currentTask.value",currentTask.value);
-
     this.completedTasks.push(currentTask.value || "");
-    console.log("completedTasks", this.completedTasks);
     // Wait before adding tasks TODO: think about removing this
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
     this.messageService.sendThinkingMessage();

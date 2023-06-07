@@ -27,10 +27,12 @@ const ChatMessage = ({ message }: { message: Message }) => {
       )}
     >
       {message.type != MESSAGE_TYPE_SYSTEM && (
-        // Avoid for system messages as they do not have an icon and will cause a weird space
+        // 执行主界面抬头
         <>
           <div className="mr-2 inline-block h-[0.9em]">{getTaskStatusIcon(message, {})}</div>
-          <span className="mr-2 font-bold">{t(getMessagePrefix(message), { ns: "chat" })}</span>
+          <span className="mr-2 font-bold">
+            {t(getMessagePrefix(message), { ns: "chat" })}
+            </span>
         </>
       )}
 
@@ -72,11 +74,11 @@ const getMessagePrefix = (message: Message) => {
   } else if (getTaskStatus(message) === TASK_STATUS_STARTED) {
     return "TASK_ADDED";
   } else if (getTaskStatus(message) === TASK_STATUS_COMPLETED) {
-    return `Completing: ${message.value}`;
+    return `COMPLETING: ${message.value}`;
   } else if (getTaskStatus(message) === TASK_STATUS_FINAL) {
     return "NO_MORE_TASKS";
   }
-  return "";
+  return ""; 
 };
 const FAQ = () => {
   return (

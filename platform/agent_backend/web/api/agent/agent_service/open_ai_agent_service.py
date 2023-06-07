@@ -76,11 +76,12 @@ class OpenAIAgentService(AgentService):
         task: str,
         analysis: Analysis,
     ) -> StreamingResponse:
-        print("第一步：执行任务分析:", analysis)
         tool_class = get_tool_from_name(analysis.action)
-        print("第三步：使用工具", tool_class)
-        res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
-        return res
+        if(analysis.arg==''):
+            return "缺少参数，无法执行任务"
+        else:
+            res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
+            return res
 
     async def create_tasks_agent(
         self,

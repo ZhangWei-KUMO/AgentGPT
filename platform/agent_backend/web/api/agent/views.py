@@ -40,7 +40,10 @@ async def start_tasks(
     )
     return NewTasksResponse(newTasks=new_tasks)
 
-
+"""
+根据任务的目标、任务名称、工具名称
+返回分析结果。
+"""
 @router.post("/analyze")
 async def analyze_tasks(
     req_body: AgentRequestBody = Depends(agent_validator()),
@@ -55,7 +58,7 @@ async def analyze_tasks(
 class CompletionResponse(BaseModel):
     response: str
 
-
+# 执行任务API
 @router.post("/execute")
 async def execute_tasks(
     req_body: AgentRequestBody = Depends(
@@ -72,12 +75,12 @@ async def execute_tasks(
         )
     ),
 ) -> FastAPIStreamingResponse:
+    print("执行API任务时参数：",req_body.analysis)
     res = await get_agent_service(req_body.modelSettings).execute_task_agent(
         goal=req_body.goal or "",
         task=req_body.task or "",
         analysis=req_body.analysis or Analysis.get_default_analysis(),
     )
-    print("API结果：",res)
     return res
 
 

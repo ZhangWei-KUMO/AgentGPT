@@ -135,13 +135,10 @@ const Home: NextPage = () => {
   };
 
   const handleContinue = () => {
-    console.log("agent",agent)
     if (!agent) {
       return;
     }
-    console.log("AGENT_PLAY",AGENT_PLAY)
     agent.updatePlayBackControl(AGENT_PLAY);
-    console.log("agent.playbackControl",agent.playbackControl)
     updateIsAgentPaused(agent.playbackControl);
     agent.updateIsRunning(true);
     agent.run().then(console.log).catch(console.error);

@@ -25,7 +25,6 @@ def get_available_tools_names() -> List[str]:
 """
 def get_external_tools() -> List[Type[Tool]]:
     return [
-        # Wikipedia,  # TODO: Remove if async doesn't work
         Search,
         Code,
     ]
@@ -35,7 +34,6 @@ def get_external_tools() -> List[Type[Tool]]:
 """
 def get_default_tools() -> List[Type[Tool]]:
     return [
-        Reason,
         Conclude,
     ]
 

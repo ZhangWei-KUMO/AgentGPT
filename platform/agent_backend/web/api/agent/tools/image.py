@@ -48,24 +48,24 @@ async def get_open_ai_image(input_str: str) -> str:
     return response["data"][0]["url"]
 
 
-# class Image(Tool):
-#     description = (
-#         "Used to sketch, draw, or generate an image. The input string "
-#         "should be a detailed description of the image touching on image "
-#         "style, image focus, color, etc"
-#     )
-#     public_description = "Generate AI images."
+class Image(Tool):
+    description = (
+        "Used to sketch, draw, or generate an image. The input string "
+        "should be a detailed description of the image touching on image "
+        "style, image focus, color, etc"
+    )
+    public_description = "Generate AI images."
 
-#     def __init__(self, model_settings: ModelSettings):
-#         super().__init__(model_settings)
+    def __init__(self, model_settings: ModelSettings):
+        super().__init__(model_settings)
 
-#     async def call(
-#         self, goal: str, task: str, input_str: str
-#     ) -> FastAPIStreamingResponse:
-#         # Use the replicate API if its available, otherwise use DALL-E
-#         try:
-#             url = await get_replicate_image(input_str)
-#         except RuntimeError:
-#             url = await get_open_ai_image(input_str)
+    async def call(
+        self, goal: str, task: str, input_str: str
+    ) -> FastAPIStreamingResponse:
+        # Use the replicate API if its available, otherwise use DALL-E
+        try:
+            url = await get_replicate_image(input_str)
+        except RuntimeError:
+            url = await get_open_ai_image(input_str)
 
-#         return stream_string(f"![{input_str}]({url})")
+        return stream_string(f"![{input_str}]({url})")

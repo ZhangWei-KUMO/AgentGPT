@@ -9,7 +9,7 @@ from agent_backend.web.api.agent.tools.stream_mock import stream_string
 from agent_backend.web.api.agent.tools.tool import Tool
 from agent_backend.web.api.agent.tools.utils import summarize
 
-# Search google via serper.dev. Adapted from LangChain
+# serper.dev. Adapted from LangChain
 # https://github.com/hwchase17/langchain/blob/master/langchain/utilities
 
 async def _google_serper_search_results(
@@ -19,6 +19,7 @@ async def _google_serper_search_results(
         "X-API-KEY": settings.serp_api_key or "",
         "Content-Type": "application/json",
     }
+    print("正在搜索Google...",search_term)
     params = {
         "q": search_term,
     }
@@ -51,6 +52,7 @@ class Search(Tool):
         self, goal: str, task: str, input_str: str
     ) -> FastAPIStreamingResponse:
         # 获取Google搜索结果
+        print("call函数传入参数：",input_str)
         results = await _google_serper_search_results(
             input_str,
         )
@@ -96,10 +98,6 @@ class Search(Tool):
             return stream_string("Google搜索引擎中没有搜索到相关信息", True)
         
         # 生成摘要
-        print("开始信息整理：",snippets)
         result = summarize(self.model_settings, goal, task, snippets)
-        print("生成摘要：",result)
         return result
 
-        # TODO: Stream with formatting
-        # return f"{summary}\n\nLinks:\n" + "\n".join([f"- {link}" for link in links])

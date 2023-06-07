@@ -66,10 +66,6 @@ pre-commit install
 
 You can read more about pre-commit here: https://pre-commit.com/
 
-## 已知bug
-```bash
-mysqlclient = "^2.1.1"
-```
 ## 测试
 
 2. 运行pytest.
@@ -92,16 +88,12 @@ poetry run pytest -vv --cov="agent_backend" .
 poetry self add poetry-plugin-up
 poetry up --latest
 ```
+## 自定义任务
 
-## Pyproject.toml 介绍
+针对中文世界中的信息，可以针对不同的语料库进行扩展。本项目中自定义工具箱位于`/platfrom/agent_backend/web/api/agent/tools`中。已集成功能有：
 
-`pyproject.toml` 是 Python 项目的配置文件，它是 `PEP 518` 引入的一部分。在 Python 项目中，`pyproject.toml` 文件通常用于定义项目元数据、依赖管理和构建配置等信息。
-
-以下是 `pyproject.toml` 的一些常见用途：
-
-- 定义项目元数据，如名称、版本号、描述等。
-- 指定项目所需的 Python 版本。
-- 定义项目的依赖项，包括依赖库和其版本号范围。
-- 配置项目的构建工具，如使用哪种构建系统、如何打包和发布项目等。
-
-在 Python 项目中，`pyproject.toml` 通常与 `poetry` 或 `pipenv` 等依赖管理器一起使用，以简化项目的依赖管理和构建过程。
+1. 推理 reason
+2. 图片 image
+3. 总结 conclude
+4. 网络搜索 search
+5. 维基百科 wikipedia
