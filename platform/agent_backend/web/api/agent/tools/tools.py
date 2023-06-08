@@ -6,6 +6,7 @@ from agent_backend.web.api.agent.tools.wikipedia_search import Wikipedia
 from agent_backend.web.api.agent.tools.reason import Reason
 from agent_backend.web.api.agent.tools.search import Search
 from agent_backend.web.api.agent.tools.tool import Tool
+from agent_backend.web.api.agent.tools.finance import Finance
 
 
 def get_user_tools(tool_names: List[str]) -> List[Type[Tool]]:
@@ -28,6 +29,7 @@ def get_external_tools() -> List[Type[Tool]]:
     return [
         Wikipedia,
         Search,
+        Finance,
         Code,      
     ]
 

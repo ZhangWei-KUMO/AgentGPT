@@ -28,6 +28,7 @@ replicate = "^0.8.3"
 lanarky = "^0.7.6"
 weaviate-client = "^3.19.2"
 tiktoken = "^0.4.0"
+tushare= "^1.2.64"
 
 
 [tool.poetry.dev-dependencies]

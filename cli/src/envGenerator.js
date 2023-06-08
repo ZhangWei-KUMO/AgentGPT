@@ -43,6 +43,7 @@ const getEnvDefinition = (
       BACK_END_RELOAD: true,
       BACK_END_OPENAI_API_BASE: "https://api.openai.com/v1",
       BACK_END_SERP_API_KEY: envValues.serpApiKey || "<change me>",
+      BACK_END_TUSHARE_API_KEY: envValues.tushareApiKey || "<change me>",
       BACK_END_REPLICATE_API_KEY:envValues.replicateApiKey || "<change me>",
       BACK_END_VECTOR_DB_URL: envValues.WeaviateUrl || "<change me>",
       BACK_END_VECTOR_DB_API_KEY: envValues.WeaviateApiKey || "<change me>",
