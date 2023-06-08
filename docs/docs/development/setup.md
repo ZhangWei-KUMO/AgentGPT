@@ -72,12 +72,16 @@ poetry install
 poetry run python -m agent_backend
 ```
 
-## 运行站点
+## FastAPI跨域设置
 
-在本地构建 Ultra-GPT 后，您可以在 Web 浏览器中访问 http://localhost:3000/。
-
-## 问题 / 其他帮助
-
-如果您仍然遇到问题，您可以遵循 @CybrCo 的旧指南：[如何在本地安装 Ultra-GPT](https://snapdragon-writer-867.notion.site/How-to-Install-AgentGPT-Locally-9b96b2314c9b491397976249fd121023)
-
-如果您仍然遇到问题，请在 [GitHub 上提交问题](https://github.com/reworkd/AgentGPT/issues) 
+打开`/platform/agent_backend/web/application.py`, 在origin字段中添加允许IP:
+```py
+  origins = [
+        "http://112.65.39.181",
+        "https://112.65.39.181",
+        "http://localhost",
+        "https://localhost",
+        settings.frontend_url,
+        "https://localhost:3000",
+    ]
+```

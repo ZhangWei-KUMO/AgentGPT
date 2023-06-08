@@ -32,8 +32,7 @@ const getEnvDefinition = (
     },
     NextJS: {
       NEXT_PUBLIC_BACKEND_URL: "http://localhost:8000",
-      PLATFORM_URL: platformUrl,
-      NEXT_PUBLIC_FORCE_AUTH: false,
+      NEXT_PUBLIC_MAX_LOOPS: 25,
     },
     Backend: {
       BACK_END_ENVIRONMENT: "development",

@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     """
     应用程序设置，这些参数可以通过环境变量配置。
     """
-    host: str = "127.0.0.1"
+    host: str = "0.0.0.0"
     port: int = 8000
 
     # 是指用于启动uvicorn服务器的工作进程数量。Uvicorn是一个基于ASGI（异步服务器网关接口）的Web服务器，
