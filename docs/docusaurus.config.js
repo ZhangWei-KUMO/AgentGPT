@@ -12,7 +12,7 @@ const config = {
   url: 'https://zhangwei-kumo.github.io/',
   baseUrl: '/UltraGPT',
   organizationName: 'ZhangWei-Kumo',
-  projectName: 'AgentGPT',
+  projectName: 'UltraGPT',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
