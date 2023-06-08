@@ -1,12 +1,11 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/>
+<!-- <p align="center">
+  <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/> -->
 </p>
 <p align="center">
   <em>🤖 🤖 一款支持中文的AutoGPT客户端  🤖 </em>
 </p>
 
-UltraGPT可以帮助您配置和部署自主AI代理。
----
+UltraGPT可以帮助您配置和部署自主AI代理。更多详细请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
 ## 👨‍🚀 启动
 
