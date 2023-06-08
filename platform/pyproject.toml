@@ -10,7 +10,6 @@ readme = "README.md"
 python = "^3.9"
 fastapi = "^0.96.0"
 langchain = "^0.0.191"
-mysqlclient = "^2.1.1"
 wikipedia="^1.4.0"
 uvicorn = { version = "^0.22.0", extras = ["standard"] }
 pydantic = { version = "^1.10.8", extras = ["dotenv"] }
