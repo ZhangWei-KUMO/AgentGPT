@@ -43,8 +43,9 @@ def get_app() -> FastAPI:
                 SqlalchemyIntegration(),
             ],
         )
+    # FastAPI后端接口的主路由
     app = FastAPI(
-        title="Agent BackEnd API",
+        title="Ultra BackEnd API",
         version=metadata.version("agent_backend"),
         docs_url="/api/docs",
         redoc_url="/api/redoc",

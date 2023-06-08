@@ -22,13 +22,14 @@ git clone https://github.com/ZhangWei-KUMO/UltraGPT.git && cd UltraGPT
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt install python3.11
+vim ~/.bashrc
 # 修改~/.bashrc中添加环境变量
 alias python='/usr/bin/python3.11'
 source ~/.bashrc
-# 为pip与python版本号保持一致,将执行环境改为#!/usr/bin/python3.11
+which pip
 sudo vim /usr/local/bin/pip
-
 ```
+
 安装mysql:
 ```bash
 sudo apt update
@@ -43,12 +44,8 @@ sudo mysql_secure_installation
 ```
 
 后端的代码由python编写，在包管理上使用了poetry,首先需要进行安装。由于不同的版本不一样，在这里仅以Ubuntu22举例：
+
 ```bash
-curl -sSL https://install.python-poetry.org | python -
-# 在~/.bashrc中添加环境变量,/home/ubuntu/.local/bin/poetry
-export PATH="/home/ubuntu/.local/bin:$PATH"
-source ~/.bashrc
-poetry --version
 # 进入platform文件夹，安装依赖
 poetry install
 # 进入next中

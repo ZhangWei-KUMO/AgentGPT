@@ -7,7 +7,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.pem
-
+.peotry.lock
 # C extensions
 *.so
 
