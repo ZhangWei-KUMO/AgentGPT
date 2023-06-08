@@ -170,14 +170,14 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
 };
 
 const AuthItem: React.FC<{
-  session: Session | null;
+  // session: Session | null;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
-}> = ({ signIn, signOut, session }) => {
+}> = ({ signIn, signOut }) => {
   const [t] = useTranslation("drawer");
-  const icon = session?.user ? <FaSignOutAlt /> : <FaSignInAlt />;
-  const onClick = session?.user ? signOut : signIn;
-  const text = session?.user ? t("SIGN_OUT") : t("SIGN_IN");
+  const icon =  <FaSignInAlt />;
+  const onClick =  signIn;
+  const text = t("SIGN_IN");
 
   return <DrawerItemButton icon={icon} text={text} onClick={onClick} />;
 };

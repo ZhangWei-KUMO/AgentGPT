@@ -19,8 +19,9 @@ const ActiveToolSchema = Tool.extend({
 });
 
 export type ActiveTool = z.infer<typeof ActiveToolSchema>;
-
+// 前端的请求在这里
 const fetchAPI = async <T extends z.ZodTypeAny>(path: string, schema: T): Promise<z.infer<T>> => {
+
   const response = await fetch(`${env.NEXT_PUBLIC_BACKEND_URL}${path}`);
   if (!response.ok) {
     throw new Error("Request failed");
