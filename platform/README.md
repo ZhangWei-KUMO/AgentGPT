@@ -82,7 +82,7 @@ poetry run flake8
 poetry run mypy .
 
 # Pytest
-poetry run pytest -vv --cov="agent_backend" .
+poetry run pytest -vv --cov="platform" .
 
 # Bump packages
 poetry self add poetry-plugin-up
@@ -90,7 +90,7 @@ poetry up --latest
 ```
 ## 自定义任务
 
-针对中文世界中的信息，可以针对不同的语料库进行扩展。本项目中自定义工具箱位于`/platfrom/agent_backend/web/api/agent/tools`中。已集成功能有：
+针对中文世界中的信息，可以针对不同的语料库进行扩展。本项目中自定义工具箱位于`/platform/agent_backend/web/api/agent/tools`中。已集成功能有：
 
 1. 推理 reason
 2. 图片 image
