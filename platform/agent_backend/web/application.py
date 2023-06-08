@@ -56,7 +56,10 @@ def get_app() -> FastAPI:
     origins = [
         "http://112.65.39.181",
         "https://112.65.39.181",
+        "http://localhost",
+        "https://localhost",
         settings.frontend_url,
+        "https://localhost:3000",
     ]
 
     app.add_middleware(
