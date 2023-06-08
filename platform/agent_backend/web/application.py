@@ -52,8 +52,10 @@ def get_app() -> FastAPI:
         openapi_url="/api/openapi.json",
         default_response_class=UJSONResponse,
     )
-
+    # 允许的跨域请求
     origins = [
+        "http://112.65.39.181",
+        "https://112.65.39.181",
         settings.frontend_url,
     ]
 
