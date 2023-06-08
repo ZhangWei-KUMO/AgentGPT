@@ -36,6 +36,12 @@ export const newEnvQuestions = [
   },
   {
     type: "input",
+    name: "WeaviateApiKey",
+    message:
+      "输入你的 Weaviate API Key (本项目使用的向量数据库为Weaviate，若没有可以直接按回车，注册传送https://weaviate.io/):",
+  },
+  {
+    type: "input",
     name: "tushareApiKey",
     message:
       "输入你的 TuShare API key:(本项目金融数据接口为Tushare，若没有可以直接按回车，注册传送tushare.pro/)",
