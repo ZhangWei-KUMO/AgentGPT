@@ -15,7 +15,7 @@ const fetchData = async (
     cache: "no-cache",
     keepalive: true,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'http://47.242.195.3:3000',
       "Content-Type": "application/json",
       Accept: "text/event-stream",
     },
