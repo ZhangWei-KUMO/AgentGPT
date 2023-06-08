@@ -4,7 +4,7 @@ from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.tools.tool import Tool
 from agent_backend.web.api.agent.tools.utils import summarize
 import os
-import tushare as ts
+# import tushare as ts
 # from dotenv import load_dotenv
 # load_dotenv()
 # TUSHARE_API_KEY = os.getenv('TUSHARE_API_KEY')

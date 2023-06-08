@@ -6,6 +6,8 @@ sidebar_position: 1
 
 以下文档将帮助您设置 Ultra-GPT 的本地安装。
 
+> 需要注意的是，在中国境内开发由于众所周知的原因需要开设代理，请在终端配置您的VPN代理。
+
 ## 技术栈
 
 - 💅 前端：NextJS + Typescript

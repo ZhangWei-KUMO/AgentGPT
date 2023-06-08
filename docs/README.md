@@ -1,6 +1,6 @@
-# 网站
+# UltraGPT 技术文档
 
-这个网站是使用[Docusaurus 2](https://docusaurus.io/)构建的，它是一个现代的静态网站生成器。
+本技术文档是UltraGPT官方[技术文档](https://zhangwei-kumo.github.io/UltraGPT/)，通过[Docusaurus 2](https://docusaurus.io/)生成，由社区成员进行维护。
 
 ### 安装
 
