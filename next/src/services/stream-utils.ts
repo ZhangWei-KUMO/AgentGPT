@@ -15,6 +15,7 @@ const fetchData = async (
     cache: "no-cache",
     keepalive: true,
     headers: {
+      'Access-Control-Allow-Origin': '*',
       "Content-Type": "application/json",
       Accept: "text/event-stream",
     },
