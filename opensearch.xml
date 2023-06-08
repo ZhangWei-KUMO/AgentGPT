@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>凹凸GPT</ShortName>
-  <Description>Search 凹凸GPT</Description>
+  <ShortName>Ultra-GPT</ShortName>
+  <Description>Search Ultra-GPT</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://zhangwei-kumo.github.io/AgentGPT/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://zhangwei-kumo.github.io/AgentGPT/false?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://zhangwei-kumo.github.io/AgentGPT/opensearch.xml" />
-  <moz:SearchForm>https://zhangwei-kumo.github.io/AgentGPT/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://zhangwei-kumo.github.io/UltraGPT/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://zhangwei-kumo.github.io/UltraGPT/false?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://zhangwei-kumo.github.io/UltraGPT/opensearch.xml" />
+  <moz:SearchForm>https://zhangwei-kumo.github.io/UltraGPT/</moz:SearchForm>
 </OpenSearchDescription>
