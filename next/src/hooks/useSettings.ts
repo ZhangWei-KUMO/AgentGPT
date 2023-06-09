@@ -9,11 +9,12 @@ import {
 
 const SETTINGS_KEY = "AGENTGPT_SETTINGS";
 
+// 客户端GPT模型默认设置
 const DEFAULT_SETTINGS: ModelSettings = {
   customModelName: GPT_35_TURBO,
   customTemperature: 0.1 as const,
   customMaxLoops: DEFAULT_MAX_LOOPS_CUSTOM_API_KEY,
-  maxTokens: 500 as const,
+  maxTokens: 1000 as const,
 };
 
 const loadSettings = () => {
@@ -22,7 +23,7 @@ const loadSettings = () => {
   if (typeof window === "undefined") {
     return settings;
   }
-
+  // 将默认设置存储到localStorage中
   const data = localStorage.getItem(SETTINGS_KEY);
   if (!data) {
     return settings;
