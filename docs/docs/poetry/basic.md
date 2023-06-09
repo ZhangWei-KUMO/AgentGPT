@@ -8,7 +8,7 @@ UltraGPT是一个较为复杂且使用最前沿技术的应用，整个应用构
 
 > 本文所用的系统环境为Ubuntu22，为方便起见也建议用户使用该系统。
 
-首先安装Python3.11:
+安装Python3.11,在这里仅以Ubuntu22举例：
 
 ```bash
 sudo add-apt-repository ppa:deadsnakes/ppa
@@ -16,10 +16,16 @@ sudo apt install python3.11
 vim ~/.bashrc
 # 修改~/.bashrc中添加环境变量
 alias python='/usr/bin/python3.11'
+# 更新bash
 source ~/.bashrc
+# 查看pip的变量路径
 which pip
+# 打开文件
 sudo vim /usr/local/bin/pip
+# 修改第一行，指向3.11
+#!/usr/bin/python3.11
 ```
+
 安装poetry
 ```bash
 curl -sSL https://install.python-poetry.org | POETRY_HOME=/home/ubuntu/etc python -
