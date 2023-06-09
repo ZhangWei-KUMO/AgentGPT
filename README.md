@@ -4,6 +4,12 @@
 <p align="center">
   <em>🤖 🤖 一款支持中文的AutoGPT客户端  🤖 </em>
 </p>
+<p align="center">
+      <img alt="Node version" src="https://img.shields.io/static/v1?label=node&message=%20%3E=18&logo=node.js&color=2334D058" />
+      <img src="https://img.shields.io/badge/lang-English-blue.svg" alt="English">
+      <img src="https://img.shields.io/badge/lang-简体中文-red.svg" alt="简体中文">
+      <img src="https://img.shields.io/badge/lang-Hungarian-red.svg" alt="Hungarian">
+</p>
 
 UltraGPT可以帮助您配置和部署自主AI代理。更多详细请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
