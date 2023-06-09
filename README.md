@@ -58,8 +58,6 @@ poetry install
 npm install
 ```
 
-
-
 输入如下命令行，启动程序：
 ```bash
 ./setup.sh

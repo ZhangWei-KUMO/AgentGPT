@@ -20,6 +20,7 @@ const getBaseUrl = () => {
 
 export const api = createTRPCNext<AppRouter>({
   config() {
+    let frontEndUrl = getBaseUrl();
     return {
       transformer: superjson,
       links: [
@@ -28,8 +29,9 @@ export const api = createTRPCNext<AppRouter>({
             process.env.NODE_ENV === "development" ||
             (opts.direction === "down" && opts.result instanceof Error),
         }),
+        // 在Node端以前端地址发送请求
         httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
+          url: `${frontEndUrl}/api/trpc`,
         }),
       ],
     };

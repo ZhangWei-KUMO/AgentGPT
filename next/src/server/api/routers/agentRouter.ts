@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { createTRPCRouter, protectedProcedure, publicProcedure } from "../trpc";
+import { createTRPCRouter, publicProcedure } from "../trpc";
 import { prisma } from "../../db";
 import { MESSAGE_TYPE_TASK, messageSchema } from "../../../types/agentTypes";
 
@@ -11,7 +11,7 @@ const saveAgentParser = z.object({
 });
 
 export const agentRouter = createTRPCRouter({
-  create: protectedProcedure.input(saveAgentParser).mutation(async ({ input, ctx }) => {
+  create: publicProcedure.input(saveAgentParser).mutation(async ({ input, ctx }) => {
     const agent = await prisma.agent.create({
       data: {
         name: input.name,
@@ -38,7 +38,7 @@ export const agentRouter = createTRPCRouter({
     await Promise.all(all);
     return agent;
   }),
-  getAll: protectedProcedure.query(async ({ ctx }) => {
+  getAll: publicProcedure.query(async ({ ctx }) => {
     return prisma.agent.findMany({
       where: {
         userId:'',
@@ -61,7 +61,7 @@ export const agentRouter = createTRPCRouter({
       },
     });
   }),
-  deleteById: protectedProcedure.input(z.string()).mutation(async ({ input, ctx }) => {
+  deleteById: publicProcedure.input(z.string()).mutation(async ({ input, ctx }) => {
     await prisma.agent.updateMany({
       where: {
          id: input, 
