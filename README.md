@@ -16,7 +16,7 @@ UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户
 ## 👨‍🚀 启动
 
 ### 配置环境变量
-Ultra-GPT给用户构建了自动化环境变量生成脚本，位于项目`cli`文件夹中，用户只需执行`.setup.sh`文件即可在前端**next**项目文件夹和后端**platform**文件夹下各自创建`.env`文件。
+Ultra-GPT给用户构建了自动化环境变量生成脚本，位于项目`cli`文件夹中，用户只需执行`./setup.sh`文件即可在前端**next**项目文件夹和后端**platform**文件夹下各自创建`.env`文件。
 
 ```
 git clone https://github.com/ZhangWei-KUMO/UltraGPT.git && cd UltraGPT
