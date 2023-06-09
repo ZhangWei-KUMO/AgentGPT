@@ -1,5 +1,5 @@
-<!-- <p align="center">
-  <img src="https://raw.githubusercontent.com/reworkd/AgentGPT/main/next/public/banner.png" height="300" alt="AgentGPT Logo"/> -->
+<p align="center">
+  <img src="https://github.com/ZhangWei-KUMO/UltraGPT/blob/main/logo.png?raw=true" height="300" alt="AgentGPT Logo"/>
 </p>
 <p align="center">
   <em>🤖 🤖 一款支持中文的AutoGPT客户端  🤖 </em>
