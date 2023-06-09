@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import { appWithTranslation, useTranslation } from "next-i18next";
 import { useEffect } from "react";
 import nextI18NextConfig from "../../next-i18next.config.js";
+
 const MyApp: AppType = ({
   Component,
   pageProps: { ...pageProps },
