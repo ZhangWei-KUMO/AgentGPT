@@ -17,14 +17,14 @@
  *
  */
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
-// import { type Session } from "next-auth";
+import { type Session } from "next-auth";
 
 // import { getServerAuthSession } from "../auth";
 import { prisma } from "../db";
 
-// type CreateContextOptions = {
-//   session: Session | null;
-// };
+type CreateContextOptions = {
+  session: Session | null;
+};
 
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use
@@ -47,16 +47,14 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-// export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-//   const { req, res } = opts;
+export const createTRPCContext = async (opts: CreateNextContextOptions) => {
+  const { req, res } = opts;
 
-//   // Get the session from the server using the unstable_getServerSession wrapper function
-//   const session = await getServerAuthSession({ req, res });
+  // Get the session from the server using the unstable_getServerSession wrapper function
+  // const session = await getServerAuthSession({ req, res });
 
-//   return createInnerTRPCContext({
-//     session,
-//   });
-// };
+  return createInnerTRPCContext({session:null});
+};
 
 /**
  * 2. INITIALIZATION
@@ -67,12 +65,12 @@ const createInnerTRPCContext = (opts: CreateContextOptions) => {
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 
-// const t = initTRPC.context<typeof createTRPCContext>().create({
-//   transformer: superjson,
-//   errorFormatter({ shape }) {
-//     return shape;
-//   },
-// });
+const t = initTRPC.context<typeof createTRPCContext>().create({
+  transformer: superjson,
+  errorFormatter({ shape }) {
+    return shape;
+  },
+});
 
 /**
  * 3. ROUTER & PROCEDURE (THE IMPORTANT BIT)
@@ -85,7 +83,7 @@ import superjson from "superjson";
  * This is how you create new routers and subrouters in your tRPC API
  * @see https://trpc.io/docs/router
  */
-// export const createTRPCRouter = t.router;
+export const createTRPCRouter = t.router;
 
 /**
  * Public (unauthed) procedure
@@ -94,23 +92,23 @@ import superjson from "superjson";
  * tRPC API. It does not guarantee that a user querying is authorized, but you
  * can still access user session data if they are logged in
  */
-// export const publicProcedure = t.procedure;
+export const publicProcedure = t.procedure;
 
 /**
  * Reusable middleware that enforces users are logged in before running the
  * procedure
  */
-// const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
-//   if (!ctx.session || !ctx.session.user) {
-//     throw new TRPCError({ code: "UNAUTHORIZED" });
-//   }
-//   return next({
-//     ctx: {
-//       // infers the `session` as non-nullable
-//       session: { ...ctx.session, user: ctx.session.user },
-//     },
-//   });
-// });
+const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
+  if (!ctx.session || !ctx.session.user) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+  return next({
+    ctx: {
+      // infers the `session` as non-nullable
+      session: { ...ctx.session, user: ctx.session.user },
+    },
+  });
+});
 
 /**
  * Protected (authed) procedure
@@ -121,4 +119,4 @@ import superjson from "superjson";
  *
  * @see https://trpc.io/docs/procedures
  */
-// export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);
+export const protectedProcedure = t.procedure.use(enforceUserIsAuthed);
