@@ -12,9 +12,9 @@
 
 UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户端，支持网络搜索、维基百科、中国上市公司数据。集成的第三方API除OpenAI外，还支持：
 
-1. [Serp API](https://serpapi.com/)[必选项] - Google搜索实时信息，请用户使用前注册完毕
-2. [REPLICATE API](https://https://replicate.com)[可选项] - 图片搜索
-3. [Tushare API](https://serpapi.com/)[可选项] - 中国金融市场数据
+1. [Serp API](https://serpapi.com/) - Google搜索实时信息，请用户使用前注册完毕 ✅
+2. [REPLICATE API](https://https://replicate.com) - 图片搜索 ✅
+3. [Tushare API](https://serpapi.com/) - 中国金融市场数据 ✅
 
 目前处于开发阶段，详细内容请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
@@ -44,9 +44,14 @@ npm run dev
 ## 🚧 项目架构和技术栈
 
 本项目由四个子项目所组成，分别为环境变量脚手架`cli`,文档网站`docs`,客户端`next`,后端`platform`。其中前端的技术选型在语言中是TypeScript,框架为React应用最多的Next.js框架。
-在API通信上使用的是**tRPC**库。后端选择Python语言是鉴于Python在机器学习强大的社区环境，采用的tPeotry进行依赖包管理，整体框架采用FastAPI。在机器学习的库中与大多数GPT应用一样，
+在API通信上使用的是**tRPC**库。后端选择Python语言是鉴于Python在机器学习强大的社区环境，采用Peotry进行依赖包管理，整体框架采用FastAPI。在机器学习的库中与大多数GPT应用一样，
 选择了LangChain库。
 
+## ⏰ 即将上线的新功能
+
+1. [MySQL]() - 传统标量数据库
+2. [WEAVIATE](https://weaviate.io/) - 向量化数据库
+3. [Pinecone](https://www.pinecone.io) - 向量化数据库
 
 ## 前端部署Vercel
 
