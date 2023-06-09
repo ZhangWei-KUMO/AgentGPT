@@ -41,6 +41,30 @@ npm install
 npm run dev
 ```
 
+后端生产环境，在`/etc/systemd/system/`文件夹中创建`agent_backend.service`：
+
+```bash
+[Unit]
+Description=My Agent Backend Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/UltraGPT/platform
+ExecStart=/home/ubuntu/etc/bin/poetry run python -m agent_backend
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl start agent_backend
+sudo systemctl enable agent_backend
+```
+
+
 ## 🚧 项目架构和技术栈
 
 本项目由四个子项目所组成，分别为环境变量脚手架`cli`,文档网站`docs`,客户端`next`,后端`platform`。其中前端的技术选型在语言中是TypeScript,框架为React应用最多的Next.js框架。
