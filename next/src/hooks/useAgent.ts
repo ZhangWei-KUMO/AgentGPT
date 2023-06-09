@@ -9,7 +9,6 @@ export interface SaveProps {
 
 export function useAgent() {
   const utils = api.useContext();
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   const voidFunc = () => {};
   const saveMutation = api.agent.create.useMutation({
     onSuccess: (data) => {

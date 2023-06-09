@@ -16,7 +16,9 @@ export const agentRouter = createTRPCRouter({
       data: {
         name: input.name,
         goal: input.goal,
-        userId: ctx.session?.user?.id,
+        // 暂不存储用户信息
+        userId: '',
+        // userId: ctx.session?.user?.id,
       },
     });
 
@@ -39,7 +41,8 @@ export const agentRouter = createTRPCRouter({
   getAll: protectedProcedure.query(async ({ ctx }) => {
     return prisma.agent.findMany({
       where: {
-        userId: ctx.session?.user?.id,
+        userId:'',
+        // userId: ctx.session?.user?.id,
         deleteDate: null,
       },
       orderBy: { createDate: "desc" },
@@ -60,7 +63,10 @@ export const agentRouter = createTRPCRouter({
   }),
   deleteById: protectedProcedure.input(z.string()).mutation(async ({ input, ctx }) => {
     await prisma.agent.updateMany({
-      where: { id: input, userId: ctx.session?.user?.id },
+      where: {
+         id: input, 
+        //  userId: ctx.session?.user?.id 
+        },
       data: {
         deleteDate: new Date(),
       },

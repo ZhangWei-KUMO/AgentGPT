@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-/* Message & Task Type */
+// 信息类型
 export const [
   MESSAGE_TYPE_GOAL,
   MESSAGE_TYPE_THINKING,
@@ -17,6 +17,7 @@ export const [
   "error" as const,
 ];
 
+// 任务状态，分别为开始、执行中、已完成、结束
 export const [
   TASK_STATUS_STARTED,
   TASK_STATUS_EXECUTING,
@@ -24,6 +25,7 @@ export const [
   TASK_STATUS_FINAL,
 ] = ["started" as const, "executing" as const, "completed" as const, "final" as const];
 
+// 任务状态枚举, 用于前端显示
 const TaskStatusSchema = z.union([
   z.literal(TASK_STATUS_STARTED),
   z.literal(TASK_STATUS_EXECUTING),
@@ -31,9 +33,10 @@ const TaskStatusSchema = z.union([
   z.literal(TASK_STATUS_FINAL),
   z.literal(""),
 ]);
-
+// 任务状态类型, 用于后端存储
 export type TaskStatus = z.infer<typeof TaskStatusSchema>;
 
+// 消息
 export const messageSchemaBase = z.object({
   id: z.string().optional(),
   value: z.string(),
