@@ -10,8 +10,11 @@
       <img src="https://img.shields.io/badge/ubuntu-22.04-orange" alt="ubuntu">
 </p>
 
-UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户端，支持网络搜索、维基百科、中国上市公司数据。集成的第三方API除OpenAI外，还包括：
-1. 
+UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户端，支持网络搜索、维基百科、中国上市公司数据。集成的第三方API除OpenAI外，还支持：
+
+1. [Serp API](https://serpapi.com/)[必选项] - Google搜索实时信息，请用户使用前注册完毕
+2. [REPLICATE API](https://https://replicate.com)[可选项] - 图片搜索
+3. [Tushare API](https://serpapi.com/)[可选项] - 中国金融市场数据
 
 目前处于开发阶段，详细内容请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
