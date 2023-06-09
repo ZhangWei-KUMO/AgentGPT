@@ -1,6 +1,7 @@
 
 datasource db {
   provider     = "mysql"
+  // 当前版本暂不介入mysql
   url          = env("DATABASE_URL")
   relationMode = "prisma"
 }

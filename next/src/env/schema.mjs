@@ -14,7 +14,7 @@ function stringToBoolean() {
  * This way you can ensure the app isn't built with invalid env vars.
  */
 export const serverSchema = z.object({
-  DATABASE_URL: z.string().url(),
+  // DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
   PLATFORM_URL: z.string().url().optional(),
 });
@@ -25,7 +25,7 @@ export const serverSchema = z.object({
  * @type {{ [k in keyof z.input<typeof serverSchema>]: string | undefined }}
  */
 export const serverEnv = {
-  DATABASE_URL: process.env.DB_URL,
+  // DATABASE_URL: process.env.DB_URL,
   NODE_ENV: process.env.NODE_ENV,
   PLATFORM_URL: process.env.PLATFORM_URL,
 };
