@@ -2,7 +2,6 @@
   <img src="https://github.com/ZhangWei-KUMO/UltraGPT/blob/main/logo_ultra.png?raw=true" height="300" alt="AgentGPT Logo"/>
 </p>
 <p align="center">
-[![一键部署UltraGPT](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world)
   <em>🤖 🤖 一款支持中文的AutoGPT客户端  🤖 </em>
 </p>
 
@@ -13,6 +12,7 @@
       <img src="https://img.shields.io/badge/lang-Hungarian-red.svg" alt="Hungarian">
 </p>
 
+[
 
 UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户端，支持网络搜索、维基百科、中国上市公司数据。目前处于开发阶段，更多详细请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
@@ -74,3 +74,5 @@ kill [PID]
 # 进入next中启动前端
 npm run dev
 ```
+## 部署
+![一键部署UltraGPT](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world)
