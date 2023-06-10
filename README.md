@@ -86,6 +86,7 @@ sudo systemctl enable agent_backend
 
 选择在环境变量中分别填入：
 ```bash
-NEXT_PUBLIC_BACKEND_URL="YOUR_BACKEND_URL"
+NEXT_PUBLIC_BACKEND_URL="https://lewiszhang.top"
 NODE_ENV="production"
+BACK_END_ENVIRONMENT="production"
 ```
