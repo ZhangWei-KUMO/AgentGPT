@@ -41,6 +41,20 @@ npm install
 npm run dev
 ```
 
+## 🚧 项目架构和技术栈
+
+本项目由四个子项目所组成，分别为环境变量脚手架`cli`,文档网站`docs`,客户端`next`,后端`platform`。其中前端的技术选型在语言中是TypeScript,框架为React应用最多的Next.js框架。
+在API通信上使用的是**tRPC**库。后端选择Python语言是鉴于Python在机器学习强大的社区环境，采用Peotry进行依赖包管理，整体框架采用FastAPI。在机器学习的库中与大多数GPT应用一样，
+选择了LangChain库。
+
+## ⏰ 即将上线的新功能
+
+1. [MySQL]() - 传统标量数据库
+2. [WEAVIATE](https://weaviate.io/) - 向量化数据库
+3. [Pinecone](https://www.pinecone.io) - 向量化数据库
+
+## 后端生产环境部署
+
 后端生产环境，在`/etc/systemd/system/`文件夹中创建`agent_backend.service`：
 
 ```bash
@@ -64,19 +78,14 @@ sudo systemctl start agent_backend
 sudo systemctl enable agent_backend
 ```
 
-
-## 🚧 项目架构和技术栈
-
-本项目由四个子项目所组成，分别为环境变量脚手架`cli`,文档网站`docs`,客户端`next`,后端`platform`。其中前端的技术选型在语言中是TypeScript,框架为React应用最多的Next.js框架。
-在API通信上使用的是**tRPC**库。后端选择Python语言是鉴于Python在机器学习强大的社区环境，采用Peotry进行依赖包管理，整体框架采用FastAPI。在机器学习的库中与大多数GPT应用一样，
-选择了LangChain库。
-
-## ⏰ 即将上线的新功能
-
-1. [MySQL]() - 传统标量数据库
-2. [WEAVIATE](https://weaviate.io/) - 向量化数据库
-3. [Pinecone](https://www.pinecone.io) - 向量化数据库
-
 ## 前端部署Vercel
 
 [![一键部署UltraGPT](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world)
+
+**Framework Preset**选择`Next.js`,**Root Directory**选择`next`
+
+选择在环境变量中分别填入：
+```bash
+NEXT_PUBLIC_BACKEND_URL="YOUR_BACKEND_URL"
+NODE_ENV="production"
+```
