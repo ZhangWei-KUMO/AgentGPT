@@ -9,7 +9,6 @@ const fetchData = async (
   onError: (message: unknown) => void
 ): Promise<TextStream | undefined> => {
   url = env.NEXT_PUBLIC_BACKEND_URL + url;
-  console.log("url", url);
   const response = await fetch(url, {
     method: "POST",
     cache: "no-cache",

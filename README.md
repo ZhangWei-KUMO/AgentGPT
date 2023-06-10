@@ -80,13 +80,20 @@ sudo systemctl enable agent_backend
 
 ## 前端部署Vercel
 
-[![一键部署UltraGPT](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world)
+进入`next`
 
-**Framework Preset**选择`Next.js`,**Root Directory**选择`next`
-
-选择在环境变量中分别填入：
+设置环境变量：
 ```bash
-NEXT_PUBLIC_BACKEND_URL="https://lewiszhang.top"
+NEXT_PUBLIC_BACKEND_URL="你的服务器域名"
 NODE_ENV="production"
 BACK_END_ENVIRONMENT="production"
+```
+
+```bash
+# 安装pm2
+npm install pm2@latest -g
+# 启动
+pm2 start npm --name "next" -- start
+# 关闭
+pm2 stop next
 ```
