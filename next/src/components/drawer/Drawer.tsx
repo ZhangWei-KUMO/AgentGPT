@@ -83,7 +83,7 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
           </div>
           <DrawerItemButton
             icon={<BiPlus size={17} />}
-            text={"New Agent"}
+            text={"新任务"}
             border
             onClick={() => location.reload()}
           />
@@ -135,7 +135,7 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
           />
           <FadingHr className="my-2" />
           <div className="flex flex-row items-center justify-center gap-2">
-            <DrawerUrlButton
+            {/* <DrawerUrlButton
               icon={
                 <FaDiscord
                   size={27}
@@ -152,7 +152,7 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
                 />
               }
               href="https://twitter.com/reworkdai"
-            />
+            /> */}
             <DrawerUrlButton
               icon={
                 <FaGithub
@@ -160,7 +160,7 @@ const Drawer = ({ showHelp, showSettings }: { showHelp: () => void; showSettings
                   className="transition-colors group-hover:fill-current group-hover:text-purple-500"
                 />
               }
-              href="https://github.com/reworkd/AgentGPT"
+              href="https://github.com/ZhangWei-KUMO/UltraGPT"
             />
           </div>
         </div>

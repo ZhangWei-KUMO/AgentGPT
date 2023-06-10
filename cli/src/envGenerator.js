@@ -31,8 +31,8 @@ const getEnvDefinition = (
       NODE_ENV: "development",
     },
     NextJS: {
-      // NEXT_PUBLIC_BACKEND_URL: "http://localhost:8000",
-      NEXT_PUBLIC_BACKEND_URL: "https://api.lewiszhang.top",
+      NEXT_PUBLIC_BACKEND_URL: "http://localhost:8000",
+      // NEXT_PUBLIC_BACKEND_URL: "https://api.lewiszhang.top",
       NEXT_PUBLIC_MAX_LOOPS: 25,
     },
     Backend: {

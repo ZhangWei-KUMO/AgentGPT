@@ -38,7 +38,7 @@ class MessageService {
   sendGoalMessage(goal: string) {
     this.sendMessage({ type: MESSAGE_TYPE_GOAL, value: goal });
   }
-
+ // Loops Error
   sendLoopMessage() {
     this.sendMessage({
       type: MESSAGE_TYPE_SYSTEM,

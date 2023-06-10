@@ -10,7 +10,7 @@
 	"EXECUTING": "执行中",
 	"EXPORT": "导出",
 	"IMAGE": "图片",
-	"LOOP": "循环",
+	"LOOP": "执行次数",
 	"PAUSED": "暂停",
 	"RESET": "重置",
 	"RUNNING": "进行中",

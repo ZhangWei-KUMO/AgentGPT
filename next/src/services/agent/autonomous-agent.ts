@@ -102,6 +102,7 @@ class AutonomousAgent {
     }
 
     this.numLoops += 1;
+    // 获取最大执行次数
     const maxLoops = this.maxLoops();
     if (this.numLoops > maxLoops) {
       this.messageService.sendLoopMessage();
