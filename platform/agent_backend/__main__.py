@@ -5,8 +5,8 @@ from agent_backend.settings import settings
 
 # 后端接口的主路由
 def main() -> None:
-    ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    ssl_context.load_cert_chain("server.crt", "server.key")
+    # ssl_context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+    # ssl_context.load_cert_chain("server.crt", "server.key")
     """应用程序的入口点"""
     uvicorn.run(
         "agent_backend.web.application:get_app",

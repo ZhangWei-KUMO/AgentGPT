@@ -23,11 +23,11 @@ class Reason(Tool):
 
         llm = create_model(self.model_settings, streaming=True)
         chain = LLMChain(llm=llm, prompt=execute_task_prompt)
-
+        print("Reason tool called.")
         return StreamingResponse.from_chain(
             chain,
             {"goal": goal, 
-             "language": "简体中文", 
+             "language": "English", 
              "task": task
             },
             media_type="text/event-stream",

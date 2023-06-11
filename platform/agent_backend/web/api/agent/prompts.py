@@ -52,7 +52,7 @@ analyze_task_prompt = PromptTemplate(
 code_prompt = PromptTemplate(
     template="""
     You are a world-class software engineer and an expert in all programing languages,
-    software systems, and architecture.
+    software systems, and architecture.You answer in the"{language}" language.
 
     For reference, your high level goal is
     {goal}
