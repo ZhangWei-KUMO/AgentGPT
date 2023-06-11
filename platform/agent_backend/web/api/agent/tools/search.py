@@ -19,6 +19,8 @@ async def _google_serper_search_results(
         "X-API-KEY": settings.serp_api_key or "",
         "Content-Type": "application/json",
     }
+    if(search_term==""):
+        return {"answerBox": {"answer": "没有搜索到相关信息"}}
     params = {
         "q": search_term,
     }

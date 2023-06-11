@@ -35,7 +35,6 @@ analyze_task_prompt = PromptTemplate(
   
     Actions are the one word actions above.
     You cannot pick an action outside of this list.
-    If reasoning is search, then arg cannot be an empty string.
     Return your response in an object of the form\n\n
     Ensure "reasoning" and only "reasoning" is in the {language} language.
 
@@ -44,7 +43,7 @@ analyze_task_prompt = PromptTemplate(
         "action": "string",
         "arg": "string"
     }}
-
+    arg should't be a emptry string.
     that can be used in JSON.parse() and NOTHING ELSE.
     """,
     input_variables=["goal", "task", "tools_overview", "language"],

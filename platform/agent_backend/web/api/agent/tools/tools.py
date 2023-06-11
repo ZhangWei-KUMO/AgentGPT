@@ -1,17 +1,15 @@
-from typing import Type, List
+from typing import List, Type
 
 from agent_backend.web.api.agent.tools.code import Code
 from agent_backend.web.api.agent.tools.conclude import Conclude
-from agent_backend.web.api.agent.tools.wikipedia_search import Wikipedia
+from agent_backend.web.api.agent.tools.image import Image
 from agent_backend.web.api.agent.tools.reason import Reason
 from agent_backend.web.api.agent.tools.search import Search
 from agent_backend.web.api.agent.tools.tool import Tool
-from agent_backend.web.api.agent.tools.finance import Finance
 
 
 def get_user_tools(tool_names: List[str]) -> List[Type[Tool]]:
-    tools =  list(map(get_tool_from_name, tool_names)) + get_default_tools()
-    return tools
+    return list(map(get_tool_from_name, tool_names)) + get_default_tools()
 
 
 def get_available_tools() -> List[Type[Tool]]:
@@ -21,23 +19,19 @@ def get_available_tools() -> List[Type[Tool]]:
 def get_available_tools_names() -> List[str]:
     return [get_tool_name(tool) for tool in get_available_tools()]
 
-"""
-外部工具，有图像处理，代码处理，搜索处理。
-未来可以添加的可以有维基百科、知乎、知网等等
-"""
+
 def get_external_tools() -> List[Type[Tool]]:
     return [
-        # Wikipedia,
+        # Wikipedia,  # TODO: Remove if async doesn't work
+        Image,
         Search,
-        # Finance,
-        Code,      
+        Code,
     ]
 
-"""
-默认工具分为推理（Reason）和结论（Conclude）两大块
-"""
+
 def get_default_tools() -> List[Type[Tool]]:
     return [
+        Reason,
         Conclude,
     ]
 
@@ -52,16 +46,24 @@ def format_tool_name(tool_name: str) -> str:
 
 def get_tools_overview(tools: List[Type[Tool]]) -> str:
     """Return a formatted string of name: description pairs for all available tools"""
+
+    # Create a list of formatted strings
     formatted_strings = [
         f"'{get_tool_name(tool)}': {tool.description}" for tool in tools
     ]
+
+    # Remove duplicates by converting the list to a set and back to a list
     unique_strings = list(set(formatted_strings))
+
+    # Join the unique strings with newlines
     return "\n".join(unique_strings)
 
-# 搜集工具，实际上就是action
+
 def get_tool_from_name(tool_name: str) -> Type[Tool]:
     for tool in get_available_tools():
-        return tool
+        if get_tool_name(tool) == format_tool_name(tool_name):
+            return tool
+
     return get_default_tool()
 
 
