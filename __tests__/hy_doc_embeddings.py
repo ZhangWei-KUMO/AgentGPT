@@ -14,4 +14,3 @@ embeddings = HypotheticalDocumentEmbedder.from_llm(llm, base_embeddings, "web_se
 # 生成一个嵌入向量
 vector = embeddings.embed_query("我该如何从台北去上海?")
 
-print(vector)

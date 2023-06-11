@@ -31,8 +31,6 @@ class OpenAIAgentService(AgentService):
         self._language = model_settings.language or "English"
 
     async def start_goal_agent(self, *, goal: str) -> List[str]:
-        # 调用模型
-        print("调用：",self._language, self.model_settings)
         completion = await call_model_with_handling(
             self.model_settings,
             start_goal_prompt,
@@ -49,7 +47,6 @@ class OpenAIAgentService(AgentService):
         chain = LLMChain(llm=llm, prompt=analyze_task_prompt)
         pydantic_parser = PydanticOutputParser(pydantic_object=Analysis)
         tool_names = get_user_tools(tool_names)
-        print("tool_names",tool_names)
         tools_overview = get_tools_overview(tool_names)
       
 
@@ -62,11 +59,9 @@ class OpenAIAgentService(AgentService):
             }
         )
       
-        print("分析完成:\n", completion)
         try:
             return pydantic_parser.parse(completion)
         except Exception as error:
-            print(f"Error parsing analysis: {error}")
             return Analysis.get_default_analysis()
     #执行任务代理 
     async def execute_task_agent(
@@ -77,11 +72,9 @@ class OpenAIAgentService(AgentService):
         analysis: Analysis,
     ) -> StreamingResponse:
         tool_class = get_tool_from_name(analysis.action)
-        if(analysis.arg==''):
-            return "缺少参数，无法执行任务"
-        else:
-            res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
-            return res
+        print("断点：",tool_class,analysis)
+        res = await tool_class(self.model_settings).call(goal, task, analysis.arg)
+        return res
 
     async def create_tasks_agent(
         self,

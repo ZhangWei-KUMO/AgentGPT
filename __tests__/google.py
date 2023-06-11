@@ -26,4 +26,3 @@ inputs = {
 }
 response = chain(inputs)
 # 返回的对象中包括output和url两个字段
-print(response['output'])

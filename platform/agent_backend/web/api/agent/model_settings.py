@@ -4,18 +4,18 @@ from langchain.chat_models import ChatOpenAI
 from agent_backend.schemas import ModelSettings
 from agent_backend.settings import settings
 from agent_backend.web.api.agent.api_utils import rotate_keys
-if(settings.openai_api_base == "<Should be updated via env>"):
-    print("openai_api_base未配置")
-if(settings.db_user == "<Should be updated via env>"):
-    print("数据库USER未配置")
-if(settings.db_pass == "<Should be updated via env>"):
-    print("数据库密码未配置")
-if(settings.db_base == "<Should be updated via env>"):
-    print("数据库名称未配置")
-if(settings.vector_db_url == "<Should be updated via env>"):
-    print("向量数据库URL未配置")
-if(settings.vector_db_api_key == "<Should be updated via env>"):
-    print("向量数据库API KEY未配置")
+# if(settings.openai_api_base == "<Should be updated via env>"):
+#     print("openai_api_base未配置")
+# if(settings.db_user == "<Should be updated via env>"):
+#     print("数据库USER未配置")
+# if(settings.db_pass == "<Should be updated via env>"):
+#     print("数据库密码未配置")
+# if(settings.db_base == "<Should be updated via env>"):
+#     print("数据库名称未配置")
+# if(settings.vector_db_url == "<Should be updated via env>"):
+#     print("向量数据库URL未配置")
+# if(settings.vector_db_api_key == "<Should be updated via env>"):
+#     print("向量数据库API KEY未配置")
 
 openai.api_base = settings.openai_api_base
 

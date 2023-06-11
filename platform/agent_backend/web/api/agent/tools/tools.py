@@ -27,9 +27,9 @@ def get_available_tools_names() -> List[str]:
 """
 def get_external_tools() -> List[Type[Tool]]:
     return [
-        Wikipedia,
+        # Wikipedia,
         Search,
-        Finance,
+        # Finance,
         Code,      
     ]
 
@@ -61,13 +61,11 @@ def get_tools_overview(tools: List[Type[Tool]]) -> str:
 # 搜集工具，实际上就是action
 def get_tool_from_name(tool_name: str) -> Type[Tool]:
     for tool in get_available_tools():
-        print(f"第二步：使用{tool_name}工具")
         return tool
     return get_default_tool()
 
 
 def get_default_tool() -> Type[Tool]:
-    print("启动默认工具-Reason")
     return Reason
 
 

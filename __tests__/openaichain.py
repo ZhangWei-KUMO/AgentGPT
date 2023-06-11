@@ -20,5 +20,3 @@ chain = OpenAPIEndpointChain.from_api_operation(
     return_intermediate_steps=True # Return request and response text
 )
 output = chain("什么衣服最贵")
-
-print(output)

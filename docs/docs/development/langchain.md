@@ -31,7 +31,6 @@ inputs = {
 }
 
 response = chain(inputs)
-print(response['output'])
 ```
 在这个Demo中可以通过LLMRequestsChain轻松地爬取金融数据，事实上，LangChain的Chain有很多种下面就开始一一介绍：
 
