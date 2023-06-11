@@ -13,8 +13,8 @@
 UltraGPT可以帮助您配置和部署自主AI代理,可配置的中文GPT客户端，支持网络搜索、维基百科、中国上市公司数据。集成的第三方API除OpenAI外，还支持：
 
 1. [Serp API](https://serpapi.com/) - Google搜索实时信息，请用户使用前注册完毕 ✅
-2. [REPLICATE API](https://https://replicate.com) - 图片搜索 ✅
-3. [Tushare API](https://serpapi.com/) - 中国金融市场数据 ✅
+2. [REPLICATE API](https://https://replicate.com) - 基于Stable Diffusion的图片生成功能 ✅
+3. [Tushare API](https://serpapi.com/) - 基于Tushare的中国金融数据处理功能 ✅
 
 目前处于开发阶段，详细内容请查看[技术文档](https://zhangwei-kumo.github.io/UltraGPT)。
 
