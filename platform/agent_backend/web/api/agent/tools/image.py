@@ -21,32 +21,15 @@ async def get_replicate_image(input_str: str) -> str:
             "stability-ai/stable-diffusion"
             ":db21e45d3f7023abc2a46ee38a23973f6dce16bb082a930b0c49861f96d1e5bf",
             input={"prompt": input_str},
-            image_dimensions="512x512",
+            image_dimensions="312x312",
         )
+        print("生成图片",output)
     except ModelError as e:
         raise ReplicateError(e, "Image generation failed due to NSFW image.")
     except ReplicateAPIError as e:
-        raise ReplicateError(e, "Failed to generate an image.")
+        raise ReplicateError(e, "生成图片失败")
 
     return output[0]
-
-
-# Use AI to generate an Image based on a prompt
-async def get_open_ai_image(input_str: str) -> str:
-    api_key = rotate_keys(
-        primary_key=settings.openai_api_key,
-        secondary_key=settings.secondary_openai_api_key,
-    )
-
-    response = openai.Image.create(
-        api_key=api_key,
-        prompt=input_str,
-        n=1,
-        size="256x256",
-    )
-
-    return response["data"][0]["url"]
-
 
 class Image(Tool):
     description = (
@@ -62,10 +45,5 @@ class Image(Tool):
     async def call(
         self, goal: str, task: str, input_str: str
     ) -> FastAPIStreamingResponse:
-        # Use the replicate API if its available, otherwise use DALL-E
-        try:
             url = await get_replicate_image(input_str)
-        except RuntimeError:
-            url = await get_open_ai_image(input_str)
-
-        return stream_string(f"![{input_str}]({url})")
+            return stream_string(f"![{input_str}]({url})")

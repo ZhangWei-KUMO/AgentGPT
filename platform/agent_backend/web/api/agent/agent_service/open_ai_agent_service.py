@@ -3,6 +3,7 @@ from typing import List, Optional
 from lanarky.responses import StreamingResponse
 from langchain.chains import LLMChain
 from langchain.output_parsers import PydanticOutputParser
+from langchain import PromptTemplate
 
 from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.agent_service.agent_service import AgentService
@@ -22,6 +23,13 @@ from agent_backend.web.api.agent.tools.tools import (
     get_tools_overview,
     get_tool_from_name,
     get_user_tools,
+)
+
+translator_prompt = PromptTemplate(
+    template="""
+     translate {text} to English.
+    """,
+    input_variables=["text"],
 )
 
 
@@ -44,17 +52,21 @@ class OpenAIAgentService(AgentService):
         self, *, goal: str, task: str, tool_names: List[str]
     ) -> Analysis:
         llm = create_model(self.model_settings)
+
         chain = LLMChain(llm=llm, prompt=analyze_task_prompt)
         pydantic_parser = PydanticOutputParser(pydantic_object=Analysis)
         tool_names = get_user_tools(tool_names)
         tools_overview = get_tools_overview(tool_names)
-      
+        print("可选工具：",tools_overview)
+        trans_chain = LLMChain(llm=llm, prompt=translator_prompt)
+        goal = trans_chain.run({"text": goal})
+        task = trans_chain.run({"text": task})
 
         completion = chain.run(
             {
                 "goal": goal,
                 "task": task,
-                "language": self._language,
+                "language": "English",
                 "tools_overview": tools_overview
             }
         )

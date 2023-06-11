@@ -57,7 +57,12 @@ async function processStream(
 
       let text = await readStream(reader);
       if (text === null) break;
-      onText(eval(text));
+      if(text[0]=='"'){
+        onText(eval(text));
+      }else{
+        onText(text);
+      }
+     
     }
   } catch (error) {
     onError(error);
