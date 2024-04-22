@@ -8,6 +8,7 @@ app = FastAPI()
 
 
 def stream_string(data: str, delayed: bool = False) -> FastAPIStreamingResponse:
+    print("触发stream_string")
     return FastAPIStreamingResponse(
         stream_generator(data, delayed),
     )

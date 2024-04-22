@@ -20,16 +20,5 @@ def summarize(
             "snippets": snippets
          }
     markdown = chain.run(args)
-    # 数据流的方式，返回的是一个StreamingResponse对象，未来实现
-    # res = await chain.arun(args)
-    # print("---",tasks)
-    # text_stream =  StreamingResponse.from_chain(
-    #     chain,
-    #     {
-    #         "goal": goal, 
-    #          "query": query,
-    #         "snippets": snippets
-    #      },
-    #      media_type="text/event-stream",
-    # )
+    print("触发总结")
     return markdown

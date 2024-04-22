@@ -1,6 +1,5 @@
 from typing import List, Type
 
-from agent_backend.web.api.agent.tools.code import Code
 from agent_backend.web.api.agent.tools.conclude import Conclude
 from agent_backend.web.api.agent.tools.image import Image
 from agent_backend.web.api.agent.tools.reason import Reason
@@ -25,7 +24,6 @@ def get_external_tools() -> List[Type[Tool]]:
         #Wikipedia,  # TODO: Remove if async doesn't work
         # Image,
         Search,
-        #Code,
     ]
 
 

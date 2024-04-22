@@ -27,7 +27,7 @@ from agent_backend.web.api.agent.tools.tools import (
 
 translator_prompt = PromptTemplate(
     template="""
-     translate {text} to English.
+     translate {text} to Chinese.
     """,
     input_variables=["text"],
 )
@@ -36,7 +36,7 @@ translator_prompt = PromptTemplate(
 class OpenAIAgentService(AgentService):
     def __init__(self, model_settings: ModelSettings):
         self.model_settings = model_settings
-        self._language = model_settings.language or "English"
+        self._language = model_settings.language or "Chinese"
 
     async def start_goal_agent(self, *, goal: str) -> List[str]:
         completion = await call_model_with_handling(
@@ -66,13 +66,12 @@ class OpenAIAgentService(AgentService):
             {
                 "goal": goal,
                 "task": task,
-                "language": "English",
+                "language": "Chinese",
                 "tools_overview": tools_overview
             }
         )
       
         try:
-            print("====",completion)
             return pydantic_parser.parse(completion)
         except Exception as error:
             return Analysis.get_default_analysis()

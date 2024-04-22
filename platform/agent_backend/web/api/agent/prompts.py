@@ -60,7 +60,7 @@ code_prompt = PromptTemplate(
     Write code in English but explanations/comments in the "{language}" language.
     Provide no information about who you are and focus on writing code.
     Ensure code is bug and error free and explain complex concepts through comments
-    Respond in well-formatted markdown. Ensure code blocks are used for code sections.
+    Respond in well-formatted pure text. Ensure code blocks are used for code sections.
 
     Write code to accomplish the following:
     {task}
@@ -104,7 +104,7 @@ create_tasks_prompt = PromptTemplate(
 summarize_prompt = PromptTemplate(
     template="""Answer in Chinese.Summarize the following text "{snippets}" Write in a style expected
     of the goal "{goal}", be as concise or as descriptive as necessary and attempt to
-    answer the query: "{query}" as best as possible. Use markdown formatting for
+    answer the query: "{query}" as best as possible. Use pure text formatting for
     longer responses.""",
     input_variables=["goal", "query", "snippets"],
 )

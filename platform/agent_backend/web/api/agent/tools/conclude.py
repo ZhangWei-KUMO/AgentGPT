@@ -11,5 +11,5 @@ class Conclude(Tool):
     async def call(
         self,goal: str, task: str, input_str: str
     ) -> FastAPIStreamingResponse:
-        print("Task execution concluded.")
-        return stream_string("Task execution concluded.", delayed=True)
+        print("触发Conclude")
+        return stream_string("对任务进行总结", delayed=True)

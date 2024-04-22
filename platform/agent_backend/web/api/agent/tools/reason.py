@@ -6,10 +6,11 @@ from agent_backend.schemas import ModelSettings
 from agent_backend.web.api.agent.model_settings import create_model
 from agent_backend.web.api.agent.tools.tool import Tool
 from langchain import PromptTemplate
+from agent_backend.web.api.agent.prompts import execute_task_prompt
 
 translator_prompt = PromptTemplate(
     template="""
-     translate {text} to English.
+     translate {text} to Chinese.
     """,
     input_variables=["text"],
 )
@@ -25,8 +26,7 @@ class Reason(Tool):
     async def call(
         self, goal: str, task: str, input_str: str
     ) -> FastAPIStreamingResponse:
-        from agent_backend.web.api.agent.prompts import execute_task_prompt
-
+        print("触发Reason")
         llm = create_model(self.model_settings, streaming=True)
         chain = LLMChain(llm=llm, prompt=execute_task_prompt)
         trans_chain = LLMChain(llm=llm, prompt=translator_prompt)

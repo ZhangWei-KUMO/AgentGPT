@@ -95,9 +95,7 @@ class Search(Tool):
 
         if len(snippets) == 0:
             return stream_string("Google搜索引擎中没有搜索到相关信息", True)
-        print("====",snippets)
         # 生成摘要
         res = summarize(self.model_settings, goal, task, snippets)
-        print(res)
         return res
 
