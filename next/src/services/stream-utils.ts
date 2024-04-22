@@ -54,7 +54,11 @@ async function processStream(
       return;
     }
 
-    const text = await readStream(reader);
+    let text = await readStream(reader);
+    // 如果text中包含\n或者"则去除
+    if (text) {
+      text = text.replace(/[\n"]/g, "");
+    }
     if (text === null) break;
     onText(text);
   }
