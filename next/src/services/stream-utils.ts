@@ -47,26 +47,18 @@ async function processStream(
   onError: (error: unknown) => void,
   shouldClose: () => boolean
 ): Promise<void> {
-  try {
-    onStart();
-    while (true) {
-      if (shouldClose()) {
-        await reader.cancel();
-        return;
-      }
-
-      let text = await readStream(reader);
-      if (text === null) break;
-      if(text[text.length-1]=='"'){
-        onText(eval(text));
-      }else{
-        onText(text);
-      }
-     
+  onStart();
+  while (true) {
+    if (shouldClose()) {
+      await reader.cancel();
+      return;
     }
-  } catch (error) {
-    onError(error);
+
+    const text = await readStream(reader);
+    if (text === null) break;
+    onText(text);
   }
+  
 }
 
 export const streamText = async (

@@ -141,10 +141,14 @@ class AutonomousAgent {
         executionMessage.info = "";
       },
       (text) => {
-        executionMessage.info = text.replace(/"/g, "");
-        this.messageService.updateMessage(executionMessage);
+        executionMessage.info += text;
+        if(executionMessage.info){
+          console.log("执行任务信息",executionMessage)
+          this.messageService.updateMessage(executionMessage);
+        }
       },
       (error) => {
+        console.log("执行任务错误",error)
         this.messageService.sendErrorMessage(error);
         this.shutdown();
       },

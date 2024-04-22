@@ -6,7 +6,7 @@ from agent_backend.web.api.agent.tools.image import Image
 from agent_backend.web.api.agent.tools.reason import Reason
 from agent_backend.web.api.agent.tools.search import Search
 from agent_backend.web.api.agent.tools.tool import Tool
-
+from agent_backend.web.api.agent.tools.wikipedia_search import Wikipedia
 
 def get_user_tools(tool_names: List[str]) -> List[Type[Tool]]:
     return list(map(get_tool_from_name, tool_names)) + get_default_tools()
@@ -22,10 +22,10 @@ def get_available_tools_names() -> List[str]:
 
 def get_external_tools() -> List[Type[Tool]]:
     return [
-        # Wikipedia,  # TODO: Remove if async doesn't work
-        Image,
+        #Wikipedia,  # TODO: Remove if async doesn't work
+        # Image,
         Search,
-        Code,
+        #Code,
     ]
 
 

@@ -27,7 +27,7 @@ async def _google_serper_search_results(
    # 调用serper.dev的API
     async with aiohttp.ClientSession() as session:
         async with session.post(
-            f"https://google.serper.dev/{search_type}", headers=headers, params=params
+            f"https://google.serper.dev/{search_type}", headers=headers, params=params,ssl=False
         ) as response:
             response.raise_for_status()
             search_results = await response.json()
@@ -95,7 +95,9 @@ class Search(Tool):
 
         if len(snippets) == 0:
             return stream_string("Google搜索引擎中没有搜索到相关信息", True)
-        
+        print("====",snippets)
         # 生成摘要
-        return summarize(self.model_settings, goal, task, snippets)
+        res = summarize(self.model_settings, goal, task, snippets)
+        print(res)
+        return res
 

@@ -5,8 +5,9 @@
 
 这个项目使用poetry作为现代化的依赖管理工具。要运行这个项目，请使用以下命令：
 ```bash
+python3 -m pip install poetry==1.2.0
 poetry install
-poetry run python -m agent_backend
+poetry run python3 -m agent_backend
 ```
 这将在配置的主机上启动服务器。您可以在`/api/docs`处找到Swagger文档。
 您可以在此处阅读有关poetry的更多信息：https://python-poetry.org/

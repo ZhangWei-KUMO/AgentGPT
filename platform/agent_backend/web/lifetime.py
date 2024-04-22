@@ -44,11 +44,12 @@ def register_startup_event(
 
     @app.on_event("startup")
     async def _startup() -> None:  # noqa: WPS430
-        _setup_db(app)
+        # _setup_db(app)
         # await _create_tables()
         # await init_kafka(app)
 
-    return _startup
+    # return _startup
+      return ""
 
 
 def register_shutdown_event(

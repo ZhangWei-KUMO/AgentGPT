@@ -72,6 +72,7 @@ class OpenAIAgentService(AgentService):
         )
       
         try:
+            print("====",completion)
             return pydantic_parser.parse(completion)
         except Exception as error:
             return Analysis.get_default_analysis()
