@@ -77,7 +77,7 @@ export const TaskWindow = ({ visibleOnMobile }: TaskWindowProps) => {
   );
 };
 
-const Task = ({ task, index }: { task: Task; index: number }) => {
+const Task = ({ task, index }: { task; index: number }) => {
   const isAgentStopped = useAgentStore.use.isAgentStopped();
   const deleteTask = useMessageStore.use.deleteTask();
   const isTaskDeletable = task.taskId && !isAgentStopped && task.status === "started";
